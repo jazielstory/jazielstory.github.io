@@ -24,15 +24,15 @@
 
   const MOBILE_QUERY = "(max-width: 759px)";
 
-  const DESKTOP_BANNER_KEY = "d7d5c0071562c8f7cf1c9773733f24c4";
-  const MOBILE_BANNER_KEY = "320efe85976f3f342fd35af14d52bbc3";
-  const NATIVE_BANNER_CONTAINER_ID = "container-1bcab6550425f1ce18e8f118f6b99bf2";
+  const DESKTOP_BANNER_KEY = "86c93233fc95e08e7f3a2b57dd0e2a25";
+  const MOBILE_BANNER_KEY = "d839145e8aeac0b0e354df1e1d1194f5";
+  const NATIVE_BANNER_CONTAINER_ID = "container-80079ecb01bef79f6a3491bfd4857916";
   const NATIVE_BANNER_SRC =
-    "https://pl31316186.profitableratecpmnetwork.com/1bcab6550425f1ce18e8f118f6b99bf2/invoke.js";
+    "https://pl32296917.profitableratecpmnetwork.com/80079ecb01bef79f6a3491bfd4857916/invoke.js";
   const POPUNDER_SRC =
-    "https://pl31316184.profitableratecpmnetwork.com/f3/5b/52/f35b52f91576d2c53bbf5863c3578734.js";
+    "https://pl32296916.profitableratecpmnetwork.com/75/30/fd/7530fd5e296928b88bd3fc7ea6100a04.js";
   const SOCIAL_BAR_SRC =
-    "https://pl31316185.profitableratecpmnetwork.com/15/c5/51/15c55106a88f7401e45138ca83397064.js";
+    "https://pl32296918.profitableratecpmnetwork.com/7d/50/97/7d50973958e288a776e849f6f40dd48f.js";
 
   /* ---------- Site-wide, once-per-page scripts ---------- */
 
