@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin — Jaziel</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="admin.css">
+<link rel="stylesheet" href="admin-modal-fix.css?v=20260912-1">
+</head>
+<body>
+<div class="admin-shell">
+  <header class="admin-topbar">
+    <button class="admin-menu-btn" id="menuToggle" type="button" aria-label="Toggle menu">☰</button>
+    <a class="admin-logo" href="#/dashboard">JAZIEL <span>Admin</span></a>
+    <div class="admin-topbar-spacer"></div>
+    <span class="admin-conn-badge" id="connBadge">Not connected</span>
+  </header>
+  <nav class="admin-sidebar" id="sidebar">
+    <a href="#/dashboard" data-nav="dashboard">📊 Dashboard</a>
+    <a href="#/articles" data-nav="articles">📰 Articles</a>
+    <a href="#/editor/new" data-nav="editor">➕ New Article</a>
+    <a href="#/search" data-nav="search">🔎 Search</a>
+    <a href="#/settings" data-nav="settings">⚙️ Settings</a>
+    <a href="#/help" data-nav="help">❓ Help</a>
+  </nav>
+  <main class="admin-main" id="view">
+    <p class="loading-text">Loading admin panel…</p>
+  </main>
+</div>
+<div id="toastRoot" class="toast-root"></div>
+<div id="confirmModal" class="modal-overlay" hidden>
+  <div class="modal-box">
+    <p id="confirmMessage">Are you sure?</p>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" id="confirmCancel" type="button">Cancel</button>
+      <button class="btn btn-danger" id="confirmOk" type="button">Confirm</button>
+    </div>
+  </div>
+</div>
+<div id="previewModal" class="modal-overlay" hidden>
+  <div class="modal-box modal-box-wide">
+    <div class="modal-head">
+      <h3>Article Preview</h3>
+      <button class="btn btn-ghost" id="previewClose" type="button">✕ Close</button>
+    </div>
+    <div id="previewRoot" class="preview-frame"></div>
+  </div>
+</div>
+<script src="../assets/js/image-manager.js?v=20260913-1" defer></script>
+<script src="../assets/js/image-compressor.js?v=20260913-1" defer></script>
+<script src="admin.js?v=20260912-5" defer></script>
+<script src="../assets/js/schema-publish-guard.js?v=20260913-1" defer></script>
+<script src="../assets/js/admin-section-labels.js?v=20260913-1" defer></script>
+<script src="../assets/js/ai-writer-category-fix.js?v=20260913-1" defer></script>
+<script src="../assets/js/preview-cover-fix-v2.js?v=20260913-1" defer></script>
+<script src="../assets/js/body-image-labels.js?v=20260912-3" defer></script>
+<script src="../assets/js/body-image-preview.js?v=20260912-4" defer></script>
+<script src="../assets/js/admin-preview-order-fix.js?v=20260913-2" defer></script>
+</body>
+</html>
