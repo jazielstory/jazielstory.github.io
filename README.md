@@ -1,1 +1,0 @@
-# jazielstory.github.io
