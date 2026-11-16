@@ -1,3 +1,17 @@
+## 2026-11-16
+
+### P1 — Admin Panel GitHub repository draft integration
+- **Status:** IMPLEMENTED / NEEDS LIVE ADMIN VERIFICATION
+- **Files changed:** `admin/admin.js`, `admin/index.html`, `README.md`, `CHANGELOG.md`.
+- **Load Draft:** Lists JSON draft files from the configured branch's `admin/drafts/` folder and loads the selected `article` payload into the editor. Browser-local drafts remain a fallback.
+- **Save Draft:** With an active GitHub token, writes/updates `admin/drafts/{slug}.json` using the existing GitHub Contents API. Without a token, it safely falls back to browser-local storage and tells the user that the draft is local only.
+- **Security:** No token is hardcoded or exposed in repository JavaScript. Remote writes require the user's own token with Contents read/write access; the existing Settings flow keeps it in tab-scoped `sessionStorage`.
+- **Clear Draft:** Clears only the local browser draft and explicitly does not delete repository files.
+- **Publishing safety:** Drafts remain outside `articles.json`; only the existing Publish action adds an article to the public feed. Article Schema v1 is unchanged.
+- **Cache:** Updated the Admin script query version so browsers fetch the new code.
+- **Commit:** `23ca09aa4f348473e38de027955f9ecce169ddaa` (Admin implementation); documentation and cache update commits follow.
+- **Verification:** Source-level checks and live Admin browser test are pending. Do not claim the live button flow is verified until the user tests it after GitHub Pages deployment.
+
 
 ## 2026-11-16
 
