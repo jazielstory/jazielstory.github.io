@@ -2,6 +2,20 @@
 
 ## 2026-11-16
 
+### P1 — Automatic static article pages and Facebook-ready Open Graph metadata
+- **Status:** IMPLEMENTED / NEEDS VERIFICATION
+- **Reason:** Facebook's crawler cannot rely on metadata inserted by JavaScript after page load. The dynamic `article.html?slug=...` template initially exposed generic metadata and an empty OG image.
+- **Files changed:** `.github/scripts/generate-static-articles.mjs`, `.github/workflows/generate-static-articles.yml`, `assets/js/main.js`, `assets/js/home-latest-final.js`, `assets/js/related-articles.js`, `README.md`, `CHANGELOG.md`.
+- **Change:** Added a Node.js generator that creates `articles/{slug}.html` for every article in `articles.json`. Each generated page has its own title, description, canonical URL, absolute HTTPS `og:image`, `og:image:alt`, image type/dimensions, and Twitter large-image metadata in the initial HTML. Article cover is used as the OG image; the site OG cover is the fallback when an article has no cover.
+- **Automation:** Added a GitHub Actions workflow triggered by changes to `articles.json`, the article template, or generator, plus manual dispatch. It regenerates pages and commits only when generated files change.
+- **Routing:** Homepage/search/category and related-story cards now link to generated static article URLs. Legacy dynamic `article.html?slug=...` routes remain as fallback. Existing pagination behavior is preserved through the static page containers and `article-pagination.js`.
+- **Schema/data safety:** Article Schema v1 and `articles.json` are unchanged. The generator does not delete older static article files.
+- **Commits:** `f038c12c43c13fd23d9c8e9bdbd50a4ccba5592d`, `ef253d754d46a51c9109b9b3e1fecfcbeff4bae4`, `d536af6e2e97c87e408dfa90a5debc2b6ebed0f9`, `de5543aab426d1f28c47c01cb8f553ac7558c67e`, `fdea6da6d9562632da39947d3b3f8e13c9632aff`, and README/CHANGELOG documentation commits.
+- **Verification:** Generator execution, JavaScript syntax validation, generated HTML inspection, GitHub Actions result, and live Facebook Sharing Debugger test are pending. Do not claim Facebook thumbnail success until tested.
+- **Deployment:** Pending successful workflow run and GitHub Pages deployment.
+
+## 2026-11-16
+
 ### P1 — Article URL routing fallback repair
 - **Status:** IMPLEMENTED / NEEDS VERIFICATION
 - **Reason:** Newly published articles can exist in `articles.json` without a generated `articles/{slug}.html` file. Homepage and shared links previously pointed directly to that missing static path.
