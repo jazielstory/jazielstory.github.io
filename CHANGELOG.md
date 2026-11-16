@@ -9,8 +9,8 @@
 - **Clear Draft:** Clears only the local browser draft and explicitly does not delete repository files.
 - **Publishing safety:** Drafts remain outside `articles.json`; only the existing Publish action adds an article to the public feed. Article Schema v1 is unchanged.
 - **Cache:** Updated the Admin script query version so browsers fetch the new code.
-- **Commit:** `23ca09aa4f348473e38de027955f9ecce169ddaa` (Admin implementation); documentation and cache update commits follow.
-- **Verification:** Source-level checks and live Admin browser test are pending. Do not claim the live button flow is verified until the user tests it after GitHub Pages deployment.
+- **Commits:** `23ca09aa4f348473e38de027955f9ecce169ddaa`, `3d03276da21a3d74e364424d7d07c10cf1631986`, `3c075ecce356197ffe5694a3afd740d618b1a071` (Admin implementation/escaping correction/source-note preservation); cache update `f9f13b4f8e4a0c16c32a46cada82c2cdd71c3594`; README `d84fa2a117537789f3c6788ec66c8dae9194b80b`.
+- **Verification:** JavaScript syntax validation passed with the final `admin/admin.js` source. The remote draft file was confirmed to exist in the repository. Live Admin browser/E2E test and GitHub Pages deployment confirmation remain pending.
 
 
 ## 2026-11-16
