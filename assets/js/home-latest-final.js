@@ -14,7 +14,7 @@
   }
 
   function url(article) {
-    return `article.html?slug=${encodeURIComponent(article.slug || "")}`;
+    return `articles/${encodeURIComponent(article.slug || "")}.html`;
   }
 
   function newest(articles) {
