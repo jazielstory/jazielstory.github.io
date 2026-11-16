@@ -281,3 +281,13 @@ Adsterra ad slots (`.ad-slot` elements) are unchanged. The Admin Panel does not 
 - **Save Draft** writes to `admin/drafts/{slug}.json` on GitHub when a Personal Access Token with repository Contents read/write permission is active in Settings; without a token it saves locally in the current browser only. The token remains in the current tab's `sessionStorage` and is never embedded in public JavaScript.
 - **Clear Draft** clears only the local browser draft; it does not delete repository draft files. Repository drafts remain unpublished until the user explicitly presses Publish.
 - Article Schema v1 remains unchanged. Draft contract metadata (`draftVersion`, `draftStatus`, `savedAt`, and `sourceNotes`) wraps the article payload without changing its schema.
+
+## Admin saved-draft picker — 2026-11-16
+
+- **Status:** IMPLEMENTED / NEEDS LIVE VERIFICATION.
+- **Scope:** Only the Admin editor's Load Draft selection flow was changed.
+- **Behavior:** When more than one GitHub or browser-local draft exists, Load Draft opens a searchable selection dialog showing the article title, filename/key, saved date when available, and storage source. Selecting an item loads it into the existing editor. A single available draft continues to load automatically.
+- **Preserved:** Save Draft, Publish, Clear Draft, article fields/schema, image handling, GitHub settings/token handling, and public website files were not intentionally changed.
+- **Files:** `admin/admin.js`, `admin/index.html`, `README.md`, `CHANGELOG.md`.
+- **Verification:** Source-level review completed; JavaScript syntax/workflow and live mobile/desktop selection still require verification after deployment.
+- **Commit:** Admin picker `df0dbef36b6f7a91126ed4eda1b332f599049a46`; cache refresh commit recorded in GitHub history.
