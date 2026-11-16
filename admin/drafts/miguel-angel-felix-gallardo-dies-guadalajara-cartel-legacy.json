@@ -1,0 +1,94 @@
+{
+  "draftVersion": 1,
+  "draftStatus": "draft",
+  "savedAt": "2026-11-16T20:24:00+09:00",
+  "sourceNotes": [
+    {
+      "publisher": "BBC News",
+      "url": "https://www.bbc.com/news/articles/c51k9nkwrndxo",
+      "note": "User-provided source article; used for the news peg and background."
+    },
+    {
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/world/americas/mexicos-guadalajara-cartel-founder-aged-80-dies-hospital-milenio-reports-2026-11-15/",
+      "note": "Independent reporting used to cross-check the death, timeline and legal history."
+    },
+    {
+      "publisher": "Anadolu Agency",
+      "url": "https://www.aa.com.tr/en/americas/mexican-drug-kingpin-miguel-angel-felix-gallardo-dies-at-80/4126089",
+      "note": "Additional reporting used to cross-check the reported cause of death and custody history."
+    }
+  ],
+  "article": {
+    "id": "draft-miguel-angel-felix-gallardo-20261116",
+    "title": "Miguel Ángel Félix Gallardo Dies at 80: The Rise and Legacy of Mexico's Guadalajara Cartel",
+    "slug": "miguel-angel-felix-gallardo-dies-guadalajara-cartel-legacy",
+    "description": "Miguel Ángel Félix Gallardo, founder of Mexico's Guadalajara Cartel, has died at 80. His criminal network helped reshape international drug trafficking during the 1980s.",
+    "category": "People",
+    "date": "2026-11-16",
+    "readTime": "5 min read",
+    "dek": "Known as the 'Boss of Bosses,' Félix Gallardo helped build a trafficking network that connected Mexican routes with Colombian cocaine suppliers and changed the history of organized crime in Mexico.",
+    "cover": "",
+    "intro": "Miguel Ángel Félix Gallardo, the former leader of Mexico's Guadalajara Cartel, has died at the age of 80. He died in a hospital in Guadalajara on November 15, 2026, after being transferred from prison for emergency treatment. His death closes the personal story of a figure whose organization helped reshape the country's drug trade during the 1970s and 1980s. The cartel's alliances, trafficking routes and eventual fragmentation became part of the history of organized crime in Mexico.",
+    "sections": [
+      {
+        "heading": "The Rise of the Guadalajara Cartel",
+        "paragraphs": [
+          "Félix Gallardo rose to prominence in the 1970s and became a central figure in the Guadalajara Cartel, one of Mexico's first major drug-trafficking organizations. The group brought together criminal networks and developed relationships with corrupt officials, helping it expand its reach.",
+          "Its influence grew during the cocaine boom of the 1980s, when Mexico became an increasingly important transit route for cocaine moving from South America toward the United States."
+        ]
+      },
+      {
+        "heading": "An Alliance With Colombian Traffickers",
+        "paragraphs": [
+          "The Guadalajara organization developed partnerships with Colombian cocaine traffickers, including Pablo Escobar's Medellín Cartel. The arrangement connected cocaine production in the Andes with transportation networks operating through Mexico and toward the US market.",
+          "The alliance helped transform the scale and organization of cross-border drug trafficking. It also demonstrated how criminal groups in different countries could cooperate across the supply chain."
+        ]
+      },
+      {
+        "heading": "The Murder of DEA Agent Kiki Camarena",
+        "paragraphs": [
+          "The cartel came under intense pressure after the 1985 kidnapping and murder of US Drug Enforcement Administration agent Enrique 'Kiki' Camarena. Camarena had been investigating trafficking operations and was connected to the discovery and destruction of a large marijuana plantation in Chihuahua.",
+          "The killing triggered a major US investigation and increased pressure on Mexican authorities to identify and prosecute those responsible. Félix Gallardo was later convicted and sentenced in connection with the case. He denied responsibility for the killings, according to Reuters reporting."
+        ]
+      },
+      {
+        "heading": "Arrest, Fragmentation and the Sinaloa Cartel",
+        "paragraphs": [
+          "Mexican authorities arrested Félix Gallardo in 1989. His imprisonment weakened the Guadalajara Cartel's centralized leadership, and its networks fragmented as different figures and groups expanded their own operations.",
+          "The Sinaloa Cartel later emerged from this period of fragmentation. Joaquín 'El Chapo' Guzmán, who had worked within the wider organization, eventually became one of the most prominent leaders in Mexico's drug trade."
+        ]
+      },
+      {
+        "heading": "Decades in Prison and His Death",
+        "paragraphs": [
+          "Félix Gallardo remained in state custody from his 1989 arrest. He received a 40-year sentence for drug-trafficking and weapons offenses, followed by an additional 37-year sentence in 2017 in connection with the Camarena case and the murder of Mexican pilot Alfredo Zavala Avelar.",
+          "A judge granted a house-arrest request in 2022, but the transfer was not carried out after legal challenges. On November 13, 2026, he was moved from prison to a hospital in Guadalajara. Mexican authorities said he died on November 15 after suffering multiple organ failure."
+        ]
+      }
+    ],
+    "images": [],
+    "bibleVerse": null,
+    "closing": "Félix Gallardo's death marks the end of a life closely tied to the rise of Mexico's modern drug trade. The Guadalajara Cartel no longer exists in its original form, but the networks and rivalries that developed during its era helped shape the criminal landscape that followed. His story remains part of a wider history of trafficking, corruption, violence and the difficult efforts to hold powerful criminal organizations accountable.",
+    "seo": {
+      "title": "Miguel Ángel Félix Gallardo Dies at 80 | Guadalajara Cartel History",
+      "description": "A look at the rise of Guadalajara Cartel founder Miguel Ángel Félix Gallardo, his Colombian trafficking alliances, the Kiki Camarena case and his death at 80."
+    },
+    "og": {
+      "title": "Miguel Ángel Félix Gallardo Dies at 80",
+      "description": "The rise and legacy of the Guadalajara Cartel founder who helped reshape Mexico's drug trade.",
+      "image": ""
+    },
+    "tags": [
+      "Miguel Ángel Félix Gallardo",
+      "Guadalajara Cartel",
+      "Mexico",
+      "organized crime",
+      "drug trafficking",
+      "Kiki Camarena",
+      "Sinaloa Cartel"
+    ],
+    "relatedArticles": [],
+    "featured": false
+  }
+}
