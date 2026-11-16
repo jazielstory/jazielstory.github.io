@@ -104,3 +104,13 @@ body { background: var(--bg); }
 .body-image-preview span { color: var(--muted); font-size: .76rem; font-weight: 600; }
 .body-image-preview-empty { width: 120px; height: 72px; display: flex; align-items: center; justify-content: center; border: 1px dashed var(--line); border-radius: 7px; color: var(--muted); font-size: .7rem; text-align: center; }
 @media (max-width: 520px) { .body-image-preview img, .body-image-preview-empty { width: 100px; height: 64px; } }
+
+
+/* ---------- Dedicated saved-drafts page ---------- */
+.drafts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px; }
+.draft-card { min-width: 0; border: 1px solid var(--line); border-radius: 12px; padding: 16px; background: var(--surface); display: flex; flex-direction: column; gap: 10px; }
+.draft-card-meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-size: .76rem; }
+.draft-card h3 { margin: 0; font-size: 1rem; line-height: 1.4; overflow-wrap: anywhere; }
+.draft-card-file { margin: 0; color: var(--muted); font-size: .78rem; overflow-wrap: anywhere; }
+.draft-card .btn { align-self: flex-start; margin-top: auto; }
+@media (max-width: 520px) { .drafts-grid { grid-template-columns: 1fr; } .draft-card { padding: 14px; } }
