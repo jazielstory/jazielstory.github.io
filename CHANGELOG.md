@@ -1,5 +1,18 @@
 ## 2026-11-16
 
+### P1 — Searchable Admin saved-draft picker
+- **Status:** IMPLEMENTED / NEEDS LIVE VERIFICATION
+- **Reason:** Choosing among many saved drafts using a numbered browser prompt is difficult on mobile and becomes inconvenient as the draft collection grows.
+- **Files changed:** `admin/admin.js`, `admin/index.html`, `README.md`, `CHANGELOG.md`.
+- **Change:** Load Draft now builds a searchable selection dialog for multiple GitHub and browser-local drafts. Each entry displays its title, filename/key, saved timestamp when available, and storage source. Selecting an entry loads it into the existing editor. If exactly one draft is available, it still loads automatically.
+- **Safety scope:** No intentional changes to Save Draft, Publish, Clear Draft, article schema/data, image handling, GitHub token/settings, or public website pages.
+- **Cache:** Admin script query advanced to `admin.js?v=20261116-4`.
+- **Commit:** Admin picker `df0dbef36b6f7a91126ed4eda1b332f599049a46`; subsequent cache/documentation commits are in repository history.
+- **Verification:** Static source review completed. Automated JavaScript validation and live mobile/desktop testing remain pending; do not mark as fully verified until those checks pass.
+- **Deployment:** Awaiting GitHub Pages deployment and user confirmation.
+
+## 2026-11-16
+
 ### P1 — Follow-up fix: Admin remote draft discovery on mobile
 - **Cause addressed:** A browser prompt was used even when there was only one repository draft. Some mobile browser/webview contexts suppress or make prompts difficult to notice.
 - **Fix:** When exactly one JSON draft exists in `admin/drafts/`, Load Draft now selects and loads it automatically. A prompt is retained only when multiple drafts exist.
