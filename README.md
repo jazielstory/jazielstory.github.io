@@ -277,5 +277,7 @@ Adsterra ad slots (`.ad-slot` elements) are unchanged. The Admin Panel does not 
 ## Unpublished repository drafts
 
 - Article drafts may be stored as JSON files under `admin/drafts/` without adding them to `articles.json`; this keeps them out of the public article feed.
-- These repository JSON drafts are archival files and are **not currently loaded by the Admin Panel's Save Draft / Load Draft buttons**. Those buttons use browser `localStorage` only. To edit a repository draft in the Admin Panel, its content must be transferred into the editor manually unless a future remote-draft integration is implemented.
+- The Admin Panel's **Load Draft** button lists JSON files in `admin/drafts/` from the configured GitHub branch and loads the selected article into the editor. It also falls back to the browser's local `localStorage` draft when no remote draft is selected/available.
+- **Save Draft** writes to `admin/drafts/{slug}.json` on GitHub when a Personal Access Token with repository Contents read/write permission is active in Settings; without a token it saves locally in the current browser only. The token remains in the current tab's `sessionStorage` and is never embedded in public JavaScript.
+- **Clear Draft** clears only the local browser draft; it does not delete repository draft files. Repository drafts remain unpublished until the user explicitly presses Publish.
 - Article Schema v1 remains unchanged. Draft contract metadata (`draftVersion`, `draftStatus`, `savedAt`, and `sourceNotes`) wraps the article payload without changing its schema.
