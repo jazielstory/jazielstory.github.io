@@ -1,3 +1,14 @@
+## 2026-11-17
+
+### P1 — Dedicated Admin Drafts page
+- **Status:** IMPLEMENTED / NEEDS LIVE VERIFICATION
+- **Scope:** Admin draft discovery and selection only. AI Writer behavior was not changed.
+- **Files changed:** `admin/index.html`, `admin/admin.js`, `admin/admin.css`, `README.md`, `CHANGELOG.md`.
+- **Change:** Added a dedicated Drafts navigation page. It lists GitHub repository drafts and browser-local drafts, supports search and storage-source filtering, displays saved timestamps, and opens only the selected draft in the existing editor. Draft collection is shared with the existing Load Draft action. A pending selection is passed safely into the editor route rather than overwriting the current form before selection.
+- **Safety:** No changes to Save Draft storage format, Publish, Clear Draft, `articles.json`, Article Schema v1, image handling, OG generation, pagination, or public pages. AI Writer files and workflow were not changed.
+- **Cache:** Admin script query advanced to `admin.js?v=20261117-1`.
+- **Verification:** Source-level checks completed for route, navigation, selection flow, and preservation boundaries. Live mobile/desktop interaction and GitHub Pages deployment still require verification.
+
 ## 2026-11-16
 
 ### P1 — Searchable Admin saved-draft picker
