@@ -1,0 +1,45 @@
+name: Generate static article pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "articles.json"
+      - "article.html"
+      - ".github/scripts/generate-static-articles.mjs"
+      - ".github/workflows/generate-static-articles.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: generate-static-articles
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Generate article pages
+        run: node .github/scripts/generate-static-articles.mjs
+      - name: Commit generated pages
+        run: |
+          if git diff --quiet -- articles/; then
+            echo "Static article pages are already up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add articles/
+          git commit -m "Build static article pages with OG metadata"
+          git push
