@@ -1,5 +1,14 @@
 ## 2026-11-16
 
+### P1 — Follow-up fix: Admin remote draft discovery on mobile
+- **Cause addressed:** A browser prompt was used even when there was only one repository draft. Some mobile browser/webview contexts suppress or make prompts difficult to notice.
+- **Fix:** When exactly one JSON draft exists in `admin/drafts/`, Load Draft now selects and loads it automatically. A prompt is retained only when multiple drafts exist.
+- **Cache:** Admin script query version advanced to `20261116-3` to force clients to fetch the latest code.
+- **Verification:** GitHub REST directory listing confirmed the Miguel Ángel Félix Gallardo draft exists on `main`; final Admin JavaScript syntax check passed. Live browser interaction still requires user confirmation.
+- **Commit:** `300c40826faa90d89a486b250b5ebe5d1b78b18d`; cache commit follows.
+
+## 2026-11-16
+
 ### P1 — Admin Panel GitHub repository draft integration
 - **Status:** IMPLEMENTED / NEEDS LIVE ADMIN VERIFICATION
 - **Files changed:** `admin/admin.js`, `admin/index.html`, `README.md`, `CHANGELOG.md`.
