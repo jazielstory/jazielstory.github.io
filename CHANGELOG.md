@@ -1,5 +1,19 @@
 # Jaziel — Change Log
 
+## 2026-11-16
+
+### P1 — Article URL routing fallback repair
+- **Status:** IMPLEMENTED / NEEDS VERIFICATION
+- **Reason:** Newly published articles can exist in `articles.json` without a generated `articles/{slug}.html` file. Homepage and shared links previously pointed directly to that missing static path.
+- **Files changed:** `assets/js/main.js`, `assets/js/home-latest-final.js`, `assets/js/related-articles.js`, `README.md`.
+- **Change:** Shared article URLs now use `article.html?slug={slug}`. The dynamic article page's canonical and Open Graph URL are aligned to that route. Related-story links on dynamic article pages use the root dynamic route; links inside existing generated static article pages retain their relative static route.
+- **Additional correction:** A first related-link update used an incorrect parent-directory prefix for the dynamic viewer; it was corrected in a follow-up commit before verification.
+- **Article Schema v1:** Unchanged. `articles.json` unchanged. Existing generated article HTML files were not deleted or rewritten.
+- **Commits:** `726cc235412fcd704206e2d75bb551c974476c39`, `b4a80252d0e2fa1fd716d35cd8200cc82ed849ee`, `63af6bddc5429f53cd8ffc6331336514e3ce22a3`, `22a799fc5b75b1d61c5ea5ed587841e50ea30d32`, and this documentation update.
+- **Verification:** Source-level URL checks and `node --check` are pending. Live GitHub Pages checks for an older static article and the newly added Santa Claus article are pending.
+- **Deployment:** Not yet confirmed.
+
+
 This file is the project memory for repository changes. Read it before making a new change.
 
 ## Project rules
