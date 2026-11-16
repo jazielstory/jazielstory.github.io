@@ -175,7 +175,7 @@
       : "";
     const href = isStaticArticle
       ? `${encodeURIComponent(article.slug)}.html`
-      : `articles/${encodeURIComponent(article.slug)}.html`;
+      : `../article.html?slug=${encodeURIComponent(article.slug)}`;
 
     return `
       <a class="story-card" href="${escapeAttribute(href)}">
