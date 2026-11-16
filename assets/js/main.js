@@ -377,7 +377,7 @@ function updateArticleMeta(article) {
   const ogTitle = (article.og && article.og.title) || article.title || "";
   const ogDescription = (article.og && article.og.description) || description;
   const ogImage = (article.og && article.og.image) || article.cover || "";
-  const url = `${window.location.origin}/articles/${encodeURIComponent(article.slug || "")}.html`;
+  const url = `${window.location.origin}/article.html?slug=${encodeURIComponent(article.slug || "")}`;
 
   document.title = title;
   setMeta('meta[name="description"]', "content", description);
@@ -566,7 +566,7 @@ function getQueryParam(name) {
 
 function articleUrl(article) {
   if (!article || !article.slug) return "#";
-  return `articles/${encodeURIComponent(article.slug)}.html`;
+  return `article.html?slug=${encodeURIComponent(article.slug)}`;
 }
 
 function categoryUrl(category) {
