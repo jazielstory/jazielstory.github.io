@@ -291,3 +291,13 @@ Adsterra ad slots (`.ad-slot` elements) are unchanged. The Admin Panel does not 
 - **Files:** `admin/admin.js`, `admin/index.html`, `README.md`, `CHANGELOG.md`.
 - **Verification:** Source-level review completed; JavaScript syntax/workflow and live mobile/desktop selection still require verification after deployment.
 - **Commit:** Admin picker `df0dbef36b6f7a91126ed4eda1b332f599049a46`; cache refresh commit recorded in GitHub history.
+
+
+### Saved Drafts — dedicated Admin view (2026-11-17)
+
+- Added a separate **Drafts** item in the Admin sidebar at `#/drafts`.
+- The Drafts page lists unpublished JSON files from `admin/drafts/` in the configured GitHub repository and browser-local drafts, newest saved first when timestamps are available.
+- Search by article title or filename and filter by storage source (GitHub / this browser).
+- Choose **Choose & Open Draft** to load only that selected draft into the existing article editor. Other saved drafts remain untouched.
+- The existing Save Draft and Load Draft actions remain available; the editor's Load Draft picker now uses the same shared draft collection routine.
+- No changes to publishing, `articles.json`, Article Schema v1, OG metadata, pagination, or public pages.
