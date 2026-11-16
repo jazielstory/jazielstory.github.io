@@ -7,7 +7,7 @@
 - **Change:** Added an English original article draft using the existing Article Schema v1 fields, wrapped in Draft Contract v1 metadata. The article is stored only under `admin/drafts/` and was not added to `articles.json`; therefore it is not published in the public article feed.
 - **Research:** User-provided BBC report cross-checked against Reuters and Anadolu Agency. The draft notes that Félix Gallardo denied responsibility for the Camarena killings.
 - **Images:** No cover or body images added; image production remains pending.
-- **Commits:** Draft `9966c47d8c1c55dcde02935002a7252b4f91daaf`; README documentation `586b22aa6db02f9f18826ce52336e5878fe1ba8f`; this CHANGELOG update pending.
+- **Commits:** Draft `9966c47d8c1c55dcde02935002a7252b4f91daaf`; README documentation `586b22aa6db02f9f18826ce52336e5878fe1ba8f`; the CHANGELOG entry is included in the current documentation commit.
 - **Admin limitation:** The current Admin Panel Save Draft / Load Draft functions use browser `localStorage`; they do not read files from `admin/drafts/`. README documents this limitation. No Admin JavaScript was changed.
 - **Schema:** Article Schema v1 unchanged.
 - **Verification:** Draft JSON was serialized and committed through GitHub Contents API. Public-feed exclusion is ensured by not modifying `articles.json`. Live Admin integration and publication were not attempted.
