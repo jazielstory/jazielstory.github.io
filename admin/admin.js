@@ -65,7 +65,7 @@ function renderTags(){const row=$("#tagsRow"),input=$("#tagInput");row.querySele
 function renderRelated(){const wrap=$("#relatedList");if(!state.editor.relatedArticles.length){wrap.innerHTML=`<p class="muted" style="font-size:.85rem">No related articles selected yet.</p>`;return}wrap.innerHTML=state.editor.relatedArticles.map((r,i)=>`<span class="tag-pill">${escapeHTML(r.title)} <button type="button" data-remove-related="${i}">✕</button></span>`).join(" ");$all("[data-remove-related]",wrap).forEach(b=>b.addEventListener("click",()=>{state.editor.relatedArticles.splice(+b.dataset.removeRelated,1);renderRelated()}))}
 function draftKeyFor(){return state.editorMode==="new"?"new":state.editorOriginalSlug||"new"}
 function loadAllDrafts(){try{return JSON.parse(localStorage.getItem(DRAFTS_KEY)||"{}")}catch{return{}}}
-async async function saveDraft(){
+async function saveDraft(){
 try{
 const article=JSON.parse(JSON.stringify(state.editor));
 const slug=slugify(article.slug||article.title)||"untitled";
