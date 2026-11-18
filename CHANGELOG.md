@@ -1,3 +1,13 @@
+## 2026-11-19
+
+### P1 — Persist and preview images in saved drafts
+- **Status:** IMPLEMENTED / NEEDS LIVE VERIFICATION
+- **Files changed:** `admin/admin.js`, `admin/admin.css`, `admin/index.html`, `CHANGELOG.md`.
+- **Change:** Saving a GitHub draft now uploads selected cover and body image files to `assets/images/articles/` and stores their repository paths in the draft JSON. The editor shows saved body-image thumbnails again when a draft is reopened. The Drafts page displays the cover and available body-image thumbnails on each draft card.
+- **Safety:** Existing draft JSON structure and article schema remain unchanged; existing source notes are preserved. No published article data, public article pages, AI Writer, or publishing workflow was changed. Browser-local drafts still cannot permanently store newly selected image files; the admin now explains that a GitHub token is required for this.
+- **Cache:** Admin script query advanced to `admin.js?v=20261119-1`.
+- **Verification:** GitHub source checks confirm the upload and preview logic is present. Live upload/reopen behavior and GitHub Pages deployment still require verification.
+
 ## 2026-11-17
 
 ### P1 — Dedicated Admin Drafts page
