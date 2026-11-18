@@ -1,7 +1,7 @@
 {
   "draftVersion": 1,
   "draftStatus": "draft",
-  "savedAt": "2026-11-19T02:35:00+09:00",
+  "savedAt": "2026-11-18T18:57:46.754Z",
   "sourceNotes": [
     {
       "publisher": "NHS",
@@ -33,7 +33,7 @@
     "date": "2026-11-19",
     "readTime": "6 min read",
     "dek": "A baby's first cry marks a new beginning, but childbirth also involves a remarkable physical process and a period of recovery for the mother.",
-    "cover": "",
+    "cover": "assets/images/articles/first-baby-facts-mother-childbirth-cover.jpg",
     "intro": "The birth of a first child is a major moment for a family. For a mother, it involves more than meeting her newborn: her body goes through labour and delivery, then begins recovering while the baby adapts to life outside the womb. Medical guidance from the NHS and the World Health Organization helps explain what happens during these first hours and days. Every birth is different, so these facts describe common processes rather than a promise of what every mother will experience.",
     "sections": [
       {
@@ -93,8 +93,32 @@
         ]
       }
     ],
-    "images": [],
-    "bibleVerse": null,
+    "images": [
+      {
+        "src": "",
+        "alt": "A first-time mother experiencing labor contractions while her partner holds her hand and a nurse provides support in a hospital delivery room.",
+        "caption": "Labor contractions can be intense, but support from loved ones and medical professionals can help a mother through each stage of childbirth."
+      },
+      {
+        "src": "assets/images/articles/first-baby-facts-mother-childbirth-2.webp",
+        "alt": "A first-time mother holding her newborn baby in a hospital bed while the father gently touches the baby's head.",
+        "caption": "After hours of waiting and uncertainty, a family shares its first precious moments together with their newborn."
+      },
+      {
+        "src": "assets/images/articles/first-baby-facts-mother-childbirth-3.webp",
+        "alt": "A mother and father smiling as they look at their peacefully sleeping newborn in a hospital bassinet.",
+        "caption": "The first days with a newborn bring new emotions as parents begin learning how to care for their little one."
+      },
+      {
+        "src": "",
+        "alt": "",
+        "caption": ""
+      }
+    ],
+    "bibleVerse": {
+      "text": "",
+      "reference": ""
+    },
     "closing": "A baby's first cry is often remembered as the beginning of a new chapter. But childbirth is also a physical event for the mother, followed by recovery and adjustment. The newborn needs care and protection, and the mother needs care, rest, and support too. Every birth is different, but both deserve attention throughout the first days of life.",
     "seo": {
       "title": "First Baby and Childbirth: Facts About a Mother's Journey",
