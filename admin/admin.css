@@ -114,3 +114,11 @@ body { background: var(--bg); }
 .draft-card-file { margin: 0; color: var(--muted); font-size: .78rem; overflow-wrap: anywhere; }
 .draft-card .btn { align-self: flex-start; margin-top: auto; }
 @media (max-width: 520px) { .drafts-grid { grid-template-columns: 1fr; } .draft-card { padding: 14px; } }
+
+/* Saved draft image thumbnails */
+.draft-card-cover { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:9px; border:1px solid var(--line); background:var(--bg); }
+.draft-card-no-cover { width:100%; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; border:1px dashed var(--line); border-radius:9px; color:var(--muted); font-size:.8rem; }
+.draft-card-body-previews { display:flex; gap:8px; flex-wrap:wrap; align-items:flex-start; }
+.draft-card-body-thumb { display:flex; flex-direction:column; gap:4px; width:76px; color:var(--muted); font-size:.68rem; }
+.draft-card-body-thumb img { display:block; width:76px; height:54px; object-fit:cover; border-radius:6px; border:1px solid var(--line); background:var(--bg); }
+
