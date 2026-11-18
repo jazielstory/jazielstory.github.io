@@ -1,7 +1,7 @@
 {
   "draftVersion": 1,
   "draftStatus": "draft",
-  "savedAt": "2026-11-18T19:11:44.146Z",
+  "savedAt": "2026-11-18T21:58:08.132Z",
   "sourceNotes": [
     {
       "publisher": "NHS",
@@ -108,6 +108,11 @@
         "src": "assets/images/articles/first-baby-facts-mother-childbirth-3.webp",
         "alt": "A mother and father smiling as they look at their peacefully sleeping newborn in a hospital bassinet.",
         "caption": "The first days with a newborn bring new emotions as parents begin learning how to care for their little one."
+      },
+      {
+        "src": "assets/images/articles/first-baby-facts-mother-childbirth-4.webp",
+        "alt": "A mother holding her fully swaddled newborn baby in a hospital bed while the father gently looks on.",
+        "caption": "A baby's first days bring precious moments as parents begin their new journey together."
       },
       {
         "src": "",
