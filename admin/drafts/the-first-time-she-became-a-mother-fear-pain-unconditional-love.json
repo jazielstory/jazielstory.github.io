@@ -1,0 +1,88 @@
+{
+  "draftVersion": 1,
+  "draftStatus": "draft",
+  "savedAt": "2026-11-19T00:00:00+09:00",
+  "sourceNotes": [
+    {
+      "publisher": "Jaziel Story — original fiction",
+      "url": "",
+      "note": "An original fictional human-interest story. The characters and events are invented; this is not a report of a verified real-life birth."
+    }
+  ],
+  "article": {
+    "id": "draft-first-time-mother-20261119",
+    "title": "The First Time She Became a Mother: A Journey Through Fear, Pain, and Unconditional Love",
+    "slug": "the-first-time-she-became-a-mother-fear-pain-unconditional-love",
+    "description": "A fictional, heartfelt story about a first-time mother facing the uncertainty of childbirth and discovering a love that changes her life.",
+    "category": "People",
+    "date": "2026-11-19",
+    "readTime": "5 min read",
+    "dek": "She had imagined the day for months, but nothing could prepare her for the fear, the waiting, and the unforgettable moment she finally heard her baby's first cry.",
+    "cover": "",
+    "intro": "Maya had spent months imagining the day she would meet her baby. She pictured a tiny face, a first embrace, and the moment she and her husband, Daniel, would finally become parents. But as her first labor began, those gentle pictures gave way to something she had never fully understood: the uncertainty of childbirth. She was excited, frightened, exhausted, and unsure of what would happen next. This fictional story follows one woman's emotional journey through her first delivery, from the long hours of waiting to the moment a new life rested against her chest.",
+    "sections": [
+      {
+        "heading": "The Night Everything Changed",
+        "paragraphs": [
+          "The first contractions came while the house was quiet. Maya woke Daniel and told him she thought the baby might be coming. For a moment, they simply looked at each other. They had prepared a hospital bag, checked the car seat, and talked about this day many times. Yet now that it was here, neither knew exactly what to say.",
+          "On the drive to the hospital, Maya watched the streetlights pass the window. Her thoughts moved quickly. Would the baby be healthy? Would she be able to get through labor? What if something unexpected happened? Daniel held her hand whenever he could, reminding her that they would take the next step together."
+        ]
+      },
+      {
+        "heading": "A Room Full of Waiting",
+        "paragraphs": [
+          "At the hospital, the hours seemed to move differently. Nurses checked on Maya and explained what was happening, while Daniel stayed beside her. Every new wave of pain made her grip the bedsheet or reach for his hand. She had read about childbirth and listened to other mothers describe their experiences, but living through it felt entirely different.",
+          "There were moments when Maya felt strong and moments when fear overwhelmed her. She worried that she was not coping well enough. A nurse gently reminded her that she did not have to prove anything. She could ask questions, accept support, and take the process one moment at a time.",
+          "Daniel tried to be reassuring, although he was frightened too. He could not take the pain away, and that helplessness was difficult. So he focused on the things he could do: listen, hold her hand, help her remember what the medical team had explained, and stay close."
+        ]
+      },
+      {
+        "heading": "The Hardest Moments",
+        "paragraphs": [
+          "As labor continued, Maya became tired. The room felt smaller, and time seemed to stretch. She wondered how much longer she could keep going. When another difficult moment arrived, she closed her eyes and listened to the calm voices around her. She reminded herself that she was not alone.",
+          "The medical team guided her through each stage and answered her questions. Daniel stayed near her shoulder. Neither of them knew exactly what the next hour would bring, but they kept returning to the same simple thought: their baby was on the way.",
+          "Maya's courage did not mean she was never afraid. It meant that, even while afraid, she continued to face the next moment with the support available to her."
+        ]
+      },
+      {
+        "heading": "The First Cry",
+        "paragraphs": [
+          "Then, after hours that felt almost endless, the room changed. A small cry broke through the quiet. Maya opened her eyes. For a second, she could hardly believe what she was hearing. The baby was here.",
+          "The medical team placed the newborn against her, and Maya looked down at the tiny face she had imagined for so long. Her eyes filled with tears. Daniel leaned close, smiling through his own emotion. The fear had not disappeared from memory, and the exhaustion was still real, but something new had entered the room: the presence of their child.",
+          "Maya touched the baby's small hand. It was a simple gesture, yet it made the moment feel real. She had spent the day wondering whether she would be strong enough. Now she understood that becoming a mother was not about feeling fearless. It was about meeting an extraordinary change one moment at a time."
+        ]
+      },
+      {
+        "heading": "A New Kind of Beginning",
+        "paragraphs": [
+          "Later, when the room had grown quiet again, Maya watched her baby sleep. She knew that the days ahead would bring new questions, sleepless nights, and responsibilities she had never faced before. She did not suddenly have all the answers.",
+          "Daniel sat beside her, and together they looked at the little person who had changed their lives. Their first hours as parents were not perfect or effortless. They were tender, uncertain, and deeply meaningful.",
+          "Maya would remember the fear of that first night, the kindness of the people who cared for her, and the sound of her baby's first cry. Most of all, she would remember the moment she realized that love could arrive alongside fear—and still be stronger than she had imagined."
+        ]
+      }
+    ],
+    "images": [],
+    "bibleVerse": null,
+    "closing": "Every birth story is different, and no single story can describe every mother's experience. But for a first-time mother, the arrival of a child can hold many feelings at once: fear, relief, exhaustion, wonder, and love. Maya's story is fictional, yet it reflects an emotion many families may recognize—the uncertainty of a new beginning and the powerful moment when a long-awaited baby is finally in their arms.",
+    "seo": {
+      "title": "A First-Time Mother's Childbirth Story: Fear, Pain and Love",
+      "description": "A fictional human-interest story about a first-time mother navigating labor, fear, family support and the unforgettable first cry of her newborn."
+    },
+    "og": {
+      "title": "The First Time She Became a Mother",
+      "description": "A moving fictional story of first childbirth, courage, uncertainty and unconditional love.",
+      "image": ""
+    },
+    "tags": [
+      "first-time mother",
+      "childbirth story",
+      "first baby",
+      "motherhood",
+      "newborn",
+      "family",
+      "human interest"
+    ],
+    "relatedArticles": [],
+    "featured": false
+  }
+}
