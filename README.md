@@ -117,6 +117,16 @@ update that single constant — no other file needs to change.
 
 ## Repository Change Log
 
+### 2026-11-19 — Admin draft image URL domain fix
+
+- **Priority:** P1 / restore Cover and Body Image thumbnails in the Admin Drafts list and editor on the custom domain.
+- **File changed:** `admin/admin.js`.
+- **Change:** Updated `coverUrlFor()` so repository-relative image paths resolve against the current Admin site's origin (`window.location.origin`) instead of the old hard-coded/default `siteUrl` setting. Absolute external image URLs remain unchanged.
+- **Reason:** The Admin Panel is accessed through `jazielstory.site`, while the previous resolver built preview URLs from the legacy `jazielstory.github.io` setting, causing broken image previews.
+- **Commit:** `b7c34090d8530139866c0f153d8e0f9cf4139e7a`.
+- **Verification:** GitHub source confirms the resolver now uses the current origin. Live browser thumbnail verification is still required after GitHub Pages deploys; Body Image 1 has no saved `src` in its draft JSON and therefore still needs its image file uploaded/saved separately.
+- **Status:** IMPLEMENTED / NEEDS LIVE VERIFICATION.
+
 **Important rule:** Every repository change must be recorded here and in
 `CHANGELOG.md`. Before making another fix, check these logs and the recent Git
 commits first. Do not repeat a change that is already marked DONE unless a
