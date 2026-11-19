@@ -1,7 +1,7 @@
 {
   "draftVersion": 1,
   "draftStatus": "draft",
-  "savedAt": "2026-11-19T11:12:05.746Z",
+  "savedAt": "2026-11-19T11:15:45.982Z",
   "sourceNotes": [
     {
       "publisher": "NHS",
@@ -123,6 +123,16 @@
         "src": "assets/images/articles/first-baby-facts-mother-childbirth-6.webp",
         "alt": "A mother gently holding her newborn baby close to her chest, sharing a peaceful and loving moment after childbirth.",
         "caption": "Beyond the pain and exhaustion of childbirth lies a love unlike anything else. Every gentle touch, every little breath, and every moment spent together marks the beginning of an extraordinary bond between mother and child.\""
+      },
+      {
+        "src": "assets/images/articles/first-baby-facts-mother-childbirth-7.webp",
+        "alt": "A new mother lovingly cuddles her sleeping newborn baby in a hospital bed during a peaceful moment of postpartum recovery.",
+        "caption": "Those first quiet moments together are truly unforgettable. After hours of strength, patience, and courage, a mother finally holds the little life she has been waiting to meet. A beautiful new chapter begins.\""
+      },
+      {
+        "src": "assets/images/articles/first-baby-facts-mother-childbirth-8.webp",
+        "alt": "A father gently touches his newborn baby while the mother lovingly holds their child in a peaceful hospital room after childbirth.",
+        "caption": "\"Motherhood is a beautiful journey, but it is even more meaningful when shared with someone who stands beside you. In these precious first moments, love, support, and family come together to welcome a new life.\""
       }
     ],
     "bibleVerse": {
