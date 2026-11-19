@@ -241,6 +241,144 @@
       ],
       "relatedArticles": [],
       "featured": false
+    },
+    {
+      "id": "draft-first-baby-facts-childbirth-20261119",
+      "title": "The First Baby: What Every Mother Goes Through During Childbirth",
+      "slug": "first-baby-facts-mother-childbirth",
+      "description": "A fact-based guide to first childbirth, the mother's body, newborn adaptation, early breastfeeding, and recovery after delivery.",
+      "category": "People",
+      "date": "2026-11-19",
+      "readTime": "6 min read",
+      "dek": "A baby's first cry marks a new beginning, but childbirth also involves a remarkable physical process and a period of recovery for the mother.",
+      "cover": "assets/images/articles/first-baby-facts-mother-childbirth-cover.jpg",
+      "intro": "The birth of a first child is a major moment for a family. For a mother, it involves more than meeting her newborn: her body goes through labour and delivery, then begins recovering while the baby adapts to life outside the womb. Medical guidance from the NHS and the World Health Organization helps explain what happens during these first hours and days. Every birth is different, so these facts describe common processes rather than a promise of what every mother will experience.",
+      "sections": [
+        {
+          "heading": "1. The First Labour Can Take Time",
+          "paragraphs": [
+            "During labour, the cervix gradually softens, thins, and opens so the baby can pass through the birth canal. In a first pregnancy, the process may take many hours. The length varies from one person to another and can depend on several medical and personal factors.",
+            "The NHS describes labour in stages, from the beginning of cervical changes to the birth of the baby and the delivery of the placenta. A first birth does not follow an identical timetable for every mother."
+          ]
+        },
+        {
+          "heading": "2. Contractions Help the Baby Move Down",
+          "paragraphs": [
+            "Contractions happen when the muscles of the uterus tighten and relax. As labour progresses, contractions generally become stronger, longer, and closer together. They help the cervix open and move the baby down through the birth canal.",
+            "Pain and pressure can be felt in the abdomen, back, or pelvis. The experience differs widely, and a maternity team can explain pain-relief and support options during labour."
+          ]
+        },
+        {
+          "heading": "3. Labour Continues After the Baby Is Born",
+          "paragraphs": [
+            "The birth of the baby is not always the final stage of labour. The placenta, sometimes called the afterbirth, must also be delivered. The uterus continues contracting to help the placenta separate and to reduce bleeding.",
+            "Midwives and doctors monitor the mother after delivery, including her bleeding and general condition. This is an important part of safe childbirth care."
+          ]
+        },
+        {
+          "heading": "4. Skin-to-Skin Contact Can Support Bonding",
+          "paragraphs": [
+            "When the mother and baby are clinically well, placing the newborn directly against the mother's bare chest can help keep the baby warm and support early bonding. It can also help breastfeeding get started.",
+            "Sometimes medical care means immediate skin-to-skin contact must be delayed. If that happens, bonding and breastfeeding can still be supported when mother and baby are ready."
+          ]
+        },
+        {
+          "heading": "5. Colostrum Is the First Milk",
+          "paragraphs": [
+            "In the first days after birth, the breasts produce colostrum. It is often thick and yellowish and contains concentrated nutrients and protective components. A newborn's stomach is small, so early feeds may involve only a small amount.",
+            "The World Health Organization recommends supporting breastfeeding as soon as possible after birth, ideally within the first hour when mother and baby are ready and medically stable. Families should receive practical help if feeding is difficult."
+          ]
+        },
+        {
+          "heading": "6. A Mother's Body Needs Time to Recover",
+          "paragraphs": [
+            "After delivery, the uterus gradually contracts and becomes smaller. Vaginal bleeding, tiredness, abdominal afterpains, breast changes, and soreness can occur during recovery. The details depend partly on whether the baby was born vaginally or by caesarean section.",
+            "Postnatal care includes checking the mother's vital signs, bleeding, uterine recovery, wounds where relevant, and emotional well-being. Heavy bleeding, fever, or feeling seriously unwell should be assessed urgently by a health professional."
+          ]
+        },
+        {
+          "heading": "7. Newborns Must Adapt to Life Outside the Womb",
+          "paragraphs": [
+            "Before birth, the baby receives oxygen and nutrients through the placenta. After birth, the newborn begins breathing with the lungs and adjusting to changes in temperature, feeding, and the surrounding environment.",
+            "Health professionals check the baby's breathing, temperature, colour, activity, and general condition. Some babies lose a little weight during the first few days; feeding and weight should be monitored to make sure the baby is progressing well."
+          ]
+        },
+        {
+          "heading": "8. Becoming a First-Time Mother Is Also an Emotional Transition",
+          "paragraphs": [
+            "The arrival of a first baby can bring happiness, relief, worry, exhaustion, and uncertainty—sometimes all at once. Learning a newborn's feeding cues, sleep patterns, and ways of communicating takes time.",
+            "Support from a partner, family, and healthcare professionals can make the early days easier. If sadness or anxiety is intense, lasts, or makes it difficult to care for oneself or the baby, the mother should be encouraged to seek professional help."
+          ]
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/images/articles/first-baby-facts-mother-childbirth-1.webp",
+          "alt": "A first-time mother experiencing labor contractions while her partner holds her hand and a nurse provides support in a hospital delivery room.",
+          "caption": "Labor contractions can be intense, but support from loved ones and medical professionals can help a mother through each stage of childbirth."
+        },
+        {
+          "src": "assets/images/articles/first-baby-facts-mother-childbirth-2.webp",
+          "alt": "A first-time mother holding her newborn baby in a hospital bed while the father gently touches the baby's head.",
+          "caption": "After hours of waiting and uncertainty, a family shares its first precious moments together with their newborn."
+        },
+        {
+          "src": "assets/images/articles/first-baby-facts-mother-childbirth-3.webp",
+          "alt": "A mother and father smiling as they look at their peacefully sleeping newborn in a hospital bassinet.",
+          "caption": "The first days with a newborn bring new emotions as parents begin learning how to care for their little one."
+        },
+        {
+          "src": "assets/images/articles/first-baby-facts-mother-childbirth-4.webp",
+          "alt": "A mother holding her fully swaddled newborn baby in a hospital bed while the father gently looks on.",
+          "caption": "A baby's first days bring precious moments as parents begin their new journey together."
+        },
+        {
+          "src": "assets/images/articles/first-baby-facts-mother-childbirth-5.webp",
+          "alt": "A mother gently kisses her swaddled newborn baby while the father looks lovingly on in a peaceful hospital room.",
+          "caption": "The first embrace, the first kiss, and a love that will last a lifetime. After the challenges of childbirth, this precious moment makes every sacrifice meaningful. A beautiful beginning to a mother's new journey.\""
+        },
+        {
+          "src": "assets/images/articles/first-baby-facts-mother-childbirth-6.webp",
+          "alt": "A mother gently holding her newborn baby close to her chest, sharing a peaceful and loving moment after childbirth.",
+          "caption": "Beyond the pain and exhaustion of childbirth lies a love unlike anything else. Every gentle touch, every little breath, and every moment spent together marks the beginning of an extraordinary bond between mother and child.\""
+        },
+        {
+          "src": "assets/images/articles/first-baby-facts-mother-childbirth-7.webp",
+          "alt": "A new mother lovingly cuddles her sleeping newborn baby in a hospital bed during a peaceful moment of postpartum recovery.",
+          "caption": "Those first quiet moments together are truly unforgettable. After hours of strength, patience, and courage, a mother finally holds the little life she has been waiting to meet. A beautiful new chapter begins.\""
+        },
+        {
+          "src": "assets/images/articles/first-baby-facts-mother-childbirth-8.webp",
+          "alt": "A father gently touches his newborn baby while the mother lovingly holds their child in a peaceful hospital room after childbirth.",
+          "caption": "\"Motherhood is a beautiful journey, but it is even more meaningful when shared with someone who stands beside you. In these precious first moments, love, support, and family come together to welcome a new life.\""
+        }
+      ],
+      "bibleVerse": {
+        "text": "“For you created my inmost being; you knit me together in my mother's womb. I praise you because I am fearfully and wonderfully made.”",
+        "reference": "Psalm 139:13–14 (NIV)"
+      },
+      "closing": "A baby's first cry is often remembered as the beginning of a new chapter. But childbirth is also a physical event for the mother, followed by recovery and adjustment. The newborn needs care and protection, and the mother needs care, rest, and support too. Every birth is different, but both deserve attention throughout the first days of life.",
+      "seo": {
+        "title": "First Baby and Childbirth: Facts About a Mother's Journey",
+        "description": "Learn what happens during a first birth, from labour and contractions to skin-to-skin contact, colostrum, newborn checks, and maternal recovery."
+      },
+      "og": {
+        "title": "The First Baby: A Mother's Journey Through Childbirth",
+        "description": "Evidence-based facts about labour, newborn care, breastfeeding, and recovery after a first birth.",
+        "image": "assets/images/articles/first-baby-facts-mother-childbirth-cover.jpg"
+      },
+      "tags": [
+        "first baby",
+        "first-time mother",
+        "childbirth",
+        "labour",
+        "newborn care",
+        "postpartum recovery",
+        "breastfeeding",
+        "motherhood"
+      ],
+      "relatedArticles": [],
+      "featured": false
     }
   ]
 }
