@@ -1,7 +1,7 @@
 {
   "draftVersion": 1,
   "draftStatus": "draft",
-  "savedAt": "2026-11-20T00:48:00+09:00",
+  "savedAt": "2026-11-19T16:40:52.812Z",
   "sourceNotes": [
     "BMKG monitoring figures as reported for 13 November 2026: 173 fire points across eight regencies in four provinces of Tanah Papua; 153 in Merauke. Satellite detections require field verification.",
     "BNPB reporting dated 15 November 2026: cumulative 436 hectares affected in South Papua; around 95 hectares were still undergoing suppression at that reporting time.",
@@ -16,7 +16,7 @@
     "date": "2026-11-20",
     "readTime": "4 min read",
     "dek": "A small Fire Rescue toy became a reminder that protecting Papua's forests is part of protecting our children's future.",
-    "cover": "",
+    "cover": "assets/images/articles/sebuah-hadiah-fire-rescue-untuk-anakku-cover.jpg",
     "intro": "Today, I look at a Fire Rescue toy I gave to my child. To a child, it may simply be a little fire engine to play with. But as a father, it reminds me of something much bigger: the forests of Papua and the lives, wildlife, and communities that need protection when fires break out. I am Michael Gilroy Jitmau, and this is a personal reflection inspired by a simple gift.",
     "sections": [
       {
@@ -50,6 +50,10 @@
       }
     ],
     "images": [],
+    "bibleVerse": {
+      "text": "",
+      "reference": ""
+    },
     "closing": "I gave my child a small Fire Rescue toy. It may become one of the memories of childhood, but for me it is also a reminder of what we must protect.\n\nPapua's forests are part of the inheritance we leave to our children. We may not be able to solve every environmental problem alone, but we can begin with awareness, prevention, and the lessons we teach at home.\n\nI want my child to have a happy childhood, and I hope that when they grow up, Papua will still have forests they can see, breathe beside, and feel proud to protect.\n\n— Michael Gilroy Jitmau",
     "seo": {
       "title": "A Fire Rescue Gift for My Child | Papua Forest Fires",
