@@ -3,7 +3,17 @@
 A static, GitHub Pages–hosted trending-stories site, plus an Admin Panel
 for creating and managing articles without hand-editing `articles.json`.
 
-Live site: https://jazielstory.github.io/
+Live site: https://jazielstory.site/
+
+## 2026-11-19 — Static article 404 and custom-domain SEO fix
+
+- **Status:** IMPLEMENTED / AUTOMATED VERIFICATION PENDING.
+- **Files changed:** `.github/scripts/generate-static-articles.mjs`, `.github/workflows/generate-static-articles.yml`, `index.html`, `article.html`, `README.md`, `CHANGELOG.md`.
+- **Root cause:** The generator created new article pages as untracked files. The workflow checked `git diff --quiet -- articles/` before staging them; Git does not include untracked files in that diff, so it reported “already up to date” and skipped committing newly created pages.
+- **Fix:** The workflow now uses `git add -N articles/` before checking the diff, verifies that every article in `articles.json` has a generated HTML file, and then commits all changed/new pages.
+- **SEO:** The generator, homepage canonical/OG/Twitter metadata, and legacy article template now use the custom production domain `https://jazielstory.site`. The repository `CNAME` remains unchanged.
+- **Safety:** Article Schema v1, article content, draft files, and the CNAME record were not changed.
+- **Verification:** The earlier 2026-11-19 workflow run reported success but its log showed “Static article pages are already up to date” after generating 4 pages; the untracked-file check explains why the new page was not committed. The updated workflow must pass its output-verification step and commit the missing page before the 404 can be marked resolved.
 
 ## Site structure
 
@@ -32,7 +42,7 @@ remains unchanged and locked.
 
 Newly published and shared articles use generated static pages at `articles/{slug}.html`. Each page contains its own server-readable Open Graph and Twitter metadata in the initial HTML response.
 
-- Canonical article route: `https://jazielstory.github.io/articles/{slug}.html`.
+- Canonical article route: `https://jazielstory.site/articles/{slug}.html`.
 - The generator reads the existing `articles.json` Article Schema v1 and uses the article's OG title, OG description, OG image, and cover fallback.
 - OG image URLs are absolute HTTPS URLs; missing article covers fall back to the site OG cover.
 - Pagination remains UI-compatible: static pages contain the existing page sections and `article-pagination.js` controls `?page=N`.
@@ -73,7 +83,7 @@ admin/ai-results/      AI Writer result files (created automatically)
 ```
 
 Open `admin/index.html` on the deployed site (e.g.
-`https://jazielstory.github.io/admin/`) to use it. See **Settings → GitHub
+`https://jazielstory.site/admin/`) to use it. See **Settings → GitHub
 Access Token** inside the panel for what permissions you need, and **Help**
 inside the panel for an honest description of what is and isn't secure about
 this setup on static GitHub Pages hosting.
