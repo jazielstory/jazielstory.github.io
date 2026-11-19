@@ -1,5 +1,14 @@
 ## 2026-11-19
 
+### P1 — Fix missing generated article pages and custom-domain SEO
+- **Status:** IMPLEMENTED / AUTOMATED VERIFICATION PENDING
+- **Files changed:** `.github/scripts/generate-static-articles.mjs`, `.github/workflows/generate-static-articles.yml`, `index.html`, `article.html`, `README.md`, `CHANGELOG.md`.
+- **Root cause:** The generator created a new article HTML file as an untracked file. The workflow used `git diff --quiet -- articles/` before staging it; untracked files are invisible to that check, so the workflow incorrectly exited with “Static article pages are already up to date” and never committed the new page.
+- **Fix:** Stage intent-to-add with `git add -N articles/` before the diff check. Added a verification step that fails the workflow if any article in `articles.json` lacks its corresponding `articles/{slug}.html` output.
+- **SEO:** Changed the generator's production base URL, homepage canonical/OG/Twitter URLs, and legacy article template metadata to `https://jazielstory.site`. The existing `CNAME` was preserved.
+- **Safety:** Article Schema v1, article body/content, existing draft JSON files, and CNAME were not modified.
+- **Verification:** The prior workflow run was marked successful but its logs showed the false “already up to date” result despite generating 4 files. The new workflow run must verify and commit generated output before the missing article is considered live.
+
 ### P1 — Persist and preview images in saved drafts
 - **Status:** IMPLEMENTED / NEEDS LIVE VERIFICATION
 - **Files changed:** `admin/admin.js`, `admin/admin.css`, `admin/index.html`, `CHANGELOG.md`.
