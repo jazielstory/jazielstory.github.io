@@ -48,13 +48,13 @@ jobs:
       - name: Commit generated pages
         run: |
           # git diff ignores untracked files; mark new pages intent-to-add first.
-          git add -N articles/
+          git add -N -f articles/
           if git diff --quiet -- articles/; then
             echo "Static article pages are already up to date."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add articles/
+          git add -f articles/
           git commit -m "Build static article pages with OG metadata"
           git push
