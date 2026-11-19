@@ -3,7 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
-const SITE = "https://jazielstory.github.io";
+const SITE = "https://jazielstory.site";
 const PAGE_SIZE = 2;
 const GLOBAL_OG = SITE + "/assets/images/og/jaziel-og-cover.png";
 const esc = v => String(v ?? "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;");
