@@ -1,7 +1,7 @@
 {
   "draftVersion": 1,
   "draftStatus": "draft",
-  "savedAt": "2026-11-18T21:58:08.132Z",
+  "savedAt": "2026-11-19T10:59:48.371Z",
   "sourceNotes": [
     {
       "publisher": "NHS",
@@ -113,6 +113,11 @@
         "src": "assets/images/articles/first-baby-facts-mother-childbirth-4.webp",
         "alt": "A mother holding her fully swaddled newborn baby in a hospital bed while the father gently looks on.",
         "caption": "A baby's first days bring precious moments as parents begin their new journey together."
+      },
+      {
+        "src": "assets/images/articles/first-baby-facts-mother-childbirth-5.webp",
+        "alt": "A mother gently kisses her swaddled newborn baby while the father looks lovingly on in a peaceful hospital room.",
+        "caption": "The first embrace, the first kiss, and a love that will last a lifetime. After the challenges of childbirth, this precious moment makes every sacrifice meaningful. A beautiful beginning to a mother's new journey.\""
       },
       {
         "src": "",
