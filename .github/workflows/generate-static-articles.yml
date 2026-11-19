@@ -32,8 +32,23 @@ jobs:
           node-version: 22
       - name: Generate article pages
         run: node .github/scripts/generate-static-articles.mjs
+      - name: Verify generated article pages
+        run: |
+          node --input-type=module -e '
+            import fs from "node:fs";
+            const data = JSON.parse(fs.readFileSync("articles.json", "utf8"));
+            const articles = Array.isArray(data.articles) ? data.articles : [];
+            const missing = articles.filter(a => !a.slug || !fs.existsSync(`articles/${a.slug}.html`));
+            if (missing.length) {
+              console.error("Missing generated pages:", missing.map(a => a.slug || "(empty slug)").join(", "));
+              process.exit(1);
+            }
+            console.log(`Verified ${articles.length} generated article pages.`);
+          '
       - name: Commit generated pages
         run: |
+          # git diff ignores untracked files; mark new pages intent-to-add first.
+          git add -N articles/
           if git diff --quiet -- articles/; then
             echo "Static article pages are already up to date."
             exit 0
