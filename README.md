@@ -5,6 +5,18 @@ for creating and managing articles without hand-editing `articles.json`.
 
 Live site: https://jazielstory.site/
 
+## 2026-11-20 — Fire Rescue article draft revised and English slug adopted
+
+- **Status:** DRAFT SAVED / NOT PUBLISHED.
+- **Draft file:** `admin/drafts/a-fire-rescue-gift-for-my-child-papua.json`.
+- **Previous file removed:** `admin/drafts/sebuah-hadiah-fire-rescue-untuk-anakku.json`.
+- **New slug:** `a-fire-rescue-gift-for-my-child-papua`.
+- **Change:** Replaced the earlier draft with a complete English-language article. The story keeps the father's Fire Rescue gift at its centre and explains Papua's need for accessible, equipped, trained fire and rescue services; it also discusses forest fires, environmental protection, Indigenous communities, Papua's history, political self-determination, and the author's criticism of policies that fail to protect Papuans.
+- **Images:** Existing cover path retained; body images remain empty and were not changed.
+- **Publishing:** No changes to `articles.json`, public article pages, or publication status. The article remains an unpublished draft.
+- **Commits:** Draft replacement `c6da18b68157f6ce1d569b5d7b5abda21c022760`; old draft removal `5122b5a6e72f032fd2cdd00b7ce8cc8889acf6c5`.
+- **Verification:** Draft JSON was written successfully; final read-back verification pending.
+
 ## 2026-11-19 — Static article 404 and custom-domain SEO fix
 
 - **Status:** IMPLEMENTED / GENERATOR VERIFIED / LIVE DEPLOYMENT PENDING.
