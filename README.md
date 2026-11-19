@@ -7,13 +7,13 @@ Live site: https://jazielstory.site/
 
 ## 2026-11-19 — Static article 404 and custom-domain SEO fix
 
-- **Status:** IMPLEMENTED / AUTOMATED VERIFICATION PENDING.
+- **Status:** IMPLEMENTED / GENERATOR VERIFIED / LIVE DEPLOYMENT PENDING.
 - **Files changed:** `.github/scripts/generate-static-articles.mjs`, `.github/workflows/generate-static-articles.yml`, `index.html`, `article.html`, `README.md`, `CHANGELOG.md`.
-- **Root cause:** The generator created new article pages as untracked files. The workflow checked `git diff --quiet -- articles/` before staging them; Git does not include untracked files in that diff, so it reported “already up to date” and skipped committing newly created pages.
-- **Fix:** The workflow now uses `git add -N articles/` before checking the diff, verifies that every article in `articles.json` has a generated HTML file, and then commits all changed/new pages.
-- **SEO:** The generator, homepage canonical/OG/Twitter metadata, and legacy article template now use the custom production domain `https://jazielstory.site`. The repository `CNAME` remains unchanged.
+- **Root cause:** The generator created new article pages as untracked files. The workflow checked `git diff --quiet -- articles/` before staging them; Git does not include untracked files in that diff, so it incorrectly reported “already up to date” and skipped committing newly created pages.
+- **Fix:** The workflow now force-stages newly generated pages before checking the diff, verifies that every article in `articles.json` has a generated HTML file, and commits all changed/new pages.
+- **SEO:** The generator, homepage canonical/OG/Twitter metadata, and legacy article template now use `https://jazielstory.site`. The repository `CNAME` remains unchanged.
 - **Safety:** Article Schema v1, article content, draft files, and the CNAME record were not changed.
-- **Verification:** The earlier 2026-11-19 workflow run reported success but its log showed “Static article pages are already up to date” after generating 4 pages; the untracked-file check explains why the new page was not committed. The updated workflow must pass its output-verification step and commit the missing page before the 404 can be marked resolved.
+- **Verification:** GitHub Actions run `44514670193` completed successfully. Its output verification confirmed all 4 article pages; generated page `articles/first-baby-facts-mother-childbirth.html` was committed in `a7e316bc9951fd5bd815e67cb89c3fc8eac1ae69`. Source inspection confirmed the new page uses the custom-domain canonical and OG URLs. GitHub Pages live deployment is the remaining check.
 
 ## Site structure
 
