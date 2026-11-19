@@ -1,3 +1,15 @@
+## 2026-11-20
+
+### P2 — Replace Fire Rescue draft with complete English article and English slug
+- **Status:** DRAFT SAVED / NOT PUBLISHED.
+- **Files changed:** `admin/drafts/a-fire-rescue-gift-for-my-child-papua.json` (created), `admin/drafts/sebuah-hadiah-fire-rescue-untuk-anakku.json` (removed), `README.md`, `CHANGELOG.md`.
+- **New slug:** `a-fire-rescue-gift-for-my-child-papua`.
+- **Change:** Rewrote the complete draft in English. The Fire Rescue toy remains the central father-to-child gift, but its meaning now directly reflects Papua's need for accessible fire and rescue services, trained personnel, suitable vehicles and equipment, and better emergency coverage. The article also covers forest fires, environmental protection, Indigenous communities, Papua's history, self-determination, and criticism of government policies that fail to protect people and land.
+- **Images:** Retained the existing cover asset path; body image list remains empty. No image files were changed.
+- **Safety:** Kept the article as a draft. Did not modify `articles.json`, publish the article, or change Article Schema v1.
+- **Commits:** New draft `c6da18b68157f6ce1d569b5d7b5abda21c022760`; old draft removal `5122b5a6e72f032fd2cdd00b7ce8cc8889acf6c5`; documentation commits recorded in the current repository history.
+- **Verification:** Final JSON and slug read-back pending; live Admin deployment not yet verified.
+
 ## 2026-11-19
 
 ### P1 — Fix missing generated article pages and custom-domain SEO
