@@ -2,14 +2,14 @@
 
 ### P1 — Add Admin ON/OFF control for Adsterra Popunder
 - **Status:** IMPLEMENTED / NEEDS LIVE VERIFICATION.
-- **Files changed:** `assets/js/jaziel-ads.js`, `assets/data/ads-config.json`, `admin/admin.js`, `admin/index.html`, `README.md`, `CHANGELOG.md`.
+- **Files changed:** `assets/js/jaziel-ads.js`, `assets/data/ads-config.json`, `admin/admin.js`, `admin/index.html`, `README.md`, `CHANGELOG.md`, 9 root public HTML pages, `.github/scripts/generate-static-articles.mjs`, and 5 generated `articles/*.html` pages.
 - **Change:** Added an Admin Panel → Settings control to enable or disable Popunder and update its Adsterra JavaScript URL. The public loader fetches the central configuration and loads Popunder only when explicitly enabled.
 - **Default and safety:** The checked-in configuration starts OFF; missing, invalid, or unavailable configuration also fails closed (OFF). The Admin accepts only HTTPS `.js` URLs hosted on `*.profitableratecpmnetwork.com`; it does not store arbitrary inline script snippets.
 - **Ad isolation:** Social Bar, Native Banner, and existing responsive banner placements continue independently and were not changed.
 - **Credentials:** The configuration is public and contains no secrets. GitHub tokens remain in browser memory/sessionStorage and are never committed.
-- **Commits:** `c59fe79d428343067d578f6aace3a14335856c54` (feature), `ffa832ec07eb1d762d3bd6883a97dac408886eca` (JavaScript escape correction), and `84f701d3a848102c6d77ef1a665af6ea58758a62` (README documentation).
-- **Verification:** `new Function` syntax parsing passed for both modified JavaScript files. Source checks confirmed default OFF, the Popunder-only control, URL validation, and independent Social Bar/banner initialization. Live Admin ON/OFF and public-page behavior still require browser verification.
-- **Deployment:** GitHub Pages build/deployment is running for the latest documentation commit; live ON/OFF test remains pending.
+- **Commits:** `c59fe79d428343067d578f6aace3a14335856c54` (feature), `ffa832ec07eb1d762d3bd6883a97dac408886eca` (JavaScript escape correction), and `84f701d3a848102c6d77ef1a665af6ea58758a62` (README documentation), `3c9bd1a8738c88ddcae459db5af4675424e492d1` (verification notes), `da7d0bb3c8c5e55d1da2d28eb7d74eaaf909b3f9` (cache-bust root public pages), `005204c1b062753c39c818a32d4bd40a40805e32` (correct generated-page relative path), and `b388b20ef1ae14cafe5f4832353e2c0397337a41` (static article regeneration).
+- **Verification:** `new Function` syntax parsing passed for both modified JavaScript files. Source checks confirmed default OFF, the Popunder-only control, URL validation, and independent Social Bar/banner initialization. JavaScript syntax parsing passed for both modified JavaScript files. GitHub Actions static-article generation succeeded (run `44722513132`); all 5 generated pages were read back and confirmed to use the correct relative, versioned loader URL. Live Admin ON/OFF behavior still requires browser verification.
+- **Deployment:** GitHub Pages deployment is running for the generated article commit; live Admin ON/OFF test remains pending.
 
 ### P2 — Document editorial separation for headings, body text, image alt text, and captions
 - **Status:** DOCUMENTATION UPDATED / NO APPLICATION CODE CHANGED.

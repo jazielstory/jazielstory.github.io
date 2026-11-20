@@ -340,8 +340,8 @@ For every future repository change:
 - **Unaffected ads:** Social Bar, Native Banner, and existing responsive banner placements continue to load independently and are not controlled by the Popunder switch.
 - **Security:** `assets/data/ads-config.json` is public site configuration. It must never contain GitHub tokens, API keys, or other secrets. GitHub credentials remain in the Admin Panel browser session only.
 - **Save workflow:** A GitHub Personal Access Token with repository Contents read/write permission is required to save Popunder settings. The setting takes effect on the public site after GitHub Pages deploys.
-- **Implementation commits:** `c59fe79d428343067d578f6aace3a14335856c54` (feature), `ffa832ec07eb1d762d3bd6883a97dac408886eca` (JavaScript escape correction), and `84f701d3a848102c6d77ef1a665af6ea58758a62` (README documentation).
-- **Verification:** JavaScript syntax parsing passed for `admin/admin.js` and `assets/js/jaziel-ads.js`. Live Admin ON/OFF and public-page behavior still require browser verification after deployment.
+- **Implementation commits:** `c59fe79d428343067d578f6aace3a14335856c54` (feature), `ffa832ec07eb1d762d3bd6883a97dac408886eca` (JavaScript escape correction), and `84f701d3a848102c6d77ef1a665af6ea58758a62` (README documentation), `3c9bd1a8738c88ddcae459db5af4675424e492d1` (verification notes), `da7d0bb3c8c5e55d1da2d28eb7d74eaaf909b3f9` (cache-bust the 9 root public pages), `005204c1b062753c39c818a32d4bd40a40805e32` (fix the generated article's relative loader path), and `b388b20ef1ae14cafe5f4832353e2c0397337a41` (regenerated static article pages).
+- **Verification:** JavaScript syntax parsing passed for `admin/admin.js` and `assets/js/jaziel-ads.js`. GitHub Actions static-article generation succeeded (run `44722513132`); all 5 generated article pages were read back and confirmed to use `../assets/js/jaziel-ads.js?v=20261120-1`. Live Admin ON/OFF behavior still requires browser verification.
 
 
 ## Unpublished repository drafts
