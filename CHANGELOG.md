@@ -1,3 +1,15 @@
+## 2026-11-21 — Add Monetag OnClick alongside In-Page Push and Vignette
+
+- **Status:** CODE COMMITTED / GITHUB PAGES DEPLOYMENT QUEUED / LIVE AD DELIVERY NOT YET VERIFIED.
+- **User-provided zone:** OnClick (Popunder), zone ID `12310947`, script URL `https://al5sm.com/tag.min.js`.
+- **Shared loader:** Updated `assets/js/jaziel-ads.js` to load three distinct Monetag formats, each guarded against duplicate loading: In-Page Push `12310830`, Vignette `12310939`, and OnClick `12310947`.
+- **Page references:** Updated `index.html`, `article.html`, and `.github/scripts/generate-static-articles.mjs` to use the refreshed cache key `20261121-monetag-vignette-onclick`; generated article pages inherit the shared loader path.
+- **Preserved:** Monetag `sw.js` verification file was not changed. Existing In-Page Push and Vignette zone IDs/scripts were retained. No Adsterra script was reintroduced. Article Schema v1 and article content were not changed.
+- **Implementation commits:** Loader `3c1ebca774f43a27baffcf11df3e6fc8981b2a72`; homepage `d7be2887122ef23fcf49c23f8c92bb5962e5343e`; article template `f6b9e719b155c51fe51318492e29fcf843a7dcb5`; generator `5d8e48468cca7f6d26e5680852ef17327984b870`.
+- **Workflow status at documentation time:** GitHub Pages run `44795235406` and static article generation run `44795235010` were queued. Confirm completion before declaring the new format live.
+- **Verification still required:** Check the deployed homepage and an article, confirm the loader is fetched once, test with ad blocking disabled, and inspect Monetag statistics. A successful repository commit does not guarantee ad impressions or revenue.
+- **Maintenance rule:** Record every future advertising change in both `README.md` and `CHANGELOG.md`, including provider, format, zone ID, script URL, files changed, commit SHA, deployment status, and live verification status.
+ 
 ## 2026-11-20 — Connect Jaziel Story to Google Analytics 4
 
 - Installed GA4 `gtag.js` with measurement ID `G-HC6NTTN5KP` on 9 public root pages and 5 generated article pages.
