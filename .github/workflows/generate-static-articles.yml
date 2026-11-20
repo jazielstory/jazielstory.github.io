@@ -53,7 +53,7 @@ jobs:
             const articles = Array.isArray(data.articles) ? data.articles : [];
             const xml = fs.readFileSync("sitemap.xml", "utf8");
             const robots = fs.readFileSync("robots.txt", "utf8");
-            const urls = [...xml.matchAll(/<loc>(.*?)<\\/loc>/g)].map(m => m[1]);
+            const urls = xml.split("<loc>").slice(1).map(part => part.split("</loc>")[0]);
             const expected = ["https://jazielstory.site/", ...articles.map(a => "https://jazielstory.site/articles/" + a.slug + ".html")];
             const missing = expected.filter(url => !urls.includes(url));
             if (!xml.startsWith("<?xml") || !xml.includes("<urlset") || !xml.includes("</urlset>")) throw new Error("Invalid sitemap XML structure.");
@@ -64,7 +64,7 @@ jobs:
       - name: Commit generated pages
         run: |
           # git diff ignores untracked files; mark new pages intent-to-add first.
-          git add -N -f articles/
+          git add -N -f articles/ sitemap.xml robots.txt
           if git diff --quiet -- articles/ sitemap.xml robots.txt; then
             echo "Static article pages are already up to date."
             exit 0
