@@ -1,0 +1,155 @@
+{
+  "draftVersion": 1,
+  "draftStatus": "draft",
+  "savedAt": "2026-11-20T08:01:00.000Z",
+  "sourceNotes": [
+    {
+      "publisher": "American Heart Association",
+      "url": "https://www.heart.org/en/health-topics/consumer-healthcare/what-is-cardiovascular-disease/heart-health",
+      "note": "Background reference for heart function and cardiovascular health; the daily heartbeat figure is an approximate educational estimate."
+    },
+    {
+      "publisher": "Cleveland Clinic",
+      "url": "https://my.clevelandclinic.org/health/body/251 ಪ್ರತ",
+      "note": "Reference for human anatomy and body systems."
+    },
+    {
+      "publisher": "National Institute of Arthritis and Musculoskeletal and Skin Diseases",
+      "url": "https://www.niams.nih.gov/health-topics/osteoporosis",
+      "note": "Background on bone tissue, bone health, and ongoing bone remodeling."
+    },
+    {
+      "publisher": "MedlinePlus",
+      "url": "https://medlineplus.gov/blood.html",
+      "note": "Reference for blood components and red blood cell function."
+    },
+    {
+      "publisher": "National Institutes of Health, Office of Dietary Supplements",
+      "url": "https://ods.od.nih.gov/factsheets/VitaminD-Consumer/",
+      "note": "Reference for vitamin D production in skin following UVB exposure and its role in calcium absorption."
+    },
+    {
+      "publisher": "NIDCD",
+      "url": "https://www.nidcd.nih.gov/health/how-do-we-hear",
+      "note": "Reference for the middle-ear ossicles and transmission of sound vibrations."
+    },
+    {
+      "publisher": "NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK279396/",
+      "note": "Background reference for human physiology and thermoregulation."
+    }
+  ],
+  "article": {
+    "id": "draft-amazing-human-body-facts-20261120",
+    "title": "10 Amazing Facts About the Human Body That Will Surprise You",
+    "slug": "10-amazing-facts-about-the-human-body",
+    "description": "Discover 10 fascinating facts about the human body, from your constantly beating heart to the remarkable abilities of your bones, skin, blood, and senses.",
+    "category": "Amazing Facts",
+    "date": "2026-11-20",
+    "readTime": "7 min read",
+    "dek": "Your body performs extraordinary tasks every second. Explore ten fascinating facts about the systems that keep you alive.",
+    "cover": "",
+    "intro": "The human body is one of nature's most fascinating and complex systems. Every second, countless biological processes take place inside us, even when we are sleeping, relaxing, or simply sitting still. From the heart that pumps blood to the bones that support our structure, the body performs remarkable tasks that most people rarely stop to consider. Here are ten science-based facts that may change the way you look at yourself.",
+    "sections": [
+      {
+        "heading": "1. Your Heart Beats Around 100,000 Times a Day",
+        "paragraphs": [
+          "An adult heart typically beats tens of thousands of times each day. A commonly used estimate is about 100,000 beats in 24 hours, although the actual number varies with age, activity, health, and resting heart rate.",
+          "Your heart keeps pumping blood to deliver oxygen and nutrients throughout your body. It continues working while you sleep, without requiring conscious control."
+        ]
+      },
+      {
+        "heading": "2. Babies Have More Bones Than Adults",
+        "paragraphs": [
+          "A newborn has around 270 to 300 bones or bone elements, depending on how they are counted. Most adults have 206 bones.",
+          "As a child grows, some bones gradually fuse together. This is one reason the adult skeleton has fewer separate bones than a newborn's skeleton."
+        ]
+      },
+      {
+        "heading": "3. Your Skin Is Your Largest Organ",
+        "paragraphs": [
+          "The skin is the body's largest organ by surface area and mass. It forms a protective barrier, helps regulate temperature, reduces water loss, and contains sensory receptors.",
+          "Those receptors help you detect touch, pressure, and temperature, allowing you to respond to your surroundings."
+        ]
+      },
+      {
+        "heading": "4. Red Blood Cells Usually Live for About 120 Days",
+        "paragraphs": [
+          "Red blood cells carry oxygen from the lungs to tissues throughout the body. They contain haemoglobin, a protein that binds oxygen.",
+          "A typical red blood cell circulates for about 120 days before it is removed, mainly by the spleen and liver. The body continually makes new blood cells to replace aging ones."
+        ]
+      },
+      {
+        "heading": "5. Your Bones Are Living Tissue",
+        "paragraphs": [
+          "Bones are not lifeless structures. They contain living cells, blood vessels, and nerves, and they are continually renewed through a process called bone remodeling.",
+          "Bones support the body, protect organs, store minerals, and contain marrow that produces blood cells."
+        ]
+      },
+      {
+        "heading": "6. Your Heart Begins Beating Before Birth",
+        "paragraphs": [
+          "The developing heart starts to beat very early in pregnancy, around the fifth to sixth week of gestational age when counted from the last menstrual period. This is well before birth.",
+          "The heart then develops and changes as the embryo and fetus grow, preparing to support circulation after delivery."
+        ]
+      },
+      {
+        "heading": "7. Sweating Helps Cool Your Body",
+        "paragraphs": [
+          "When your body becomes too warm, sweat glands release moisture onto the skin. As that sweat evaporates, it removes heat and helps cool you down.",
+          "Your brain and nervous system coordinate several temperature-control responses, including sweating, changes in skin blood flow, and shivering when you are cold."
+        ]
+      },
+      {
+        "heading": "8. Bone Marrow Makes Important Blood Cells",
+        "paragraphs": [
+          "Red bone marrow is a soft tissue inside certain bones. It produces red blood cells, many white blood cells, and platelets through a process called blood cell formation.",
+          "These cells have different jobs: red blood cells transport oxygen, white blood cells help defend against infection, and platelets help blood clot."
+        ]
+      },
+      {
+        "heading": "9. Sunlight Helps Your Skin Make Vitamin D",
+        "paragraphs": [
+          "When skin is exposed to ultraviolet B (UVB) radiation, it begins a process that allows the body to produce vitamin D. Vitamin D helps the body absorb calcium and supports bone health.",
+          "The amount produced varies with factors such as skin pigmentation, age, location, season, clothing, and time outdoors. Too much UV exposure can damage skin, so sensible sun protection remains important."
+        ]
+      },
+      {
+        "heading": "10. The Smallest Bone Is Inside Your Ear",
+        "paragraphs": [
+          "The stapes, one of the three tiny bones in the middle ear, is the smallest bone in the human body. It is only a few millimetres long.",
+          "Together, the middle-ear bones transmit vibrations from the eardrum toward the inner ear, helping make hearing possible."
+        ]
+      }
+    ],
+    "images": [],
+    "bibleVerse": {
+      "text": "“I praise you because I am fearfully and wonderfully made.”",
+      "reference": "Psalm 139:14 (NIV)"
+    },
+    "closing": "The human body is an extraordinary biological system. From a heart that beats while you sleep to bones that continually renew themselves, your body performs countless remarkable processes every day. The more we learn about anatomy and physiology, the more we can appreciate the systems that make everyday life possible. Which of these ten facts surprised you the most? Share your thoughts and discover more with Jaziel Story.",
+    "seo": {
+      "title": "10 Amazing Human Body Facts That Will Surprise You | Jaziel Story",
+      "description": "Discover 10 amazing facts about the human body, including the heart, bones, skin, blood cells, vitamin D, and hearing."
+    },
+    "og": {
+      "title": "10 Amazing Facts About the Human Body",
+      "description": "Discover the remarkable science behind your heart, bones, skin, blood, and senses.",
+      "image": ""
+    },
+    "tags": [
+      "human body",
+      "amazing facts",
+      "human anatomy",
+      "science facts",
+      "biology",
+      "heart",
+      "bones",
+      "skin",
+      "blood cells",
+      "health education"
+    ],
+    "relatedArticles": [],
+    "featured": false
+  }
+}
