@@ -1,5 +1,16 @@
 ## 2026-11-20
 
+### P1 — Fix banner loading across homepage slots and article pagination
+- **Status:** IMPLEMENTED / DEPLOYMENT AND LIVE BROWSER VERIFICATION PENDING.
+- **Files changed:** `assets/js/jaziel-ads.js`, `README.md`, `CHANGELOG.md`.
+- **Homepage:** Banner slots are initialized as they approach the viewport. Adsterra zone scripts are serialized so each slot receives its own `atOptions` assignment before its invoke script runs, avoiding concurrent requests racing over the shared global configuration.
+- **Article pagination:** Slots inside hidden article pages are deferred until their page is visible and the slot approaches the viewport. The first article slot retains the single fixed-ID Native Banner; additional slots use the responsive banner unit.
+- **Responsive behavior:** Existing banner slots are refreshed when the mobile/desktop banner size changes. Failed or blocked requests do not stall the remaining slots.
+- **Preserved:** Popunder, Social Bar, article content, SEO metadata, pagination markup, and Article Schema v1.
+- **Verification:** JavaScript syntax parsing passed before commit. GitHub Pages build/deploy and live browser tests remain pending.
+- **User approval:** Explicitly approved before implementation.
+
+
 ### P1 — Add Admin ON/OFF control for Adsterra Popunder
 - **Status:** IMPLEMENTED / NEEDS LIVE VERIFICATION.
 - **Files changed:** `assets/js/jaziel-ads.js`, `assets/data/ads-config.json`, `admin/admin.js`, `admin/index.html`, `README.md`, `CHANGELOG.md`, 9 root public HTML pages, `.github/scripts/generate-static-articles.mjs`, and 5 generated `articles/*.html` pages.

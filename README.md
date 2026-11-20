@@ -1,3 +1,12 @@
+## 2026-11-20 — Banner slot loading and article pagination fix
+
+- Banner slots now load one at a time so the shared Adsterra `atOptions` configuration is not overwritten by parallel zone-script requests.
+- Homepage banner slots are initialized as they approach the viewport, rather than firing every zone script at once.
+- Article-page banner slots in hidden pagination sections wait until their page is displayed and the slot approaches the viewport.
+- The first article Native Banner keeps its provider-required fixed container ID; additional article slots use the responsive 300×250 / 320×50 banner unit.
+- Responsive banner slots are refreshed when the viewport crosses the mobile/desktop breakpoint. Popunder and Social Bar loading remain independent.
+- No article content, SEO metadata, pagination structure, or Article Schema v1 fields were changed.
+
 # Jaziel — Trending Stories
 
 ## 2026-11-20 — Admin Popunder control

@@ -99,6 +99,14 @@
     return window.matchMedia(MOBILE_QUERY).matches ? "mobile" : "desktop";
   }
 
+  /*
+   * Adsterra's banner loader reads the global atOptions object. Loading
+   * several copies of the same zone script in parallel can make them race
+   * over that shared object, leaving some slots empty. Serialize each slot:
+   * set its options, load the zone, then move to the next slot.
+   */
+  let bannerLoadQueue = Promise.resolve();
+
   function initBanner(slot) {
     const label = bannerWidthLabel();
     if (slot.dataset.jazielAd === label) return;
@@ -111,41 +119,85 @@
     const width = isMobile ? 320 : 300;
     const height = isMobile ? 50 : 250;
 
-    const configScript = document.createElement("script");
-    configScript.text =
-      "atOptions = " +
-      JSON.stringify({ key, format: "iframe", height, width, params: {} }) +
-      ";";
-    slot.appendChild(configScript);
+    bannerLoadQueue = bannerLoadQueue.then(() => new Promise(resolve => {
+      /* A resize may have superseded this queued request. */
+      if (!slot.isConnected || slot.dataset.jazielAd !== label) {
+        resolve();
+        return;
+      }
 
-    const invokeScript = document.createElement("script");
-    invokeScript.src = `https://www.highrevenueformat.com/${key}/invoke.js`;
-    slot.appendChild(invokeScript);
+      const configScript = document.createElement("script");
+      configScript.text =
+        "atOptions = " +
+        JSON.stringify({ key, format: "iframe", height, width, params: {} }) +
+        ";";
+      slot.appendChild(configScript);
+
+      const invokeScript = document.createElement("script");
+      invokeScript.async = false;
+      invokeScript.src = `https://www.highrevenueformat.com/${key}/invoke.js`;
+
+      let settled = false;
+      const finish = () => {
+        if (settled) return;
+        settled = true;
+        resolve();
+      };
+      invokeScript.onload = finish;
+      invokeScript.onerror = finish;
+      /* Do not let one blocked ad request stall every later slot. */
+      setTimeout(finish, 15000);
+      slot.appendChild(invokeScript);
+    })).catch(() => {
+      /* One failed banner must not prevent the remaining slots from loading. */
+    });
   }
 
-  function fillAdSlots() {
-    const nativeCandidates = [];
-    document.querySelectorAll(".ad-slot").forEach(slot => {
-      if (slot.classList.contains("article-ad-slot")) {
-        nativeCandidates.push(slot);
-      } else {
-        initBanner(slot);
-      }
-    });
+  let adSlotObserver = null;
+  const observedAdSlots = new WeakSet();
 
-    /* The Adsterra Native Banner snippet targets one hardcoded container
-       id (NATIVE_BANNER_CONTAINER_ID). That id must never appear twice in
-       the same document, so only the first .article-ad-slot on the page
-       (in document order) becomes the Native Banner. Any further
-       .article-ad-slot positions on the same page reuse the existing
-       300x250 / 320x50 banner instead of an invalid duplicate id. */
-    nativeCandidates.forEach((slot, index) => {
-      if (index === 0) {
+  function hydrateAdSlot(slot) {
+    if (!slot || !slot.isConnected || slot.dataset.jazielAd) return;
+
+    if (slot.classList.contains("article-ad-slot")) {
+      const firstArticleSlot = document.querySelector(".article-ad-slot");
+      if (slot === firstArticleSlot) {
+        /* This provider snippet uses one fixed container ID per document. */
         initNativeBanner(slot);
       } else {
         initBanner(slot);
       }
-    });
+      return;
+    }
+
+    initBanner(slot);
+  }
+
+  function fillAdSlots() {
+    const slots = document.querySelectorAll(".ad-slot");
+
+    if ("IntersectionObserver" in window) {
+      if (!adSlotObserver) {
+        adSlotObserver = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            adSlotObserver.unobserve(entry.target);
+            observedAdSlots.delete(entry.target);
+            hydrateAdSlot(entry.target);
+          });
+        }, { rootMargin: "300px 0px" });
+      }
+
+      slots.forEach(slot => {
+        if (slot.dataset.jazielAd || observedAdSlots.has(slot)) return;
+        observedAdSlots.add(slot);
+        adSlotObserver.observe(slot);
+      });
+      return;
+    }
+
+    /* Older browsers: load all slots immediately as a compatibility fallback. */
+    slots.forEach(hydrateAdSlot);
   }
 
   /* ---------- Responsive swap between 300x250 / 320x50 ---------- */
@@ -153,7 +205,15 @@
   let resizeTimer;
   function handleResize() {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(fillAdSlots, 200);
+    resizeTimer = setTimeout(() => {
+      /* Rebuild already-initialized responsive banners after a size change. */
+      document.querySelectorAll(".ad-slot").forEach(slot => {
+        if (slot.dataset.jazielAd && slot.dataset.jazielAd !== "native") {
+          initBanner(slot);
+        }
+      });
+      fillAdSlots();
+    }, 200);
   }
 
   /* ---------- Watch for ad-slots added after initial load
