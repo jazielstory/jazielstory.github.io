@@ -390,3 +390,14 @@ For every future repository change:
 - Choose **Choose & Open Draft** to load only that selected draft into the existing article editor. Other saved drafts remain untouched.
 - The existing Save Draft and Load Draft actions remain available; the editor's Load Draft picker now uses the same shared draft collection routine.
 - No changes to publishing, `articles.json`, Article Schema v1, OG metadata, pagination, or public pages.
+
+
+## Monetag ads — permanent article publishing rule (2026-11-21)
+
+- **Provider:** Monetag In-Page Push only. Do not add Adsterra scripts or run both providers unless explicitly requested.
+- **Zone:** In-Page Push zone ID `12310830`, loaded from `https://nap5k.com/tag.min.js` through the shared `assets/js/jaziel-ads.js` loader.
+- **Verification worker:** Keep the root `sw.js` file unchanged; its verification configuration is separate from the In-Page Push zone.
+- **All new article pages:** The root `article.html` template must include `assets/js/jaziel-ads.js?v=20261121-monetag` in the head. The static article generator must rewrite that path to `../assets/js/jaziel-ads.js?v=20261121-monetag` for files generated inside `/articles/`.
+- **Publishing rule:** Never publish a new static article without the shared Monetag loader. When changing the ad loader or its cache version, update both `article.html` and `.github/scripts/generate-static-articles.mjs` together, then regenerate and verify the published article pages.
+- **Existing pages:** Every generated article page must use the parent-relative `../assets/js/jaziel-ads.js` path. Do not use `assets/js/jaziel-ads.js` from inside `/articles/`, because that resolves to a non-existent nested path.
+- **Deployment note:** The GitHub Actions workflow regenerates static articles when the generator or article source/template changes. Ads may still depend on Monetag approval/serving, visitor eligibility, browser settings, and deployment propagation.
