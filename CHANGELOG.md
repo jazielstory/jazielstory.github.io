@@ -1,3 +1,10 @@
+## 2026-11-20 — Connect Jaziel Story to Google Analytics 4
+
+- Installed GA4 `gtag.js` with measurement ID `G-HC6NTTN5KP` on 9 public root pages and 5 generated article pages.
+- Future generated articles inherit the tag from `article.html`; generator logic and Article Schema v1 unchanged.
+- Updated `privacy.html` to disclose analytics, cookies, and Google privacy/opt-out information.
+- Admin, advertising, pagination, and SEO logic unchanged. Live event receipt must be checked in GA4 Realtime after deployment.
+
 ## 2026-11-20
 
 ### P1 — Fix banner loading across homepage slots and article pagination

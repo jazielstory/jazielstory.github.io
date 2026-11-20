@@ -1,3 +1,11 @@
+## Google Analytics 4 — 2026-11-20
+
+- GA4 Measurement ID: `G-HC6NTTN5KP` (Jaziel Story property).
+- GA4 `gtag.js` installed in the `<head>` of all 9 public root HTML pages and 5 generated article pages. `admin/index.html` intentionally excluded.
+- Future generated articles inherit the GA4 tag from `article.html` via `.github/scripts/generate-static-articles.mjs`. Do not add another tag in the generator to avoid duplicate page views.
+- Privacy Policy updated to disclose Google Analytics and cookies. Article Schema v1, pagination, SEO metadata, and ad loader unchanged.
+- Verify after deployment: visit public pages with browser tracking enabled, then check GA4 Realtime. Tag presence does not guarantee events are received.
+
 ## 2026-11-20 — Banner slot loading and article pagination fix
 
 - Public HTML templates and generated article pages use the bumped `jaziel-ads.js?v=20261120-2` cache key so visitors do not keep the previous loader from browser/CDN cache.
