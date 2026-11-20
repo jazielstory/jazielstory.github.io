@@ -392,12 +392,17 @@ For every future repository change:
 - No changes to publishing, `articles.json`, Article Schema v1, OG metadata, pagination, or public pages.
 
 
-## Monetag ads — permanent article publishing rule (2026-11-21)
+## Monetag ads — permanent publishing and maintenance rule (2026-11-21)
 
-- **Provider:** Monetag In-Page Push only. Do not add Adsterra scripts or run both providers unless explicitly requested.
-- **Zone:** In-Page Push zone ID `12310830`, loaded from `https://nap5k.com/tag.min.js` through the shared `assets/js/jaziel-ads.js` loader.
-- **Verification worker:** Keep the root `sw.js` file unchanged; its verification configuration is separate from the In-Page Push zone.
-- **All new article pages:** The root `article.html` template must include `assets/js/jaziel-ads.js?v=20261121-monetag` in the head. The static article generator must rewrite that path to `../assets/js/jaziel-ads.js?v=20261121-monetag` for files generated inside `/articles/`.
-- **Publishing rule:** Never publish a new static article without the shared Monetag loader. When changing the ad loader or its cache version, update both `article.html` and `.github/scripts/generate-static-articles.mjs` together, then regenerate and verify the published article pages.
-- **Existing pages:** Every generated article page must use the parent-relative `../assets/js/jaziel-ads.js` path. Do not use `assets/js/jaziel-ads.js` from inside `/articles/`, because that resolves to a non-existent nested path.
-- **Deployment note:** The GitHub Actions workflow regenerates static articles when the generator or article source/template changes. Ads may still depend on Monetag approval/serving, visitor eligibility, browser settings, and deployment propagation.
+- **Provider:** Monetag only. Do not restore Adsterra scripts or run Adsterra alongside Monetag unless the site owner explicitly requests a provider change.
+- **Active formats configured in the shared loader:**
+  - In-Page Push: zone ID `12310830`, script `https://nap5k.com/tag.min.js`.
+  - Vignette: zone ID `12310939`, script `https://n6wxm.com/vignette.min.js`.
+  - OnClick (Popunder): zone ID `12310947`, script `https://al5sm.com/tag.min.js`.
+- **Shared loader:** `assets/js/jaziel-ads.js` is the single source for loading the three Monetag formats. Each format has its own once-per-page guard. Do not duplicate these scripts in individual pages or article content.
+- **Verification worker:** Keep root `sw.js` unchanged; it is the Monetag site-verification/service-worker file and is separate from the ad-zone scripts.
+- **Page templates and cache key:** Public root pages and `article.html` must load the shared file with the current versioned URL. When the loader changes, update its cache-busting query in all public page references and the generator/template flow.
+- **New static articles:** `.github/scripts/generate-static-articles.mjs` must rewrite the loader path to `../assets/js/jaziel-ads.js` for generated files inside `/articles/`. Keep `article.html` and the generator in sync, then regenerate and verify generated pages.
+- **No duplicate loading:** Do not add a second copy of any zone script to the HTML template, generated pages, or article body. Do not confuse the Monetag verification `sw.js` with the ad loader.
+- **Deployment and reporting:** A committed script does not prove an ad is being served. Verify GitHub Actions/Pages deployment, inspect the live page, and check Monetag statistics. Ad serving and revenue depend on Monetag processing, visitor eligibility, browser settings, and traffic.
+- **Testing safety:** Test with a clean browser session and ad blocking disabled, but do not repeatedly click ads or generate artificial clicks/impressions.
