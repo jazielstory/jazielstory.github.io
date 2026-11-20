@@ -45,6 +45,22 @@ jobs:
             }
             console.log(`Verified ${articles.length} generated article pages.`);
           '
+      - name: Verify sitemap and robots.txt
+        run: |
+          node --input-type=module -e '
+            import fs from "node:fs";
+            const data = JSON.parse(fs.readFileSync("articles.json", "utf8"));
+            const articles = Array.isArray(data.articles) ? data.articles : [];
+            const xml = fs.readFileSync("sitemap.xml", "utf8");
+            const robots = fs.readFileSync("robots.txt", "utf8");
+            const urls = [...xml.matchAll(/<loc>(.*?)<\\/loc>/g)].map(m => m[1]);
+            const expected = ["https://jazielstory.site/", ...articles.map(a => "https://jazielstory.site/articles/" + a.slug + ".html")];
+            const missing = expected.filter(url => !urls.includes(url));
+            if (!xml.startsWith("<?xml") || !xml.includes("<urlset") || !xml.includes("</urlset>")) throw new Error("Invalid sitemap XML structure.");
+            if (missing.length) throw new Error("Missing sitemap URLs: " + missing.join(", "));
+            if (!robots.includes("User-agent: *") || !robots.includes("Sitemap: https://jazielstory.site/sitemap.xml")) throw new Error("robots.txt is missing crawler or sitemap directives.");
+            console.log("Verified sitemap.xml (" + urls.length + " URLs) and robots.txt.");
+          '
       - name: Commit generated pages
         run: |
           # git diff ignores untracked files; mark new pages intent-to-add first.
