@@ -1,5 +1,15 @@
 ## 2026-11-20
 
+### P2 — Document editorial separation for headings, body text, image alt text, and captions
+- **Status:** DOCUMENTATION UPDATED / NO APPLICATION CODE CHANGED.
+- **Files changed:** README.md, CHANGELOG.md.
+- **Change:** Added a standing Jaziel Story editorial standard: headings introduce the topic; body text provides the full explanation; alt text objectively describes the visible image for accessibility; captions add optional, distinct supporting context.
+- **Quality rule:** Avoid repeating the same information across heading, body, alt text, and caption. Alt text must describe the actual image without promotional hooks or keyword stuffing. Captions should be omitted when they add no distinct value.
+- **Future content instruction:** Apply this separation automatically to all future Jaziel Story articles and AI-generated content.
+- **Safety:** No Admin Panel, AI Writer, Article Schema v1, articles.json, existing article, draft, image, or publication status was changed.
+- **Verification:** README and CHANGELOG content read back after commit; documentation changes do not require a website deployment.
+
+
 ### P2 — Replace Fire Rescue draft with complete English article and English slug
 - **Status:** DRAFT SAVED / NOT PUBLISHED.
 - **Files changed:** `admin/drafts/a-fire-rescue-gift-for-my-child-papua.json` (created), `admin/drafts/sebuah-hadiah-fire-rescue-untuk-anakku.json` (removed), `README.md`, `CHANGELOG.md`.
