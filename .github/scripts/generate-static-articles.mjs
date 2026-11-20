@@ -80,7 +80,7 @@ function render(a,template) {
   html=html.replace("</head>",'<meta property="og:image:alt" content="'+esc(a.title||title)+'"><meta property="og:image:type" content="'+mime+'"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"></head>');
   html=html.replace('href="assets/css/style.css"','href="../assets/css/style.css"').replace('href="assets/css/article-pagination.css"','href="../assets/css/article-pagination.css"');
   ["main.js","article-pagination.js","related-articles.js"].forEach(f=>{html=html.replace('src="assets/js/'+f+'"','src="../assets/js/'+f+'"');});
-  html=html.replace('src="assets/js/jaziel-ads.js?v=20261121-monetag"','src="../assets/js/jaziel-ads.js?v=20261121-monetag"');
+  html=html.replace('src="assets/js/jaziel-ads.js?v=20261121-monetag-vignette"','src="../assets/js/jaziel-ads.js?v=20261121-monetag-vignette"');
   html=html.replace('<body data-page="article">','<body data-page="static-article">');
   html=html.replace('<a class="logo" href="index.html">','<a class="logo" href="../index.html">');
   html=html.replace('<main><div class="container">\n    <div id="article-root"><p class="loading-text">Loading story…</p></div>','<main><div class="container"><article class="article" data-slug="'+esc(slug)+'"><p class="back-link"><a href="../index.html">← Back to Jaziel</a></p>'+category+'<h1 class="article-title">'+esc(a.title||"")+'</h1>'+(dek?'<p class="article-dek">'+esc(dek)+'</p>':"")+(meta?'<div class="story-meta">'+meta+"</div>":"")+pages+pagination(total)+tags+"</article>");
