@@ -1,7 +1,7 @@
 {
   "draftVersion": 1,
   "draftStatus": "draft",
-  "savedAt": "2026-11-20T08:01:00.000Z",
+  "savedAt": "2026-11-20T08:26:37.492Z",
   "sourceNotes": [
     {
       "publisher": "American Heart Association",
@@ -43,7 +43,7 @@
     "date": "2026-11-20",
     "readTime": "7 min read",
     "dek": "Your body performs extraordinary tasks every second. Explore ten fascinating facts about the systems that keep you alive.",
-    "cover": "",
+    "cover": "assets/images/articles/10-amazing-facts-about-the-human-body-cover.jpg",
     "intro": "The human body is one of nature's most fascinating and complex systems. Every second, countless biological processes take place inside us, even when we are sleeping, relaxing, or simply sitting still. From the heart that pumps blood to the bones that support our structure, the body performs remarkable tasks that most people rarely stop to consider. Here are ten science-based facts that may change the way you look at yourself.",
     "sections": [
       {
@@ -117,7 +117,23 @@
         ]
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "src": "assets/images/articles/10-amazing-facts-about-the-human-body-1.webp",
+        "alt": "A detailed medical illustration of the human heart inside a transparent upper-body anatomy model, showing blood vessels, lungs, and red blood cells to explain how the heart continuously pumps blood throughout the body.",
+        "caption": "Your heart is one of the hardest-working organs in your body. It continuously pumps blood, delivering oxygen and essential nutrients throughout your system. On average, an adult heart beats around 100,000 times every day."
+      },
+      {
+        "src": "assets/images/articles/10-amazing-facts-about-the-human-body-2.webp",
+        "alt": "A scientific anatomical comparison showing a newborn baby with approximately 300 bones and an adult skeleton with 206 bones, illustrating how several bones fuse together during human growth.",
+        "caption": "Did you know that babies are born with approximately 300 bones, while adults typically have 206? As children grow, several bones gradually fuse together, forming the stronger skeletal structure found in adulthood. The human body is truly amazing!"
+      },
+      {
+        "src": "assets/images/articles/10-amazing-facts-about-the-human-body-3.webp",
+        "alt": "A detailed educational medical infographic showing human skin anatomy, including the epidermis, dermis, and hypodermis, alongside a realistic portrait illustrating the skin's protective role and important functions.",
+        "caption": "Did you know that your skin is the largest organ of your body? In adults, it covers approximately 2 square meters and weighs around 3–4 kilograms. Beyond protecting you from the outside environment, your skin helps regulate body temperature, prevents excessive water loss, and allows you to feel touch, pressure, and temperature. Your skin does much more than you might imagine!"
+      }
+    ],
     "bibleVerse": {
       "text": "“I praise you because I am fearfully and wonderfully made.”",
       "reference": "Psalm 139:14 (NIV)"
