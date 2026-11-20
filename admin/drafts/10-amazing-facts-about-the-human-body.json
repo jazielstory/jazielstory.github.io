@@ -1,7 +1,7 @@
 {
   "draftVersion": 1,
   "draftStatus": "draft",
-  "savedAt": "2026-11-20T09:06:47.741Z",
+  "savedAt": "2026-11-20T09:17:47.412Z",
   "sourceNotes": [
     {
       "publisher": "American Heart Association",
@@ -159,14 +159,14 @@
         "caption": "Did you know that your bones contain a remarkable blood cell factory? Inside certain bones, a soft tissue called bone marrow produces essential blood cells every day. Red blood cells carry oxygen, white blood cells help fight infections, and platelets help stop bleeding when you get injured. Without healthy bone marrow, your body would struggle to maintain its blood supply and immune defenses. The human body is truly incredible!"
       },
       {
-        "src": "",
-        "alt": "",
-        "caption": ""
+        "src": "assets/images/articles/10-amazing-facts-about-the-human-body-9.webp",
+        "alt": "A detailed medical infographic showing a cross-section of human bone with red bone marrow, illustrating how stem cells develop into red blood cells, white blood cells, and platelets.",
+        "caption": "Did you know that your bones contain a remarkable blood cell factory? Inside certain bones, a soft tissue called bone marrow produces essential blood cells every day. Red blood cells carry oxygen, white blood cells help fight infections, and platelets help stop bleeding when you get injured. Without healthy bone marrow, your body would struggle to maintain its blood supply and immune defenses. The human body is truly incredible!"
       },
       {
-        "src": "",
-        "alt": "",
-        "caption": ""
+        "src": "assets/images/articles/10-amazing-facts-about-the-human-body-10.webp",
+        "alt": "A detailed medical infographic showing the anatomy of the human ear and its three tiny middle-ear bones: the malleus, incus, and stapes. A magnified illustration highlights the stapes, the smallest bone in the human body, measuring approximately 2.5–3.5 millimeters.",
+        "caption": "Did you know that your skin can produce vitamin D when exposed to sunlight? Specifically, ultraviolet B (UVB) rays trigger a natural process in your skin that helps your body make this essential vitamin. Vitamin D plays an important role in calcium absorption, bone health, muscle function, and immune system support. However, excessive sun exposure can damage your skin, so protecting yourself from harmful UV radiation is important too!"
       }
     ],
     "bibleVerse": {
