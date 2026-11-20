@@ -7,6 +7,7 @@
 - The first article Native Banner keeps its provider-required fixed container ID; additional article slots use the responsive 300×250 / 320×50 banner unit.
 - Responsive banner slots are refreshed when the viewport crosses the mobile/desktop breakpoint. Popunder and Social Bar loading remain independent.
 - No article content, SEO metadata, pagination structure, or Article Schema v1 fields were changed.
+- **Implementation commits:** `8ebcc813746b33090b815a7cd85591b6f0010fa2` (slot-loading logic) and `e27b17c936f80acf90f063af77f3f47fdc1bbe31` (public-page cache refresh).
 
 # Jaziel — Trending Stories
 

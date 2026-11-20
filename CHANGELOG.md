@@ -8,7 +8,8 @@
 - **Responsive behavior:** Existing banner slots are refreshed when the mobile/desktop banner size changes. Failed or blocked requests do not stall the remaining slots.
 - **Preserved:** Popunder, Social Bar, article content, SEO metadata, pagination markup, and Article Schema v1.
 - **Cache refresh:** Bumped the public loader URL to `jaziel-ads.js?v=20261120-2` in the article template, all 9 root public pages, the generator, and all 5 generated article pages.
-- **Verification:** JavaScript syntax parsing passed before commit. GitHub Pages build/deploy and live browser tests remain pending.
+- **Implementation commits:** `8ebcc813746b33090b815a7cd85591b6f0010fa2` (slot-loading logic) and `e27b17c936f80acf90f063af77f3f47fdc1bbe31` (public-page cache refresh).
+- **Verification:** JavaScript syntax checks passed for the loader and generator; all 14 public HTML files now reference `jaziel-ads.js?v=20261120-2`. GitHub Pages push workflow completed successfully. Actual ad rendering still requires live browser confirmation.
 - **User approval:** Explicitly approved before implementation.
 
 
