@@ -95,3 +95,31 @@ fs.mkdirSync(dir,{recursive:true});
 let count=0;
 for(const a of articles){const html=render(a,template);if(html){fs.writeFileSync(path.join(dir,a.slug+".html"),html);count++;}}
 console.log("Generated "+count+" static article pages with per-article Open Graph metadata.");
+// Generate an XML sitemap from the published article source of truth.
+// Drafts are stored outside articles.json and are therefore excluded.
+const sitemapArticles = articles
+  .filter(a => a && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(String(a.slug || "")))
+  .filter((a, i, all) => all.findIndex(x => x.slug === a.slug) === i);
+const xmlEsc = value => String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&apos;");
+const sitemapEntries = [
+  { loc: SITE + "/", priority: "1.0" },
+  ...sitemapArticles.map(a => ({
+    loc: SITE + "/articles/" + a.slug + ".html",
+    lastmod: /^\\d{4}-\\d{2}-\\d{2}$/.test(String(a.date || "")) ? a.date : "",
+    priority: "0.8"
+  }))
+];
+const sitemapXml = '<?xml version="1.0" encoding="UTF-8"?>\\n' +
+  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\\n' +
+  sitemapEntries.map(entry =>
+    "  <url>\\n    <loc>" + xmlEsc(entry.loc) + "</loc>\\n" +
+    (entry.lastmod ? "    <lastmod>" + xmlEsc(entry.lastmod) + "</lastmod>\\n" : "") +
+    "    <priority>" + entry.priority + "</priority>\\n  </url>"
+  ).join("\\n") +
+  "\\n</urlset>\\n";
+fs.writeFileSync(path.join(ROOT, "sitemap.xml"), sitemapXml);
+fs.writeFileSync(path.join(ROOT, "robots.txt"),
+  "User-agent: *\\nAllow: /\\n\\nSitemap: " + SITE + "/sitemap.xml\\n"
+);
+console.log("Generated sitemap.xml with " + sitemapArticles.length + " published article URLs and robots.txt.");
+
