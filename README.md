@@ -334,7 +334,12 @@ For every future repository change:
 
 ## Monetization
 
-Adsterra ad slots (`.ad-slot` elements) are unchanged. The Admin Panel does not manage ad code.
+- **Popunder:** Managed from Admin Panel → Settings → Popunder Control. The ON/OFF switch applies to the homepage and article pages.
+- **Default:** Popunder is OFF when `assets/data/ads-config.json` is missing or invalid. The checked-in configuration starts OFF.
+- **Script configuration:** The panel stores only the HTTPS Adsterra Popunder JavaScript URL (not arbitrary HTML/script snippets). URLs are restricted to `*.profitableratecpmnetwork.com`.
+- **Unaffected ads:** Social Bar, Native Banner, and existing responsive banner placements continue to load independently and are not controlled by the Popunder switch.
+- **Security:** `assets/data/ads-config.json` is public site configuration. It must never contain GitHub tokens, API keys, or other secrets. GitHub credentials remain in the Admin Panel browser session only.
+- **Save workflow:** A GitHub Personal Access Token with repository Contents read/write permission is required to save Popunder settings. The setting takes effect on the public site after GitHub Pages deploys.
 
 
 ## Unpublished repository drafts
