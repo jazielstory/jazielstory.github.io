@@ -1,5 +1,14 @@
 # Jaziel — Trending Stories
 
+## 2026-11-20 — Admin Popunder control
+
+- Added a dedicated ON/OFF control in Admin Panel → Settings for Adsterra Popunder.
+- The public loader reads `assets/data/ads-config.json`; a missing, invalid, or disabled configuration leaves Popunder OFF.
+- Only HTTPS Adsterra JavaScript URLs on `*.profitableratecpmnetwork.com` are accepted. Arbitrary inline script snippets are not stored.
+- Social Bar, Native Banner, and responsive banner placements remain independent and unchanged.
+- The configuration file is public and contains no credentials. GitHub tokens remain in the browser session and are never written to repository files.
+- Save requires a GitHub token with repository Contents read/write permission; changes apply after GitHub Pages deployment.
+
 A static, GitHub Pages–hosted trending-stories site, plus an Admin Panel
 for creating and managing articles without hand-editing `articles.json`.
 
@@ -111,7 +120,7 @@ a maximum of **2 sections per page**. The first page is the default when no
 ```
 admin/index.html      Admin Panel UI (Dashboard, Articles, Editor, Settings, Help)
 admin/admin.css        Admin-only styles (reuses the site's design tokens)
-admin/admin.js         All admin logic — talks to GitHub directly from the browser
+admin/admin.js         Admin logic, including GitHub publishing and Popunder controls
 admin/ai-requests/     AI Writer request files (created/cleared automatically)
 admin/ai-results/      AI Writer result files (created automatically)
 ```

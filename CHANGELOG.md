@@ -1,5 +1,15 @@
 ## 2026-11-20
 
+### P1 — Add Admin ON/OFF control for Adsterra Popunder
+- **Status:** IMPLEMENTED / NEEDS LIVE VERIFICATION.
+- **Files changed:** `assets/js/jaziel-ads.js`, `assets/data/ads-config.json`, `admin/admin.js`, `admin/index.html`, `README.md`, `CHANGELOG.md`.
+- **Change:** Added an Admin Panel → Settings control to enable or disable Popunder and update its Adsterra JavaScript URL. The public loader fetches the central configuration and loads Popunder only when explicitly enabled.
+- **Default and safety:** The checked-in configuration starts OFF; missing, invalid, or unavailable configuration also fails closed (OFF). The Admin accepts only HTTPS `.js` URLs hosted on `*.profitableratecpmnetwork.com`; it does not store arbitrary inline script snippets.
+- **Ad isolation:** Social Bar, Native Banner, and existing responsive banner placements continue independently and were not changed.
+- **Credentials:** The configuration is public and contains no secrets. GitHub tokens remain in browser memory/sessionStorage and are never committed.
+- **Verification:** Source-level checks and live Admin/public-page verification are pending after deployment.
+- **Deployment:** Pending GitHub Pages deployment and live ON/OFF test.
+
 ### P2 — Document editorial separation for headings, body text, image alt text, and captions
 - **Status:** DOCUMENTATION UPDATED / NO APPLICATION CODE CHANGED.
 - **Files changed:** README.md, CHANGELOG.md.

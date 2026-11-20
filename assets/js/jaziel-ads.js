@@ -29,8 +29,10 @@
   const NATIVE_BANNER_CONTAINER_ID = "container-80079ecb01bef79f6a3491bfd4857916";
   const NATIVE_BANNER_SRC =
     "https://pl32296917.profitableratecpmnetwork.com/80079ecb01bef79f6a3491bfd4857916/invoke.js";
-  const POPUNDER_SRC =
-    "https://pl32296916.profitableratecpmnetwork.com/75/30/fd/7530fd5e296928b88bd3fc7ea6100a04.js";
+  const ADS_SCRIPT_URL = document.currentScript && document.currentScript.src;
+  const ADS_CONFIG_URL = ADS_SCRIPT_URL
+    ? new URL("../data/ads-config.json", ADS_SCRIPT_URL).href
+    : "/assets/data/ads-config.json";
   const SOCIAL_BAR_SRC =
     "https://pl32296918.profitableratecpmnetwork.com/7d/50/97/7d50973958e288a776e849f6f40dd48f.js";
 
@@ -45,8 +47,31 @@
     document.head.appendChild(script);
   }
 
-  function initPopunder() {
-    loadScriptOnce("jaziel-ad-popunder", POPUNDER_SRC);
+  function isAllowedPopunderUrl(value) {
+    try {
+      const url = new URL(String(value || "").trim());
+      return url.protocol === "https:" &&
+        (url.hostname === "profitableratecpmnetwork.com" ||
+          url.hostname.endsWith(".profitableratecpmnetwork.com")) &&
+        url.pathname.toLowerCase().endsWith(".js");
+    } catch {
+      return false;
+    }
+  }
+
+  async function initPopunder() {
+    /* Popunder is opt-in. Missing, unreadable, or invalid config means OFF. */
+    try {
+      const response = await fetch(ADS_CONFIG_URL, { cache: "no-store" });
+      if (!response.ok) return;
+      const config = await response.json();
+      const popunder = config && config.popunder;
+      if (!popunder || popunder.enabled !== true ||
+          !isAllowedPopunderUrl(popunder.scriptUrl)) return;
+      loadScriptOnce("jaziel-ad-popunder", new URL(popunder.scriptUrl).href);
+    } catch {
+      /* A config/network error must never block Social Bar or banner ads. */
+    }
   }
 
   function initSocialBar() {
