@@ -27,6 +27,28 @@ Live site: https://jazielstory.site/
 - **Safety:** Article Schema v1, article content, draft files, and the CNAME record were not changed.
 - **Verification:** GitHub Actions run `44514670193` completed successfully. Its output verification confirmed all 4 article pages; generated page `articles/first-baby-facts-mother-childbirth.html` was committed in `a7e316bc9951fd5bd815e67cb89c3fc8eac1ae69`. Source inspection confirmed the new page uses the custom-domain canonical and OG URLs. GitHub Pages live deployment is the remaining check.
 
+## Editorial standard — article headings, body text, image alt text, and captions (2026-11-20)
+
+Use this standard whenever creating, editing, or generating Jaziel Story articles. The four elements have different jobs and must not repeat one another.
+
+1. **Heading:** A concise, informative label that introduces the section's subject. It is not a summary paragraph and should not repeat the full body text.
+2. **Body text:** The main explanation and source of the article's value. Explain the fact with context, how/why it happens, relevant details, and accurate qualifications. Prefer clear, natural paragraphs; do not use the image caption as a substitute for article content.
+3. **Image alt text:** A concise, objective description of what is visibly present in that specific image, written for accessibility and readers who cannot see it. Describe the actual subject, action, and relevant visual details. Do not write promotional language, “Did you know?” hooks, keyword lists, or repeat the article paragraph. Do not claim visual details that are not shown.
+4. **Image caption:** Optional short supporting context for readers who can see the image. Add a useful visual explanation, label, or detail that complements the body text. Do not simply copy the body paragraph or restate the heading. If the caption adds no new value, leave it empty rather than forcing repetition.
+
+### Required editorial workflow for image-based fact articles
+
+- Write the heading and body text first; the body text carries the complete explanation.
+- Then write alt text from the actual image, not from the article paragraph alone.
+- Add a caption only when it contributes distinct context or helps interpret the image.
+- Check each section for duplication: heading = topic; body = explanation; alt = visual description; caption = supplementary context.
+- Keep medical/scientific claims accurate, appropriately qualified, and supported by reliable sources. Do not invent precision or imply that an illustrative image is a clinical photograph.
+- For a series of body images, keep the visual style consistent while ensuring each image and its alt text match the correct article section.
+
+**AI content-generation instruction:** When asked to create Jaziel Story content, apply this separation automatically. Never make the alt text, caption, heading, and body paragraph four paraphrases of the same sentence.
+
+**Scope:** Editorial guidance only. This entry does not change the Admin Panel, AI Writer implementation, Article Schema v1, articles.json, existing articles, or publication status.
+
 ## Site structure
 
 ```
