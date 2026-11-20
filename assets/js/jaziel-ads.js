@@ -1,6 +1,6 @@
 /* =========================================================
    JAZIEL — Monetag advertising integration
-   Loads the approved In-Page Push and Vignette zones once.
+   Loads the approved In-Page Push, Vignette and OnClick zones once.
    ========================================================= */
 (() => {
   "use strict";
@@ -23,5 +23,14 @@
     vignette.src = "https://n6wxm.com/vignette.min.js";
     vignette.async = true;
     (document.head || document.documentElement).appendChild(vignette);
+  }
+  // OnClick (Popunder) — separate zone, loaded once per page.
+  if (!window.__jazielMonetagOnClickLoaded) {
+    window.__jazielMonetagOnClickLoaded = true;
+    const onClick = document.createElement("script");
+    onClick.dataset.zone = "12310947";
+    onClick.src = "https://al5sm.com/tag.min.js";
+    onClick.async = true;
+    (document.head || document.documentElement).appendChild(onClick);
   }
 })();
