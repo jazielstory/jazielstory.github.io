@@ -1,5 +1,6 @@
 ## 2026-11-20 — Banner slot loading and article pagination fix
 
+- Public HTML templates and generated article pages use the bumped `jaziel-ads.js?v=20261120-2` cache key so visitors do not keep the previous loader from browser/CDN cache.
 - Banner slots now load one at a time so the shared Adsterra `atOptions` configuration is not overwritten by parallel zone-script requests.
 - Homepage banner slots are initialized as they approach the viewport, rather than firing every zone script at once.
 - Article-page banner slots in hidden pagination sections wait until their page is displayed and the slot approaches the viewport.
