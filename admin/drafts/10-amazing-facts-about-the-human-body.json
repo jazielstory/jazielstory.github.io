@@ -1,7 +1,7 @@
 {
   "draftVersion": 1,
   "draftStatus": "draft",
-  "savedAt": "2026-11-20T08:40:01.645Z",
+  "savedAt": "2026-11-20T09:06:47.741Z",
   "sourceNotes": [
     {
       "publisher": "American Heart Association",
@@ -147,6 +147,26 @@
         "src": "assets/images/articles/10-amazing-facts-about-the-human-body-6.webp",
         "alt": "A detailed educational medical infographic illustrating fetal heart development inside the womb, showing a developing baby with a highlighted heart, a magnified anatomical heart, and the stages of early heart development during pregnancy.",
         "caption": "Did you know that your heart begins beating long before you are born? The developing heart starts beating during early pregnancy, approximately 3–4 weeks after conception. Even before a baby takes its first breath, this remarkable organ has already begun its important journey of supporting life. Isn't that incredible?"
+      },
+      {
+        "src": "assets/images/articles/10-amazing-facts-about-the-human-body-7.webp",
+        "alt": "A detailed educational medical infographic illustrating fetal heart development inside the womb, showing a developing baby with a highlighted heart, a magnified anatomical heart, and the stages of early heart development during pregnancy.",
+        "caption": "Did you know that your heart begins beating long before you are born? The developing heart starts beating during early pregnancy, approximately 3–4 weeks after conception. Even before a baby takes its first breath, this remarkable organ has already begun its important journey of supporting life. Isn't that incredible?"
+      },
+      {
+        "src": "assets/images/articles/10-amazing-facts-about-the-human-body-8.webp",
+        "alt": "A detailed medical infographic showing a cross-section of human bone with red bone marrow, illustrating how stem cells develop into red blood cells, white blood cells, and platelets.",
+        "caption": "Did you know that your bones contain a remarkable blood cell factory? Inside certain bones, a soft tissue called bone marrow produces essential blood cells every day. Red blood cells carry oxygen, white blood cells help fight infections, and platelets help stop bleeding when you get injured. Without healthy bone marrow, your body would struggle to maintain its blood supply and immune defenses. The human body is truly incredible!"
+      },
+      {
+        "src": "",
+        "alt": "",
+        "caption": ""
+      },
+      {
+        "src": "",
+        "alt": "",
+        "caption": ""
       }
     ],
     "bibleVerse": {
