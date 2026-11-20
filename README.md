@@ -340,6 +340,8 @@ For every future repository change:
 - **Unaffected ads:** Social Bar, Native Banner, and existing responsive banner placements continue to load independently and are not controlled by the Popunder switch.
 - **Security:** `assets/data/ads-config.json` is public site configuration. It must never contain GitHub tokens, API keys, or other secrets. GitHub credentials remain in the Admin Panel browser session only.
 - **Save workflow:** A GitHub Personal Access Token with repository Contents read/write permission is required to save Popunder settings. The setting takes effect on the public site after GitHub Pages deploys.
+- **Implementation commits:** `c59fe79d428343067d578f6aace3a14335856c54` (feature), `ffa832ec07eb1d762d3bd6883a97dac408886eca` (JavaScript escape correction), and `84f701d3a848102c6d77ef1a665af6ea58758a62` (README documentation).
+- **Verification:** JavaScript syntax parsing passed for `admin/admin.js` and `assets/js/jaziel-ads.js`. Live Admin ON/OFF and public-page behavior still require browser verification after deployment.
 
 
 ## Unpublished repository drafts

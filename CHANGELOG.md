@@ -7,8 +7,9 @@
 - **Default and safety:** The checked-in configuration starts OFF; missing, invalid, or unavailable configuration also fails closed (OFF). The Admin accepts only HTTPS `.js` URLs hosted on `*.profitableratecpmnetwork.com`; it does not store arbitrary inline script snippets.
 - **Ad isolation:** Social Bar, Native Banner, and existing responsive banner placements continue independently and were not changed.
 - **Credentials:** The configuration is public and contains no secrets. GitHub tokens remain in browser memory/sessionStorage and are never committed.
-- **Verification:** Source-level checks and live Admin/public-page verification are pending after deployment.
-- **Deployment:** Pending GitHub Pages deployment and live ON/OFF test.
+- **Commits:** `c59fe79d428343067d578f6aace3a14335856c54` (feature), `ffa832ec07eb1d762d3bd6883a97dac408886eca` (JavaScript escape correction), and `84f701d3a848102c6d77ef1a665af6ea58758a62` (README documentation).
+- **Verification:** `new Function` syntax parsing passed for both modified JavaScript files. Source checks confirmed default OFF, the Popunder-only control, URL validation, and independent Social Bar/banner initialization. Live Admin ON/OFF and public-page behavior still require browser verification.
+- **Deployment:** GitHub Pages build/deployment is running for the latest documentation commit; live ON/OFF test remains pending.
 
 ### P2 — Document editorial separation for headings, body text, image alt text, and captions
 - **Status:** DOCUMENTATION UPDATED / NO APPLICATION CODE CHANGED.
