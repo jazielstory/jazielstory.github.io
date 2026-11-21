@@ -1,3 +1,15 @@
+## 2026-11-21 — Homepage story selection and category accuracy
+
+- **Status:** IMPLEMENTED / NEEDS LIVE VERIFICATION.
+- **Priority/reason:** P1 — the homepage previously ignored the article `featured` flag, labelled the five newest stories as “Most Popular,” showed hardcoded categories that did not match published content, and contained a stale Lady Gaga fallback story.
+- **Files changed:** `assets/js/home-latest-final.js`, `index.html`, `README.md`, `CHANGELOG.md`.
+- **What changed:** Featured Story now selects the first article explicitly marked `featured: true`, falling back to the newest article if none is featured. Latest Stories remain date-sorted. Most Popular ranks by a numeric `views`, `viewCount`, or `viewsCount` value when such data exists; otherwise it clearly falls back to date order because the current article records do not contain view counts. Category navigation is generated from categories actually present in `articles.json`. The initial homepage markup now uses loading placeholders rather than outdated story content, and fetch failures show a clear message.
+- **Why:** Keep homepage labels and links consistent with published article data without adding a new data schema or introducing duplicate homepage loaders.
+- **Preserved:** Article Schema v1, `articles.json`, Admin Panel, AI Writer, advertising loader, Google Analytics, static article generation, and mobile CSS were not changed.
+- **Implementation commits:** `832f5e782e64382fe31db15e1d89f9176453d160` (homepage loader) and `5502e41d5fceee10f7c1d92547095bc807ec4553` (homepage markup).
+- **Verification:** JavaScript syntax parsing passed. A mocked-data test passed for featured-flag selection, view-count ranking, dynamic categories, newest-first ordering, and removal of the stale fallback. No runtime errors occurred in the test. Live browser/mobile verification and GitHub Pages deployment confirmation remain pending.
+- **Deployment:** Pending GitHub Pages workflow completion and live-site review.
+
 ## 2026-11-21 — George Orwell, poverty, work, and human dignity article draft
 
 - **Status:** DRAFT SAVED / NOT PUBLISHED.
