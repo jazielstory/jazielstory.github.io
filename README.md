@@ -1,15 +1,15 @@
 ## 2026-11-21 — Homepage story selection and category accuracy
 
 - **Status:** IMPLEMENTED / NEEDS LIVE VERIFICATION.
-- **Priority/reason:** P1 — the homepage previously ignored the article `featured` flag, labelled the five newest stories as “Most Popular,” showed hardcoded categories that did not match published content, and contained a stale Lady Gaga fallback story.
+- **Priority/reason:** P1 — the homepage ignored the article `featured` flag, called the five newest stories “Most Popular,” showed hardcoded categories that did not match published content, and contained a stale Lady Gaga fallback.
 - **Files changed:** `assets/js/home-latest-final.js`, `index.html`, `README.md`, `CHANGELOG.md`.
-- **What changed:** Featured Story now selects the first article explicitly marked `featured: true`, falling back to the newest article if none is featured. Latest Stories remain date-sorted. Most Popular ranks by a numeric `views`, `viewCount`, or `viewsCount` value when such data exists; otherwise it clearly falls back to date order because the current article records do not contain view counts. Category navigation is generated from categories actually present in `articles.json`. The initial homepage markup now uses loading placeholders rather than outdated story content, and fetch failures show a clear message.
-- **Why:** Keep homepage labels and links consistent with published article data without adding a new data schema or introducing duplicate homepage loaders.
-- **Preserved:** Article Schema v1, `articles.json`, Admin Panel, AI Writer, advertising loader, Google Analytics, static article generation, and mobile CSS were not changed.
-- **Implementation commits:** `832f5e782e64382fe31db15e1d89f9176453d160` (homepage loader) and `5502e41d5fceee10f7c1d92547095bc807ec4553` and `d29b58e7a1545ad661dcfe748c0925b449ca170f` (homepage loader cache-bust) (homepage markup).
-- **Cache:** Bumped the homepage loader URL to `?v=20261121-homepage-fix` so browsers request the updated script.
-- **Verification:** JavaScript syntax parsing passed. A mocked-data test passed for featured-flag selection, view-count ranking, dynamic categories, newest-first ordering, and removal of the stale fallback. No runtime errors occurred in the test. Live browser/mobile verification and GitHub Pages deployment confirmation remain pending.
-- **Deployment:** Pending GitHub Pages workflow completion and live-site review.
+- **What changed:** Featured Story selects an article marked `featured: true`, falling back to the newest article. Latest Stories remain newest-first. When numeric `views`, `viewCount`, or `viewsCount` data exists, the sidebar ranks by views and is labelled “Most Popular”; with no view data, it is labelled “More Stories” and falls back to date order. Category links are generated from categories in `articles.json`. Removed the stale Lady Gaga fallback and added loading/error states.
+- **Why:** Make homepage content and labels reflect the actual published data without changing the article schema or adding competing loaders.
+- **Preserved:** Article Schema v1, `articles.json`, Admin Panel, AI Writer, ads, Google Analytics, static article generation, and mobile CSS.
+- **Implementation commits:** `832f5e782e64382fe31db15e1d89f9176453d160` (loader), `5502e41d5fceee10f7c1d92547095bc807ec4553` (markup), `d29b58e7a1545ad661dcfe748c0925b449ca170f` (initial cache-bust), `8c08e8a614c1730245dac52cf49557eda2ebed7e` (accurate sidebar label), and `f133cebc59a78c021b075d349f607a84ce8fa0d0` (final cache-bust).
+- **Cache:** Homepage loader URL is `?v=20261121-homepage-fix-2`.
+- **Verification:** JavaScript syntax parsing and mocked-data tests passed for featured selection, view-count ranking, dynamic categories, newest-first ordering, and stale-content removal. Final HTML and documentation were read back from GitHub. Live browser/mobile verification and deployment confirmation remain pending.
+- **Deployment:** GitHub Pages workflow queued; live-site review pending.
 
 ## 2026-11-21 — George Orwell, poverty, work, and human dignity article draft
 
