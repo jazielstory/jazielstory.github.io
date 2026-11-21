@@ -1,7 +1,7 @@
 {
   "draftVersion": 1,
   "draftStatus": "draft",
-  "savedAt": "2026-11-21T11:21:03.952Z",
+  "savedAt": "2026-11-21T11:44:45.931Z",
   "sourceNotes": [
     "Primary source: USGS event page, M 3.4, 1 km W of Lea Hill, Washington; event ID uw714140682; origin time 2026-11-21 07:13:12 UTC; reviewed magnitude 3.4 ml; depth approximately 55.5 km. https://earthquake.usgs.gov/earthquakes/eventpage/uw714140682/executive",
     "USGS Latest Earthquakes map showed the initial automatic solution at magnitude 3.6 and 49.8 km depth before the reviewed event page reflected the updated 3.4 magnitude and approximately 55.5 km depth. https://earthquake.usgs.gov/earthquakes/map/",
@@ -78,13 +78,23 @@
       },
       {
         "src": "assets/images/articles/seattle-earthquake-lea-hill-washington-november-2026-3.webp",
-        "alt": "Illustrative map of the Seattle and Puget Sound region highlighting the earthquake epicenter near Lea Hill and Auburn, Washington, with magnitude, depth, coordinates, and nearby cities.",
-        "caption": "An illustrative map highlights the reported earthquake near Lea Hill, northwest of Auburn, Washington. The USGS event information lists a magnitude of 3.38, a depth of approximately 54.94 kilometers, and coordinates of 47.335°N, 122.191°W."
+        "alt": "A family taking shelter under a sturdy wooden table during an earthquake, demonstrating the three essential safety steps: Drop, Cover, and Hold On.",
+        "caption": "Knowing what to do during an earthquake can help protect lives. Remember to Drop to the ground, Cover your head and neck under a sturdy table or desk, and Hold On until the shaking stops."
       },
       {
-        "src": "",
-        "alt": "",
-        "caption": ""
+        "src": "assets/images/articles/seattle-earthquake-lea-hill-washington-november-2026-4.webp",
+        "alt": "A scientist monitoring earthquake activity at a seismic research station, examining seismograph waveforms and a map showing the earthquake location near Lea Hill, Washington.",
+        "caption": "Seismologists use seismic monitoring systems and waveform data to analyze earthquakes. This illustrative scene shows the reported magnitude 3.38 earthquake near Lea Hill, Washington, recorded on November 21, 2026 (UTC)."
+      },
+      {
+        "src": "assets/images/articles/seattle-earthquake-lea-hill-washington-november-2026-5.webp",
+        "alt": "A family taking shelter under a sturdy wooden table during an earthquake, demonstrating the three essential safety steps: Drop, Cover, and Hold On.",
+        "caption": "Knowing what to do during an earthquake can help protect lives. Remember to Drop to the ground, Cover your head and neck under a sturdy table or desk, and Hold On until the shaking stops."
+      },
+      {
+        "src": "assets/images/articles/seattle-earthquake-lea-hill-washington-november-2026-6.webp",
+        "alt": "A family preparing an earthquake emergency kit at home, gathering drinking water, canned food, a first-aid kit, flashlights, batteries, a radio, and other essential supplies.",
+        "caption": "Preparing before an earthquake can make a difference. Families should assemble an emergency kit, secure heavy furniture, create a family communication plan, and stay informed through trusted sources and local emergency authorities."
       }
     ],
     "bibleVerse": {
