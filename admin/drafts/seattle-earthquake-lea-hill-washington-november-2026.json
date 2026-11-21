@@ -1,0 +1,96 @@
+{
+  "draftVersion": 1,
+  "draftStatus": "draft",
+  "savedAt": "2026-11-21T10:18:00.000Z",
+  "sourceNotes": [
+    "Primary source: USGS event page, M 3.4, 1 km W of Lea Hill, Washington; event ID uw714140682; origin time 2026-11-21 07:13:12 UTC; reviewed magnitude 3.4 ml; depth approximately 55.5 km. https://earthquake.usgs.gov/earthquakes/eventpage/uw714140682/executive",
+    "USGS Latest Earthquakes map showed the initial automatic solution at magnitude 3.6 and 49.8 km depth before the reviewed event page reflected the updated 3.4 magnitude and approximately 55.5 km depth. https://earthquake.usgs.gov/earthquakes/map/",
+    "Pacific Northwest Seismic Network is identified as the contributing authoritative network on the USGS event record. https://pnsn.org/",
+    "The epicentre is near Lea Hill/Auburn, approximately 34 km (21 mi) southeast of Seattle; wording distinguishes the epicentre from Seattle proper.",
+    "Public felt reports are dynamic self-reports and are intentionally not stated as a fixed count in the article.",
+    "Safety guidance follows the standard Drop, Cover, and Hold On recommendation; article does not claim there were no injuries, no damage, or no tsunami without a confirmed official statement."
+  ],
+  "article": {
+    "id": "story-seattle-earthquake-2026-1121",
+    "title": "Magnitude 3.4 Earthquake Near Seattle: Late-Night Tremor Shakes Washington's Puget Sound Region",
+    "slug": "seattle-earthquake-lea-hill-washington-november-2026",
+    "description": "A magnitude 3.4 earthquake struck near Lea Hill, southeast of Seattle, late on November 20, 2026. Here is what USGS data reveals about the location, depth, reported shaking, and earthquake preparedness.",
+    "category": "World News",
+    "date": "2026-11-21",
+    "readTime": "5 min read",
+    "dek": "A late-night earthquake near Auburn was felt by people across parts of the Puget Sound region. The updated USGS report places the magnitude 3.4 event near Lea Hill, about 34 kilometres southeast of Seattle.",
+    "cover": "",
+    "intro": "A brief shake late Friday night caught the attention of residents across the Seattle area. The earthquake was centred near Lea Hill, close to Auburn in Washington State, rather than beneath downtown Seattle. Although the event was relatively modest in magnitude, reports from people who felt it quickly drew attention to the region's seismic activity. Updated seismic information from the U.S. Geological Survey (USGS) puts the event at magnitude 3.4, with a depth of about 55.5 kilometres. Here is what is known—and what the numbers do and do not mean.",
+    "sections": [
+      {
+        "heading": "A Late-Night Earthquake Near Auburn",
+        "paragraphs": [
+          "The earthquake occurred at 11:13 p.m. Pacific Standard Time on Friday, November 20, 2026. The reported epicentre was approximately 1 kilometre west of Lea Hill, Washington, an area near Auburn and roughly 34 kilometres (21 miles) southeast of Seattle.",
+          "The event was recorded at 07:13:12 UTC on November 21. Because the epicentre was outside Seattle itself, describing it as an earthquake near Seattle is more precise than saying the city centre was directly struck."
+        ]
+      },
+      {
+        "heading": "USGS Updated the Magnitude to 3.4",
+        "paragraphs": [
+          "The USGS event record identifies the earthquake as magnitude 3.4, with a depth of approximately 55.5 kilometres (about 34.5 miles). The event was contributed by the University of Washington's Pacific Northwest Seismic Network.",
+          "Early automatic estimates can change as seismic stations provide additional measurements and analysts review the data. The first automatic estimate for this event was higher; the reviewed value was later revised to 3.4. This is a normal part of earthquake reporting and is why readers should check the latest official event page rather than rely on an early alert."
+        ]
+      },
+      {
+        "heading": "Why People in the Region May Have Felt It",
+        "paragraphs": [
+          "People in different parts of the Puget Sound region described feeling a short shake. Public felt reports are useful because they help scientists understand where shaking was noticed, beyond what can be inferred from the location of seismic instruments alone.",
+          "A felt report does not mean that a person experienced the same level of shaking as someone closer to the epicentre. The experience can vary with distance, building type, floor level, local ground conditions, and a person's activity at the time. The number of online reports can also change as more people submit responses."
+        ]
+      },
+      {
+        "heading": "What a Magnitude 3.4 Earthquake Means",
+        "paragraphs": [
+          "Magnitude describes the size of an earthquake at its source. It is not the same as intensity, which describes how strongly the ground shakes at a particular location and what people or structures experience there.",
+          "A magnitude 3.4 earthquake is considered a relatively small event compared with earthquakes capable of causing widespread structural damage. However, the magnitude alone cannot determine the experience at every address. Local ground conditions and building characteristics matter, and official shaking assessments provide more context than a single number."
+        ]
+      },
+      {
+        "heading": "Why Washington Pays Attention to Earthquakes",
+        "paragraphs": [
+          "Washington is part of the seismically active Pacific Northwest. The region's earthquake hazards include the Cascadia Subduction Zone, crustal faults, and earthquakes within the descending Juan de Fuca Plate. These are different sources of seismic activity, and a small earthquake near Auburn should not automatically be interpreted as a warning that a major earthquake is imminent.",
+          "Scientists cannot reliably predict the exact date, location, or magnitude of the next major earthquake. Monitoring, research, stronger building practices, and public preparedness remain the practical ways to reduce risk."
+        ]
+      },
+      {
+        "heading": "How to Stay Safer During an Earthquake",
+        "paragraphs": [
+          "Emergency agencies recommend the simple instruction: Drop, Cover, and Hold On. Drop to your hands and knees, take cover under a sturdy table or desk if one is nearby, and hold on until the shaking stops. If there is no shelter, protect your head and neck with your arms and move away from windows.",
+          "After the shaking, check for injuries and visible hazards, use text messages when phone networks are busy, and follow instructions from local emergency officials. A basic emergency kit with water, food, a flashlight, batteries, essential medication, and a way to receive alerts can also help households prepare."
+        ]
+      }
+    ],
+    "images": [],
+    "bibleVerse": {
+      "text": "",
+      "reference": ""
+    },
+    "closing": "The earthquake near Lea Hill was a reminder that seismic activity is part of life in the Pacific Northwest. The reviewed magnitude was 3.4, and the epicentre was southeast of Seattle—not in the city's downtown area. There is no reason to turn a modest earthquake into a prediction of disaster. The most useful response is to follow verified updates, understand the region's hazards, and make sure that family members know what to do when the ground begins to shake.",
+    "seo": {
+      "title": "Seattle Earthquake: Magnitude 3.4 Tremor Near Auburn, Washington",
+      "description": "A magnitude 3.4 earthquake struck near Lea Hill and Auburn, southeast of Seattle, late November 20, 2026. See the updated USGS details and safety guidance."
+    },
+    "og": {
+      "title": "Magnitude 3.4 Earthquake Near Seattle",
+      "description": "A late-night tremor near Auburn was felt across parts of Washington's Puget Sound region. Here are the verified details.",
+      "image": ""
+    },
+    "tags": [
+      "Seattle earthquake",
+      "Washington earthquake",
+      "Auburn Washington",
+      "Lea Hill earthquake",
+      "USGS",
+      "Pacific Northwest",
+      "Puget Sound",
+      "earthquake safety"
+    ],
+    "relatedArticles": [],
+    "featured": false
+  }
+}
