@@ -1,3 +1,15 @@
+## 2026-11-21 — George Orwell, poverty, work, and human dignity article draft
+
+- **Status:** DRAFT SAVED / NOT PUBLISHED.
+- **Draft file:** `admin/drafts/when-working-is-no-longer-enough-george-orwell-poverty-human-dignity.json`.
+- **Slug:** `when-working-is-no-longer-enough-george-orwell-poverty-human-dignity`.
+- **Change:** Added the English Jaziel Story article adapted from the Indonesian version reviewed and approved by the user. It explores Orwell's experiences in Paris and London, poverty beyond income, the cycle of low-wage survival, decent work, modern inequality, and human dignity.
+- **Editorial accuracy:** The social-media poster's wording is not presented as a verified direct Orwell quotation. The article refers to *Down and Out in Paris and London* (1933) and distinguishes thematic inspiration from a documented quotation.
+- **Images:** Cover and body image fields remain empty for later editorial selection.
+- **Article Schema v1:** Unchanged. `articles.json`, public article pages, and publication status were not modified.
+- **Draft commit:** `02f61452ea795d34ed8d491f56d70b7fdc78aaf0`.
+- **Verification:** Draft was fetched back from GitHub, parsed as JSON, and checked for draft status, slug, and all 6 article sections. Live Admin Panel display and deployment were not checked.
+
 ## 2026-11-21 — Add Monetag OnClick alongside In-Page Push and Vignette
 
 - **Status:** CODE COMMITTED / GITHUB PAGES DEPLOYMENT QUEUED / LIVE AD DELIVERY NOT YET VERIFIED.
