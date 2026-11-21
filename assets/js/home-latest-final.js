@@ -65,6 +65,10 @@
     const hasViewData = articles.some(article => ["views", "viewCount", "viewsCount"].some(key =>
       article[key] !== undefined && article[key] !== null && article[key] !== "" && Number.isFinite(Number(article[key]))
     ));
+    const heading = document.querySelector("#popular .section-title h2");
+    const periodLink = document.querySelector("#popular .section-title a");
+    if (heading) heading.textContent = hasViewData ? "Most Popular" : "More Stories";
+    if (periodLink) periodLink.textContent = hasViewData ? "By views" : "Latest";
     const ranked = [...articles].sort((a, b) => (hasViewData ? viewCount(b) - viewCount(a) : 0) || dateValue(b) - dateValue(a)).slice(0, 5);
     if (!ranked.length) { list.innerHTML = '<li class="empty-state">Popular stories will appear here.</li>'; return; }
     list.innerHTML = ranked.map(article => `
