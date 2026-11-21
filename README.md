@@ -406,3 +406,16 @@ For every future repository change:
 - **No duplicate loading:** Do not add a second copy of any zone script to the HTML template, generated pages, or article body. Do not confuse the Monetag verification `sw.js` with the ad loader.
 - **Deployment and reporting:** A committed script does not prove an ad is being served. Verify GitHub Actions/Pages deployment, inspect the live page, and check Monetag statistics. Ad serving and revenue depend on Monetag processing, visitor eligibility, browser settings, and traffic.
 - **Testing safety:** Test with a clean browser session and ad blocking disabled, but do not repeatedly click ads or generate artificial clicks/impressions.
+
+
+## 2026-11-21 — Seattle-area earthquake article draft
+
+- **Status:** DRAFT SAVED / NOT PUBLISHED.
+- **Draft file:** `admin/drafts/seattle-earthquake-lea-hill-washington-november-2026.json`.
+- **Slug:** `seattle-earthquake-lea-hill-washington-november-2026`.
+- **Change:** Added an English-language, Schema v1 article about the reviewed magnitude 3.4 earthquake near Lea Hill/Auburn, southeast of Seattle, on November 20, 2026. The article distinguishes the epicentre from Seattle proper and explains the revised USGS magnitude/depth, felt reports, regional seismic context, and earthquake safety.
+- **Sources:** USGS event `uw714140682` and the Pacific Northwest Seismic Network. Early automatic parameters were not presented as final; no unsupported claims about injuries, damage, or tsunami were added.
+- **Images:** Cover and body images are not uploaded; image fields remain empty for later editorial selection.
+- **Publishing:** No changes to `articles.json`, public article pages, or publication status.
+- **Commit:** `86a2b364a22f6e0a08be5c1c808081ebdaf1c986`.
+- **Verification:** Draft JSON was fetched again from GitHub and parsed successfully; `draftStatus` is `draft`. Live Admin display has not been checked.
