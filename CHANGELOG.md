@@ -3,14 +3,14 @@
 - **Status:** IMPLEMENTED / NEEDS LIVE VERIFICATION.
 - **Priority:** P1 — correct misleading homepage sections and remove stale fallback content.
 - **Files changed:** `assets/js/home-latest-final.js`, `index.html`, `README.md`, `CHANGELOG.md`.
-- **Change:** Featured Story selects an article with `featured: true`, with newest-story fallback. Latest Stories remain newest-first. Most Popular uses numeric `views`, `viewCount`, or `viewsCount` when present; because current article records have no view counts, it currently falls back to newest-first and does not invent popularity data. Category navigation is built from the categories in `articles.json`. Removed the hardcoded Lady Gaga story from initial homepage fallback markup; loading and fetch-error states are now explicit.
+- **Change:** Featured Story selects an article with `featured: true`, with newest-story fallback. Latest Stories remain newest-first. Numeric `views`, `viewCount`, or `viewsCount` values enable a true view-ranked “Most Popular” list; when none exist, the section is honestly labelled “More Stories” and falls back to newest-first. Category navigation is generated from published article categories. Removed the hardcoded Lady Gaga fallback and added loading/error states.
 - **Reason:** Make homepage content accurate and data-driven while retaining the existing single-loader architecture.
 - **Preserved:** Article Schema v1 and `articles.json` are unchanged. Admin Panel, AI Writer, ads, analytics, static article generation, and mobile CSS are untouched.
-- **Implementation commits:** `832f5e782e64382fe31db15e1d89f9176453d160`; `5502e41d5fceee10f7c1d92547095bc807ec4553` and `d29b58e7a1545ad661dcfe748c0925b449ca170f` (homepage loader cache-bust).
-- **README documentation commits:** `40297fc5ee92a0571809f6aa6dcb63f3019c4a78` and `bb5b966c17da6e984e50215ecbe86935a2760d6c`.
-- **Cache:** Bumped the homepage loader URL to `?v=20261121-homepage-fix` to prevent browsers from reusing the previous script.
-- **Verification:** JavaScript syntax parsing and mocked-data tests passed for featured selection, views ranking, dynamic category links, latest ordering, and stale-content removal. Live browser/mobile verification is pending.
-- **Deployment:** GitHub Pages deployment and live-site verification pending.
+- **Implementation commits:** `832f5e782e64382fe31db15e1d89f9176453d160`, `5502e41d5fceee10f7c1d92547095bc807ec4553`, `d29b58e7a1545ad661dcfe748c0925b449ca170f`, `8c08e8a614c1730245dac52cf49557eda2ebed7e`, and `f133cebc59a78c021b075d349f607a84ce8fa0d0`.
+- **Cache:** Homepage loader URL bumped to `?v=20261121-homepage-fix-2`.
+- **Verification:** JavaScript syntax parsing and mocked-data tests passed for featured selection, views ranking, dynamic categories, newest-first ordering, and stale-content removal. Live browser/mobile verification remains pending.
+- **README documentation commit:** `6d1db9fa3bd16ba7d6ab084a32310ebef1a43893`.
+- **Deployment:** GitHub Pages workflow pending; live-site verification not yet confirmed.
 
 ## 2026-11-21 — George Orwell, poverty, work, and human dignity article draft
 
