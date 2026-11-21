@@ -1,7 +1,7 @@
 {
   "draftVersion": 1,
   "draftStatus": "draft",
-  "savedAt": "2026-11-21T10:18:00.000Z",
+  "savedAt": "2026-11-21T11:12:30.992Z",
   "sourceNotes": [
     "Primary source: USGS event page, M 3.4, 1 km W of Lea Hill, Washington; event ID uw714140682; origin time 2026-11-21 07:13:12 UTC; reviewed magnitude 3.4 ml; depth approximately 55.5 km. https://earthquake.usgs.gov/earthquakes/eventpage/uw714140682/executive",
     "USGS Latest Earthquakes map showed the initial automatic solution at magnitude 3.6 and 49.8 km depth before the reviewed event page reflected the updated 3.4 magnitude and approximately 55.5 km depth. https://earthquake.usgs.gov/earthquakes/map/",
@@ -19,7 +19,7 @@
     "date": "2026-11-21",
     "readTime": "5 min read",
     "dek": "A late-night earthquake near Auburn was felt by people across parts of the Puget Sound region. The updated USGS report places the magnitude 3.4 event near Lea Hill, about 34 kilometres southeast of Seattle.",
-    "cover": "",
+    "cover": "assets/images/articles/seattle-earthquake-lea-hill-washington-november-2026-cover.jpg",
     "intro": "A brief shake late Friday night caught the attention of residents across the Seattle area. The earthquake was centred near Lea Hill, close to Auburn in Washington State, rather than beneath downtown Seattle. Although the event was relatively modest in magnitude, reports from people who felt it quickly drew attention to the region's seismic activity. Updated seismic information from the U.S. Geological Survey (USGS) puts the event at magnitude 3.4, with a depth of about 55.5 kilometres. Here is what is known—and what the numbers do and do not mean.",
     "sections": [
       {
@@ -65,7 +65,33 @@
         ]
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "src": "assets/images/articles/seattle-earthquake-lea-hill-washington-november-2026-1.webp",
+        "alt": "Seattle skyline at night with the Space Needle, a cracked roadway, and a seismic waveform illustrating earthquake activity in the Washington region.",
+        "caption": "Seattle’s iconic skyline and Space Needle are shown alongside a visual representation of seismic activity. A magnitude 3.38 earthquake was recorded near Lea Hill, Washington, on November 21, 2026 (UTC)."
+      },
+      {
+        "src": "",
+        "alt": "",
+        "caption": ""
+      },
+      {
+        "src": "",
+        "alt": "",
+        "caption": ""
+      },
+      {
+        "src": "",
+        "alt": "",
+        "caption": ""
+      },
+      {
+        "src": "",
+        "alt": "",
+        "caption": ""
+      }
+    ],
     "bibleVerse": {
       "text": "",
       "reference": ""
