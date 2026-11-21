@@ -1,3 +1,16 @@
+## 2026-11-21 — Homepage story selection and category accuracy
+
+- **Status:** IMPLEMENTED / NEEDS LIVE VERIFICATION.
+- **Priority:** P1 — correct misleading homepage sections and remove stale fallback content.
+- **Files changed:** `assets/js/home-latest-final.js`, `index.html`, `README.md`, `CHANGELOG.md`.
+- **Change:** Featured Story selects an article with `featured: true`, with newest-story fallback. Latest Stories remain newest-first. Most Popular uses numeric `views`, `viewCount`, or `viewsCount` when present; because current article records have no view counts, it currently falls back to newest-first and does not invent popularity data. Category navigation is built from the categories in `articles.json`. Removed the hardcoded Lady Gaga story from initial homepage fallback markup; loading and fetch-error states are now explicit.
+- **Reason:** Make homepage content accurate and data-driven while retaining the existing single-loader architecture.
+- **Preserved:** Article Schema v1 and `articles.json` are unchanged. Admin Panel, AI Writer, ads, analytics, static article generation, and mobile CSS are untouched.
+- **Implementation commits:** `832f5e782e64382fe31db15e1d89f9176453d160`; `5502e41d5fceee10f7c1d92547095bc807ec4553`.
+- **README documentation commit:** `40297fc5ee92a0571809f6aa6dcb63f3019c4a78`.
+- **Verification:** JavaScript syntax parsing and mocked-data tests passed for featured selection, views ranking, dynamic category links, latest ordering, and stale-content removal. Live browser/mobile verification is pending.
+- **Deployment:** GitHub Pages deployment and live-site verification pending.
+
 ## 2026-11-21 — George Orwell, poverty, work, and human dignity article draft
 
 - **Status:** DRAFT SAVED / NOT PUBLISHED.
