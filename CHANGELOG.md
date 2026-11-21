@@ -370,3 +370,16 @@ Every repository change must be recorded in this file and summarized in `README.
 ### 🟡 SEO enhancements
 - **Status:** RECOMMENDATION / NOT FIXED
 - Potential items include sitemap/robots, JSON-LD Article structured data, and ensuring fallback/dynamic article routes do not create duplicate indexing concerns.
+
+
+## 2026-11-21 — Seattle-area earthquake article draft
+
+- **Status:** DRAFT SAVED / NOT PUBLISHED.
+- **Reason:** User approved the Indonesian article and requested the English Jaziel Story draft.
+- **Files changed:** `admin/drafts/seattle-earthquake-lea-hill-washington-november-2026.json`, `README.md`, `CHANGELOG.md`.
+- **Change:** Added an English Article Schema v1 draft about the reviewed M3.4 event near Lea Hill/Auburn, Washington, at 11:13 p.m. PST on November 20, 2026. The article uses the updated USGS magnitude 3.4 and depth of approximately 55.5 km, distinguishes the epicentre from Seattle proper, and includes qualified context and safety guidance.
+- **Sources:** USGS event ID `uw714140682`; Pacific Northwest Seismic Network. The article avoids a fixed count of felt reports because public submissions change over time, and makes no unsupported claims about injuries, damage, or tsunami.
+- **Images:** No cover or body image files were uploaded; image fields remain empty for editorial selection.
+- **Article Schema v1:** Unchanged. `articles.json` and public article pages were not modified.
+- **Commits:** Draft `86a2b364a22f6e0a08be5c1c808081ebdaf1c986`; README `1e5d65e8bded34bb1238f19691125b639f3d02ce`; CHANGELOG pending.
+- **Verification:** Draft was read back from GitHub and parsed successfully; status confirmed as `draft`. Live Admin display and deployment were not checked.
