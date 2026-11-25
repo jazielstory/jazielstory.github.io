@@ -1,7 +1,7 @@
 {
   "draftVersion": 1,
   "draftStatus": "draft",
-  "savedAt": "2026-11-21T12:37:00.000Z",
+  "savedAt": "2026-11-25T01:40:36.555Z",
   "sourceNotes": [
     "Editorial basis: the Indonesian article reviewed and approved by the user in this conversation, translated and adapted into English for Jaziel Story.",
     "Historical work: George Orwell, Down and Out in Paris and London (1933), based on Orwell's experiences and observations of poverty in Paris and London.",
@@ -76,7 +76,38 @@
         ]
       }
     ],
-    "images": [],
+    "images": [
+      {
+        "src": "assets/images/articles/when-working-is-no-longer-enough-george-orwell-poverty-human-dignity-1.webp",
+        "alt": "A cinematic 1930s scene depicting a struggling working-class family in an industrial town, with a writer typing at his desk while reflecting on poverty, low wages, and human dignity.",
+        "caption": " powerful reflection on George Orwell’s warning: when hard work is no longer enough to escape poverty, human dignity is put at risk."
+      },
+      {
+        "src": "assets/images/articles/when-working-is-no-longer-enough-george-orwell-poverty-human-dignity-2.webp",
+        "alt": "A struggling working-class father counts a few coins at a wooden table while his wife and child sit nearby in a modest, worn home, illustrating poverty and limited financial choices.",
+        "caption": "Poverty is not simply about having too little money. It is also about having too few choices, limited opportunities, and the constant struggle to meet basic needs."
+      },
+      {
+        "src": "assets/images/articles/when-working-is-no-longer-enough-george-orwell-poverty-human-dignity-3.webp",
+        "alt": "Exhausted factory workers sit outside an industrial building while a wealthy factory owner stands nearby, illustrating the cycle of hard work, low income, and economic inequality.",
+        "caption": "For many workers, each day brings the same struggle: work to earn a living, spend nearly everything on necessities, and return to work the next day with little chance to move forward."
+      },
+      {
+        "src": "",
+        "alt": "",
+        "caption": ""
+      },
+      {
+        "src": "",
+        "alt": "",
+        "caption": ""
+      },
+      {
+        "src": "",
+        "alt": "",
+        "caption": ""
+      }
+    ],
     "bibleVerse": {
       "text": "",
       "reference": ""
