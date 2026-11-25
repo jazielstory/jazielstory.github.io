@@ -1,8 +1,16 @@
-/* JAZIEL — homepage story authority */
+/* JAZIEL — homepage story authority
+   Featured Story is always the newest published article.
+   Latest Stories shows the next 12 articles, newest first.
+*/
 (() => {
   "use strict";
   const DATA_URL = new URL("articles.json", document.baseURI).href + `?homepageFinal=${Date.now()}`;
-  const dateValue = article => new Date(article.updatedAt || article.updated || article.date || 0).getTime() || 0;
+  const LATEST_LIMIT = 12;
+  const dateValue = article => {
+    const raw = article.updatedAt || article.updated || article.date || "";
+    const parsed = Date.parse(raw);
+    return Number.isFinite(parsed) ? parsed : 0;
+  };
   function esc(value) {
     return String(value ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
   }
@@ -26,7 +34,7 @@
   function renderFeatured(articles) {
     const card = document.querySelector(".featured-card");
     if (!card) return;
-    const article = articles.find(item => item.featured === true) || articles[0];
+    const article = articles[0];
     if (!article) { card.hidden = true; return; }
     card.hidden = false;
     card.href = url(article);
@@ -48,8 +56,9 @@
   function renderLatest(articles) {
     const list = document.querySelector(".story-list");
     if (!list) return;
-    if (!articles.length) { list.innerHTML = '<p class="empty-state">No stories have been published yet.</p>'; return; }
-    list.innerHTML = articles.map(article => `
+    const latest = articles.slice(1, LATEST_LIMIT + 1);
+    if (!latest.length) { list.innerHTML = '<p class="empty-state">No additional stories have been published yet.</p>'; return; }
+    list.innerHTML = latest.map(article => `
       <a class="story-card" href="${esc(url(article))}">
         <div class="story-thumb" style="${article.cover ? `background-image:url('${esc(article.cover)}');background-size:cover;background-position:center` : ""}" aria-hidden="true"></div>
         <div><div class="story-category">${esc(article.category || "Story")}</div>
@@ -79,7 +88,10 @@
   function render(articles) {
     const valid = articles.filter(article => article && typeof article === "object" && article.slug);
     const sorted = newest(valid);
-    renderCategories(sorted); renderFeatured(sorted); renderLatest(sorted); renderPopular(sorted);
+    renderCategories(sorted);
+    renderFeatured(sorted);
+    renderLatest(sorted);
+    renderPopular(sorted);
   }
   function showLoadError() {
     const card = document.querySelector(".featured-card");
