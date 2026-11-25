@@ -1,7 +1,7 @@
 {
   "draftVersion": 1,
   "draftStatus": "draft",
-  "savedAt": "2026-11-25T01:40:36.555Z",
+  "savedAt": "2026-11-25T02:05:06.966Z",
   "sourceNotes": [
     "Editorial basis: the Indonesian article reviewed and approved by the user in this conversation, translated and adapted into English for Jaziel Story.",
     "Historical work: George Orwell, Down and Out in Paris and London (1933), based on Orwell's experiences and observations of poverty in Paris and London.",
@@ -93,19 +93,19 @@
         "caption": "For many workers, each day brings the same struggle: work to earn a living, spend nearly everything on necessities, and return to work the next day with little chance to move forward."
       },
       {
-        "src": "",
-        "alt": "",
-        "caption": ""
+        "src": "assets/images/articles/when-working-is-no-longer-enough-george-orwell-poverty-human-dignity-4.webp",
+        "alt": "An exhausted factory worker sits alone inside a dark industrial workshop after a long shift, surrounded by heavy machinery, illustrating the struggle of working hard without earning enough for a decent life.",
+        "caption": "Having a job does not always guarantee financial security. When wages cannot cover basic needs and working conditions remain difficult, employment can become a struggle for survival rather than a path toward a better future."
       },
       {
-        "src": "",
-        "alt": "",
-        "caption": ""
+        "src": "assets/images/articles/when-working-is-no-longer-enough-george-orwell-poverty-human-dignity-5.webp",
+        "alt": "A modern delivery worker resting beside his motorcycle on a busy city street, with apartment buildings and office towers in the background, illustrating the contrast between technological progress and the continuing struggle to afford everyday living costs.",
+        "caption": "Technology has transformed the modern world, but financial insecurity remains. Many people still work long hours and struggle to afford housing, food, and other basic necessities."
       },
       {
-        "src": "",
-        "alt": "",
-        "caption": ""
+        "src": "assets/images/articles/when-working-is-no-longer-enough-george-orwell-poverty-human-dignity-6.webp",
+        "alt": "A working-class family sharing a peaceful moment at home after a long day, with parents spending time with their child in a modest but welcoming living room, symbolising human dignity, family, and hope beyond financial survival.",
+        "caption": "A decent life means more than having enough money to survive. It means having time for family, opportunities to grow, the freedom to pursue dreams, and the dignity to enjoy the results of our hard work."
       }
     ],
     "bibleVerse": {
