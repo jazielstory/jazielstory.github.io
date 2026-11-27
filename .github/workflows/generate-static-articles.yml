@@ -1,4 +1,4 @@
-name: Generate static article pages
+name: Generate static article pages and apply editorial image rules
 
 on:
   push:
