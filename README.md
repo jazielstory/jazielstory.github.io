@@ -1,3 +1,14 @@
+## 2026-11-28 — Image alt text and caption display standard
+- **Status:** IMPLEMENTED / AUTOMATED VERIFICATION PENDING.
+- **Priority/reason:** P1 — prevent internal image metadata and repetitive captions from appearing as reader-facing article copy.
+- **Files changed:** `.github/scripts/generate-static-articles.mjs`, `assets/js/main.js`, `admin/admin.js`, `article.html`, `admin/index.html`, `README.md`, `CHANGELOG.md`.
+- **What changed:** Alt text remains exclusively in the image `alt` attribute. Captions are optional and rendered only when they add distinct context. Captions that repeat or closely paraphrase the article title, dek, intro, closing, section headings, section paragraphs, or image alt text are suppressed in static generation, dynamic article rendering, and Admin Preview. The Admin caption field is explicitly marked optional.
+- **Detection:** Uses normalized text matching and conservative word-overlap checks. It catches exact and near-duplicate wording; it cannot reliably identify every semantic paraphrase, so editorial review remains necessary.
+- **Preserved:** Article Schema v1, `articles.json`, existing article data, publication status, section/image ordering, pagination, ads, SEO metadata, and related-story behavior.
+- **Cache:** Dynamic article renderer and Admin Panel script URLs were versioned to prevent stale browser code.
+- **Verification:** Source-level checks passed before commit. GitHub Actions static-page generation and JavaScript validation are triggered by these changes; results and live rendering still need confirmation.
+- **Deployment:** Pending GitHub Actions and GitHub Pages verification.
+
 ## 2026-11-21 — Homepage story selection and category accuracy
 
 - **Status:** IMPLEMENTED / NEEDS LIVE VERIFICATION.
