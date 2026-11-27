@@ -10,12 +10,46 @@ const esc = v => String(v ?? "").replace(/&/g,"&amp;").replace(/</g,"&lt;").repl
 const media = v => /^https?:\/\//i.test(String(v||"")) ? String(v) : "../" + String(v||"").replace(/^\/+/,"");
 const absolute = v => /^https?:\/\//i.test(String(v||"")) ? String(v) : SITE + "/" + String(v||"").replace(/^\/+/,"");
 const paras = a => (Array.isArray(a)?a:[]).map(p=>"<p>"+esc(p)+"</p>").join("");
-function imageHTML(item) {
+
+const CAPTION_STOP_WORDS = new Set(["a","an","and","are","as","at","be","been","being","by","can","did","do","does","for","from","had","has","have","he","her","hers","him","his","how","i","if","in","into","is","it","its","may","me","more","most","my","no","not","of","on","or","our","out","she","so","than","that","the","their","them","then","there","these","they","this","those","through","to","was","we","were","what","when","where","which","who","why","will","with","you","your"]);
+function normalizeEditorialText(value) {
+  return String(value ?? "").normalize("NFKD").replace(/[\\u0300-\\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+}
+function editorialTokens(value) {
+  return new Set(normalizeEditorialText(value).split(/\\s+/).filter(word => word.length > 2 && !CAPTION_STOP_WORDS.has(word)));
+}
+function captionAddsContext(caption, image, article) {
+  const normalizedCaption = normalizeEditorialText(caption);
+  if (!normalizedCaption) return false;
+  const sections = Array.isArray(article?.sections) ? article.sections : [];
+  const sources = [
+    article?.title, article?.dek, article?.description, article?.intro, article?.closing,
+    typeof image === "object" && image ? image.alt : "",
+    ...sections.flatMap(section => [section?.heading, ...(Array.isArray(section?.paragraphs) ? section.paragraphs : [])])
+  ].filter(Boolean);
+  const captionWords = editorialTokens(caption);
+  for (const source of sources) {
+    const normalizedSource = normalizeEditorialText(source);
+    if (!normalizedSource) continue;
+    if (normalizedSource === normalizedCaption || normalizedSource.includes(normalizedCaption)) return false;
+    if (captionWords.size < 4) continue;
+    const sourceWords = editorialTokens(source);
+    if (!sourceWords.size) continue;
+    let overlap = 0;
+    for (const word of captionWords) if (sourceWords.has(word)) overlap++;
+    const captionCoverage = overlap / captionWords.size;
+    const unionSize = new Set([...captionWords, ...sourceWords]).size;
+    const jaccard = unionSize ? overlap / unionSize : 0;
+    if (captionCoverage >= 0.72 && jaccard >= 0.48) return false;
+  }
+  return true;
+}
+function imageHTML(item, article) {
   const src = typeof item==="string" ? item : item && item.src;
   if (!src) return "";
   const alt = typeof item==="object" && item.alt ? item.alt : "";
   const caption = typeof item==="object" && item.caption ? item.caption : "";
-  return '<figure class="article-figure"><img src="'+esc(media(src))+'" alt="'+esc(alt)+'" loading="lazy" decoding="async">'+(caption?'<figcaption>'+esc(caption)+'</figcaption>':"")+"</figure>";
+  return '<figure class="article-figure"><img src="'+esc(media(src))+'" alt="'+esc(alt)+'" loading="lazy" decoding="async">'+(captionAddsContext(caption,item,article)?'<figcaption>'+esc(caption)+'</figcaption>':"")+"</figure>";
 }
 function verseHTML(v) {
   if (!v) return "";
@@ -23,8 +57,8 @@ function verseHTML(v) {
   if (!v.text) return "";
   return '<blockquote class="verse-block"><p>'+esc(v.text)+'</p>'+(v.reference?'<cite>'+esc(v.reference)+'</cite>':"")+"</blockquote>";
 }
-function sectionHTML(s,i,images) {
-  return (s && s.heading?'<h2>'+esc(s.heading)+"</h2>":"")+paras(s && s.paragraphs)+(images[i]?imageHTML(images[i]):"");
+function sectionHTML(s,i,images,article) {
+  return (s && s.heading?'<h2>'+esc(s.heading)+"</h2>":"")+paras(s && s.paragraphs)+(images[i]?imageHTML(images[i],article):"");
 }
 function renderPage(a,page,total) {
   const sections=Array.isArray(a.sections)?a.sections:[];
@@ -35,7 +69,7 @@ function renderPage(a,page,total) {
   if(first && a.intro) out+="<p>"+esc(a.intro)+"</p>";
   if(first) out+='<div class="ad-slot article-ad-slot" aria-label="Advertisement"></div>';
   const slice=sections.slice(start,start+PAGE_SIZE);
-  slice.forEach((s,i)=>{out+=sectionHTML(s,start+i,images);if(i<slice.length-1)out+='<div class="ad-slot article-ad-slot" aria-label="Advertisement"></div>';});
+  slice.forEach((s,i)=>{out+=sectionHTML(s,start+i,images,a);if(i<slice.length-1)out+='<div class="ad-slot article-ad-slot" aria-label="Advertisement"></div>';});
   if(last){out+=verseHTML(a.bibleVerse);if(a.closing)out+='<p class="article-closing">'+esc(a.closing)+"</p>";out+='<div class="ad-slot article-ad-slot" aria-label="Advertisement"></div>';}
   else out+='<a class="article-continue" href="?page='+(page+1)+'">Continue Reading <span aria-hidden="true">→</span></a>';
   return '<section class="article-page-content'+(first?" is-active":"")+'" data-article-page="'+page+'"'+(first?"":" hidden")+'>'+out+"</section>";
@@ -79,7 +113,8 @@ function render(a,template) {
   replacements.forEach(([re,value])=>{html=html.replace(re,value);});
   html=html.replace("</head>",'<meta property="og:image:alt" content="'+esc(a.title||title)+'"><meta property="og:image:type" content="'+mime+'"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"></head>');
   html=html.replace('href="assets/css/style.css"','href="../assets/css/style.css"').replace('href="assets/css/article-pagination.css"','href="../assets/css/article-pagination.css"');
-  ["main.js","article-pagination.js","related-articles.js"].forEach(f=>{html=html.replace('src="assets/js/'+f+'"','src="../assets/js/'+f+'"');});
+  html=html.replace('src="assets/js/main.js"','src="../assets/js/main.js?v=20261128-caption-standard"');
+  ["article-pagination.js","related-articles.js"].forEach(f=>{html=html.replace('src="assets/js/'+f+'"','src="../assets/js/'+f+'"');});
   html=html.replace('src="assets/js/jaziel-ads.js?v=20261121-monetag-vignette-onclick"','src="../assets/js/jaziel-ads.js?v=20261121-monetag-vignette-onclick"');
   html=html.replace('<body data-page="article">','<body data-page="static-article">');
   html=html.replace('<a class="logo" href="index.html">','<a class="logo" href="../index.html">');
