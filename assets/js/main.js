@@ -272,7 +272,7 @@ function renderArticle(root, article) {
 
   const imagesHTML =
     Array.isArray(article.images) && article.images.length
-      ? article.images.map(articleImageHTML).join("")
+      ? article.images.map(image => articleImageHTML(image, article)).join("")
       : "";
 
   const verseHTML = renderBibleVerse(article.bibleVerse);
@@ -307,7 +307,42 @@ function renderArticle(root, article) {
   `;
 }
 
-function articleImageHTML(image) {
+
+const CAPTION_STOP_WORDS = new Set(["a","an","and","are","as","at","be","been","being","by","can","did","do","does","for","from","had","has","have","he","her","hers","him","his","how","i","if","in","into","is","it","its","may","me","more","most","my","no","not","of","on","or","our","out","she","so","than","that","the","their","them","then","there","these","they","this","those","through","to","was","we","were","what","when","where","which","who","why","will","with","you","your"]);
+function normalizeEditorialText(value) {
+  return String(value ?? "").normalize("NFKD").replace(/[\\u0300-\\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+}
+function editorialTokens(value) {
+  return new Set(normalizeEditorialText(value).split(/\\s+/).filter(word => word.length > 2 && !CAPTION_STOP_WORDS.has(word)));
+}
+function captionAddsContext(caption, image, article) {
+  const normalizedCaption = normalizeEditorialText(caption);
+  if (!normalizedCaption) return false;
+  const sections = Array.isArray(article?.sections) ? article.sections : [];
+  const sources = [
+    article?.title, article?.dek, article?.description, article?.intro, article?.closing,
+    typeof image === "object" && image ? image.alt : "",
+    ...sections.flatMap(section => [section?.heading, ...(Array.isArray(section?.paragraphs) ? section.paragraphs : [])])
+  ].filter(Boolean);
+  const captionWords = editorialTokens(caption);
+  for (const source of sources) {
+    const normalizedSource = normalizeEditorialText(source);
+    if (!normalizedSource) continue;
+    if (normalizedSource === normalizedCaption || normalizedSource.includes(normalizedCaption)) return false;
+    if (captionWords.size < 4) continue;
+    const sourceWords = editorialTokens(source);
+    if (!sourceWords.size) continue;
+    let overlap = 0;
+    for (const word of captionWords) if (sourceWords.has(word)) overlap++;
+    const captionCoverage = overlap / captionWords.size;
+    const unionSize = new Set([...captionWords, ...sourceWords]).size;
+    const jaccard = unionSize ? overlap / unionSize : 0;
+    if (captionCoverage >= 0.72 && jaccard >= 0.48) return false;
+  }
+  return true;
+}
+
+function articleImageHTML(image, article) {
   const src = typeof image === "string" ? image : image && image.src;
   if (!src) return "";
 
@@ -317,7 +352,7 @@ function articleImageHTML(image) {
   return `
     <figure class="article-figure">
       <img src="${escapeAttribute(src)}" alt="${escapeAttribute(alt)}" loading="lazy" decoding="async">
-      ${caption ? `<figcaption>${escapeHTML(caption)}</figcaption>` : ""}
+      ${captionAddsContext(caption, image, article) ? `<figcaption>${escapeHTML(caption)}</figcaption>` : ""}
     </figure>
   `;
 }
