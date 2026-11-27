@@ -1,10 +1,11 @@
 ### P1 — Suppress repetitive image captions and keep alt text non-visible
 - **Status:** IMPLEMENTED / AUTOMATED VERIFICATION PENDING.
-- **Files:** `.github/scripts/generate-static-articles.mjs`, `assets/js/main.js`, `admin/admin.js`, `article.html`, `admin/index.html`, `README.md`, `CHANGELOG.md`.
+- **Files:** `.github/scripts/generate-static-articles.mjs`, `.github/workflows/generate-static-articles.yml`, `assets/js/main.js`, `admin/admin.js`, `article.html`, `admin/index.html`, `README.md`, `CHANGELOG.md`.
 - **Change:** Added a consistent caption relevance check to static article generation, dynamic article rendering, and Admin Preview. Captions are omitted when their normalized text is repeated in or closely overlaps the article title, dek, intro, closing, any section heading/body paragraph, or image alt text. Alt text remains only in the HTML `alt` attribute and is never emitted as visible copy. The Admin editor labels captions as optional.
 - **Method limitation:** Automated matching detects exact and close lexical repetition, not every semantic paraphrase. Editors should still omit captions that add no distinct visual context.
 - **Preserved:** Article Schema v1, `articles.json`, existing article content, publication state, pagination, ads, and SEO metadata.
 - **Cache:** Updated article renderer and Admin Panel script cache keys.
+- **Implementation commits:** `9d02654154fb4f32b85c1175e2a53954ff37264a`, `72863197ac39df93401ef85c05f612547489e5c4`, `928cbd5eb5c979de9000cdfa1ebf9fbee7476ecf`, `287fe82e0f9fe44d955535bc78fe432d67e9cfe4`, `a179d775763dad810a0bb480be64d1828b89841a`, `2e9aacc353213e65fdce3826bf965efccb9b04a8`, `e78b880ae4a477718eb75e7e5e9a3804c4c8f536`, `00f8b66d0d6f0eeb02d659940924882675b5eb2a`, `d7541c7f58e3e70d6f49dba8cae25e97066dc016`.
 - **Verification:** Source-level checks passed; GitHub Actions and live page verification pending.
 
 ## 2026-11-21 — Homepage story selection and category accuracy
