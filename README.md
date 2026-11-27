@@ -1,11 +1,12 @@
 ## 2026-11-28 — Image alt text and caption display standard
 - **Status:** IMPLEMENTED / AUTOMATED VERIFICATION PENDING.
 - **Priority/reason:** P1 — prevent internal image metadata and repetitive captions from appearing as reader-facing article copy.
-- **Files changed:** `.github/scripts/generate-static-articles.mjs`, `assets/js/main.js`, `admin/admin.js`, `article.html`, `admin/index.html`, `README.md`, `CHANGELOG.md`.
+- **Files changed:** `.github/scripts/generate-static-articles.mjs`, `.github/workflows/generate-static-articles.yml`, `assets/js/main.js`, `admin/admin.js`, `article.html`, `admin/index.html`, `README.md`, `CHANGELOG.md`.
 - **What changed:** Alt text remains exclusively in the image `alt` attribute. Captions are optional and rendered only when they add distinct context. Captions that repeat or closely paraphrase the article title, dek, intro, closing, section headings, section paragraphs, or image alt text are suppressed in static generation, dynamic article rendering, and Admin Preview. The Admin caption field is explicitly marked optional.
 - **Detection:** Uses normalized text matching and conservative word-overlap checks. It catches exact and near-duplicate wording; it cannot reliably identify every semantic paraphrase, so editorial review remains necessary.
 - **Preserved:** Article Schema v1, `articles.json`, existing article data, publication status, section/image ordering, pagination, ads, SEO metadata, and related-story behavior.
 - **Cache:** Dynamic article renderer and Admin Panel script URLs were versioned to prevent stale browser code.
+- **Implementation commits:** `9d02654154fb4f32b85c1175e2a53954ff37264a`, `72863197ac39df93401ef85c05f612547489e5c4`, `928cbd5eb5c979de9000cdfa1ebf9fbee7476ecf`, `287fe82e0f9fe44d955535bc78fe432d67e9cfe4`, `a179d775763dad810a0bb480be64d1828b89841a`, `2e9aacc353213e65fdce3826bf965efccb9b04a8`, `e78b880ae4a477718eb75e7e5e9a3804c4c8f536`, `00f8b66d0d6f0eeb02d659940924882675b5eb2a`, `d7541c7f58e3e70d6f49dba8cae25e97066dc016`.
 - **Verification:** Source-level checks passed before commit. GitHub Actions static-page generation and JavaScript validation are triggered by these changes; results and live rendering still need confirmation.
 - **Deployment:** Pending GitHub Actions and GitHub Pages verification.
 
