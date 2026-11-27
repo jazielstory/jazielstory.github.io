@@ -11,12 +11,13 @@ const media = v => /^https?:\/\//i.test(String(v||"")) ? String(v) : "../" + Str
 const absolute = v => /^https?:\/\//i.test(String(v||"")) ? String(v) : SITE + "/" + String(v||"").replace(/^\/+/,"");
 const paras = a => (Array.isArray(a)?a:[]).map(p=>"<p>"+esc(p)+"</p>").join("");
 
-const CAPTION_STOP_WORDS = new Set(["a","an","and","are","as","at","be","been","being","by","can","did","do","does","for","from","had","has","have","he","her","hers","him","his","how","i","if","in","into","is","it","its","may","me","more","most","my","no","not","of","on","or","our","out","she","so","than","that","the","their","them","then","there","these","they","this","those","through","to","was","we","were","what","when","where","which","who","why","will","with","you","your"]);
+
+const CAPTION_STOP_WORDS = new Set("a an and are as at be been being by can did do does for from had has have he her hers him his how i if in into is it its may me more most my no not of on or our out she so than that the their them then there these they this those through to was we were what when where which who why will with you your".split(" "));
 function normalizeEditorialText(value) {
-  return String(value ?? "").normalize("NFKD").replace(/[\\u0300-\\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+  return String(value ?? "").normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 }
 function editorialTokens(value) {
-  return new Set(normalizeEditorialText(value).split(/\\s+/).filter(word => word.length > 2 && !CAPTION_STOP_WORDS.has(word)));
+  return new Set(normalizeEditorialText(value).split(/\s+/).filter(word => word.length > 2 && !CAPTION_STOP_WORDS.has(word)));
 }
 function captionAddsContext(caption, image, article) {
   const normalizedCaption = normalizeEditorialText(caption);
@@ -44,6 +45,7 @@ function captionAddsContext(caption, image, article) {
   }
   return true;
 }
+
 function imageHTML(item, article) {
   const src = typeof item==="string" ? item : item && item.src;
   if (!src) return "";
