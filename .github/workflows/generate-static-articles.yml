@@ -55,14 +55,18 @@ jobs:
             for (const article of articles) {
               const file = "articles/" + article.slug + ".html";
               const html = fs.readFileSync(file, "utf8");
-              const match = html.match(/<script type="application\\/ld\\+json">([\\s\\S]*?)<\\/script>/);
-              if (!match) throw new Error("Missing Article JSON-LD: " + article.slug);
-              const schema = JSON.parse(match[1]);
+              const marker = "<script type=\\"application/ld+json\\">";
+              const start = html.indexOf(marker);
+              if (start < 0) throw new Error("Missing Article JSON-LD: " + article.slug);
+              const bodyStart = start + marker.length;
+              const bodyEnd = html.indexOf("</script>", bodyStart);
+              if (bodyEnd < 0) throw new Error("Unclosed Article JSON-LD: " + article.slug);
+              const schema = JSON.parse(html.slice(bodyStart, bodyEnd));
               const expectedUrl = "https://jazielstory.site/articles/" + article.slug + ".html";
               if (schema["@type"] !== "Article" || schema.mainEntityOfPage?.["@id"] !== expectedUrl) {
                 throw new Error("Invalid Article JSON-LD identity: " + article.slug);
               }
-              if (!html.includes("src=\\"../assets/js/main.js")) throw new Error("Incorrect main.js path: " + article.slug);
+              if (!html.includes("../assets/js/main.js")) throw new Error("Incorrect main.js path: " + article.slug);
             }
             console.log("Verified Article JSON-LD and relative main.js paths for " + articles.length + " pages.");
           '
