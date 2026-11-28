@@ -70,6 +70,24 @@ jobs:
             }
             console.log("Verified Article JSON-LD and relative main.js paths for " + articles.length + " pages.");
           '
+      - name: Verify homepage and All Stories fallbacks
+        run: |
+          node --input-type=module -e '
+            import fs from "node:fs";
+            const data = JSON.parse(fs.readFileSync("articles.json", "utf8"));
+            const articles = Array.isArray(data.articles) ? data.articles : [];
+            const home = fs.readFileSync("index.html", "utf8");
+            const all = fs.readFileSync("all.html", "utf8");
+            const latestExpected = Math.min(12, Math.max(0, articles.length - 1));
+            const latestCount = (home.match(/class="story-card"/g) || []).length;
+            const allCount = (all.match(/class="story-card"/g) || []).length;
+            if (latestCount !== latestExpected) throw new Error("Homepage fallback story count mismatch.");
+            if (allCount !== articles.length) throw new Error("All Stories fallback count mismatch.");
+            if (home.includes("JAZIEL:CATEGORY_NAV") || home.includes("JAZIEL:FEATURED_STORY") || all.includes("JAZIEL:ALL_STORIES")) {
+              throw new Error("A generated fallback placeholder remains in public HTML.");
+            }
+            console.log("Verified homepage fallback (" + latestCount + " latest cards) and All Stories fallback (" + allCount + " cards).");
+          '
       - name: Verify sitemap and robots.txt
         run: |
           node --input-type=module -e '
