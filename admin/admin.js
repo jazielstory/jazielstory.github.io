@@ -5,7 +5,7 @@ const SETTINGS_KEY="jaziel_admin_settings_v1",TOKEN_SESSION_KEY="jaziel_admin_to
 const DEFAULT_SETTINGS={owner:"jazielstory",repo:"jazielstory.github.io",branch:"main",siteUrl:"https://jazielstory.site/"};
 const ARTICLES_PATH="articles.json",IMAGES_DIR="assets/images/articles",AI_WORKFLOW_FILE="ai-writer.yml",AI_REQUEST_DIR="admin/ai-requests",AI_RESULT_DIR="admin/ai-results",ADS_CONFIG_PATH="assets/data/ads-config.json",DEFAULT_POPUNDER_SRC="https://pl32296916.profitableratecpmnetwork.com/75/30/fd/7530fd5e296928b88bd3fc7ea6100a04.js";
 const state={settings:loadSettings(),token:sessionStorage.getItem(TOKEN_SESSION_KEY)||"",articles:[],articlesSha:null,articlesLoaded:false,categories:[],editor:null,editorMode:null,editorOriginalSlug:null,editorOriginalId:null,pendingCoverFile:null,pendingBodyImageFiles:{},pendingDraftArticle:null,aiPoll:null};
-function loadSettings(){try{const raw=localStorage.getItem(SETTINGS_KEY);if(!raw)return{...DEFAULT_SETTINGS};return{...DEFAULT_SETTINGS,...JSON.parse(raw)}}catch{return{...DEFAULT_SETTINGS}}}
+function loadSettings(){try{const raw=localStorage.getItem(SETTINGS_KEY);if(!raw)return{...DEFAULT_SETTINGS};const saved={...DEFAULT_SETTINGS,...JSON.parse(raw)};if(saved.siteUrl==="https://jazielstory.github.io/")saved.siteUrl=DEFAULT_SETTINGS.siteUrl;return saved}catch{return{...DEFAULT_SETTINGS}}}
 function saveSettings(){localStorage.setItem(SETTINGS_KEY,JSON.stringify(state.settings))}
 function $(s,r=document){return r.querySelector(s)} function $all(s,r=document){return[...r.querySelectorAll(s)]}
 function escapeHTML(v){return String(v??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\"/g,"&quot;").replace(/'/g,"&#039;")}
