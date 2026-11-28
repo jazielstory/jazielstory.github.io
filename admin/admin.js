@@ -254,7 +254,7 @@ $("#btnSavePopunder").addEventListener("click",async()=>{
       monetag:{enabled:monetagEnabled,zoneId:"12310947"},
       adsterra:{enabled:adsterraEnabled,scriptUrl}
     }};
-    const result=await ghPutFile(ADS_CONFIG_PATH,utf8ToB64(JSON.stringify(payload,null,2)+"\\n"),"Update Monetag and Adsterra Popunder settings",latest&&latest.sha);
+    const result=await ghPutFile(ADS_CONFIG_PATH,utf8ToB64(JSON.stringify(payload,null,2)+"\n"),"Update Monetag and Adsterra Popunder settings",latest&&latest.sha);
     status.textContent="Saved. Monetag: "+(monetagEnabled?"ON":"OFF")+". Adsterra: "+(adsterraEnabled?"ON":"OFF")+". Public pages apply these settings after deployment.";
     if(result&&result.content&&result.content.sha)status.dataset.sha=result.content.sha;
   }catch(err){status.textContent="Could not save Popunder settings: "+err.message}
