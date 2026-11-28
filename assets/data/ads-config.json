@@ -1,7 +1,14 @@
 {
-  "version": 2,
-  "provider": "monetag",
+  "version": 3,
+  "provider": "both",
   "popunder": {
-    "enabled": false
+    "monetag": {
+      "enabled": false,
+      "zoneId": "12310947"
+    },
+    "adsterra": {
+      "enabled": false,
+      "scriptUrl": "https://pl32296916.profitableratecpmnetwork.com/75/30/fd/7530fd5e296928b88bd3fc7ea6100a04.js"
+    }
   }
 }
