@@ -158,6 +158,84 @@ fs.mkdirSync(dir,{recursive:true});
 let count=0;
 for(const a of articles){const html=render(a,template);if(html){fs.writeFileSync(path.join(dir,a.slug+".html"),html);count++;}}
 console.log("Generated "+count+" static article pages with per-article Open Graph metadata.");
+
+function publicArticleUrl(article) {
+  return "articles/" + encodeURIComponent(String(article.slug || "")) + ".html";
+}
+function rootCover(value) {
+  return /^https?:\/\//i.test(String(value || "")) ? String(value) : String(value || "").replace(/^\/+/, "");
+}
+function homepageStoryCard(article) {
+  const cover = rootCover(article.cover);
+  const meta = [article.readTime, article.date].filter(Boolean).map(esc).join(" · ");
+  return '<a class="story-card" href="' + esc(publicArticleUrl(article)) + '">' +
+    '<div class="story-thumb"' + (cover ? ' style="background-image:url(\'' + esc(cover) + '\');background-size:cover;background-position:center"' : "") + ' aria-hidden="true"></div>' +
+    '<div><div class="story-category">' + esc(article.category || "Story") + '</div>' +
+    '<h3>' + esc(article.title || "") + '</h3>' +
+    '<p class="story-excerpt">' + esc(article.description || article.dek || "") + '</p>' +
+    '<div class="story-meta">' + meta + '</div></div></a>';
+}
+function homepageFeatured(article) {
+  if (!article) return '<p class="empty-state">No stories have been published yet.</p>';
+  const cover = rootCover(article.cover);
+  const style = cover ? ' style="background-image:url(\'' + esc(cover) + '\');background-size:cover;background-position:center"' : "";
+  const meta = [article.readTime, article.date].filter(Boolean).map(esc).join(" · ");
+  return '<a class="featured-card" href="' + esc(publicArticleUrl(article)) + '">' +
+    '<div class="featured-image"' + style + ' aria-hidden="true"></div>' +
+    '<div class="featured-overlay" aria-hidden="true"></div>' +
+    '<div class="featured-content"><span class="story-category">' + esc(article.category || "Featured Story") + '</span>' +
+    '<h2>' + esc(article.title || "") + '</h2>' +
+    '<p>' + esc(article.description || article.dek || "") + '</p>' +
+    '<div class="story-meta">' + meta + '</div></div></a>';
+}
+function homepagePopularItem(article, hasViews) {
+  const views = Number(article.views ?? article.viewCount ?? article.viewsCount ?? 0);
+  const meta = hasViews
+    ? esc(article.category || "Trending") + " · " + views.toLocaleString("en-US") + " views"
+    : esc(article.category || "Story") + (article.readTime ? " · " + esc(article.readTime) : "");
+  return '<li class="popular-item"><a href="' + esc(publicArticleUrl(article)) + '">' +
+    '<h3>' + esc(article.title || "") + '</h3><div class="story-meta">' + meta + '</div></a></li>';
+}
+function generateHomepageFallbacks(sortedArticles) {
+  const categories = Array.from(new Set(sortedArticles.map(a => String(a.category || "").trim()).filter(Boolean))).sort((a,b) => a.localeCompare(b));
+  const categoryNav = [
+    '<a class="category-chip active" href="#latest">Latest</a>',
+    '<a class="category-chip" href="#popular">Popular</a>',
+    ...categories.map(category => '<a class="category-chip" href="category.html?category=' + encodeURIComponent(category) + '">' + esc(category) + '</a>')
+  ].join("");
+  const hasViews = sortedArticles.some(article => ["views","viewCount","viewsCount"].some(key =>
+    article[key] !== undefined && article[key] !== null && article[key] !== "" && Number.isFinite(Number(article[key]))
+  ));
+  const ranked = [...sortedArticles].sort((a,b) => {
+    const av = Number(a.views ?? a.viewCount ?? a.viewsCount ?? 0);
+    const bv = Number(b.views ?? b.viewCount ?? b.viewsCount ?? 0);
+    return (hasViews ? bv-av : 0) || articleDateValue(b)-articleDateValue(a);
+  }).slice(0,5);
+  const homepagePath = path.join(ROOT,"index.html");
+  let homepage = fs.readFileSync(homepagePath,"utf8");
+  homepage = homepage.replace("<!-- JAZIEL:CATEGORY_NAV -->",categoryNav);
+  homepage = homepage.replace("<!-- JAZIEL:FEATURED_STORY -->",homepageFeatured(sortedArticles[0]));
+  homepage = homepage.replace("<!-- JAZIEL:LATEST_STORIES -->",sortedArticles.slice(1,13).map(homepageStoryCard).join("") || '<p class="empty-state">No additional stories have been published yet.</p>');
+  homepage = homepage.replace("<!-- JAZIEL:POPULAR_TITLE -->More Stories",hasViews?"Most Popular":"More Stories");
+  homepage = homepage.replace("<!-- JAZIEL:POPULAR_LINK -->Latest",hasViews?"By views":"Latest");
+  homepage = homepage.replace("<!-- JAZIEL:POPULAR_STORIES -->",ranked.map(a => homepagePopularItem(a,hasViews)).join("") || '<li class="empty-state">Stories will appear here after publication.</li>');
+  fs.writeFileSync(homepagePath,homepage);
+  const allPath = path.join(ROOT,"all.html");
+  let allPage = fs.readFileSync(allPath,"utf8");
+  allPage = allPage.replace("<!-- JAZIEL:ALL_STORIES -->",sortedArticles.map(homepageStoryCard).join("") || '<p class="empty-state">No stories have been published yet.</p>');
+  fs.writeFileSync(allPath,allPage);
+  console.log("Generated homepage and All Stories fallbacks from " + sortedArticles.length + " published articles.");
+}
+function articleDateValue(article) {
+  const value = article.updatedAt || article.updated || article.date || "";
+  const parsed = Date.parse(value);
+  return Number.isFinite(parsed) ? parsed : 0;
+}
+const sortedPublishedArticles = articles
+  .filter(article => article && typeof article === "object" && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(String(article.slug || "")))
+  .sort((a,b) => articleDateValue(b)-articleDateValue(a));
+generateHomepageFallbacks(sortedPublishedArticles);
+
 // Generate an XML sitemap from the published article source of truth.
 // Drafts are stored outside articles.json and are therefore excluded.
 const sitemapArticles = articles
