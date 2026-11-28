@@ -113,9 +113,34 @@ function render(a,template) {
     [/<meta name="twitter:image" content="[^"]*">/,'<meta name="twitter:image" content="'+esc(image)+'">']
   ];
   replacements.forEach(([re,value])=>{html=html.replace(re,value);});
-  html=html.replace("</head>",'<meta property="og:image:alt" content="'+esc(a.title||title)+'"><meta property="og:image:type" content="'+mime+'"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"></head>');
+  const published = /^\d{4}-\d{2}-\d{2}$/.test(String(a.date || "")) ? a.date : "";
+  const modifiedValue = a.updatedAt || a.updated || "";
+  const modified = /^\d{4}-\d{2}-\d{2}$/.test(String(modifiedValue)) ? modifiedValue : "";
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    headline: a.title || title,
+    description: a.seo?.description || a.dek || a.description || description,
+    image: [image],
+    ...(published ? { datePublished: published } : {}),
+    ...(modified ? { dateModified: modified } : {}),
+    author: { "@type": "Organization", name: "Jaziel" },
+    publisher: { "@type": "Organization", name: "Jaziel" },
+    ...(a.category ? { articleSection: a.category } : {}),
+    inLanguage: a.language || "en",
+    isAccessibleForFree: true,
+    ...(Array.isArray(a.tags) && a.tags.length ? { keywords: a.tags.join(", ") } : {})
+  };
+  const jsonLdScript = '<script type="application/ld+json">\n' +
+    JSON.stringify(jsonLd, null, 2).replace(/</g, '\\u003c') +
+    '\n  </script>';
+  const articleMeta = (published ? '<meta property="article:published_time" content="' + esc(published) + '">' : "") +
+    (a.category ? '<meta property="article:section" content="' + esc(a.category) + '">' : "") +
+    '<meta name="twitter:image:alt" content="' + esc(a.title || title) + '">';
+  html=html.replace("</head>",'<meta property="og:image:alt" content="'+esc(a.title||title)+'"><meta property="og:image:type" content="'+mime+'"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">'+articleMeta+jsonLdScript+'</head>');
   html=html.replace('href="assets/css/style.css"','href="../assets/css/style.css"').replace('href="assets/css/article-pagination.css"','href="../assets/css/article-pagination.css"');
-  html=html.replace('src="assets/js/main.js"','src="../assets/js/main.js?v=20261128-caption-standard"');
+  html=html.replace(/src="assets\/js\/main\.js([^"]*)"/,'src="../assets/js/main.js$1"');
   ["article-pagination.js","related-articles.js"].forEach(f=>{html=html.replace('src="assets/js/'+f+'"','src="../assets/js/'+f+'"');});
   html=html.replace('src="assets/js/jaziel-ads.js?v=20261121-monetag-vignette-onclick"','src="../assets/js/jaziel-ads.js?v=20261121-monetag-vignette-onclick"');
   html=html.replace('<body data-page="article">','<body data-page="static-article">');
