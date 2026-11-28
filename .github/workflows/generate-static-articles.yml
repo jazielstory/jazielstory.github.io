@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - "audit/**"
     paths:
       - "articles.json"
       - "article.html"
@@ -25,7 +26,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ github.ref }}
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -44,6 +45,25 @@ jobs:
               process.exit(1);
             }
             console.log(`Verified ${articles.length} generated article pages.`);
+          '
+      - name: Verify generated article SEO and asset paths
+        run: |
+          node --input-type=module -e '
+            import fs from "node:fs";
+            const data = JSON.parse(fs.readFileSync("articles.json", "utf8"));
+            const articles = Array.isArray(data.articles) ? data.articles : [];
+            for (const article of articles) {
+              const file = \`articles/\${article.slug}.html\`;
+              const html = fs.readFileSync(file, "utf8");
+              const match = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
+              if (!match) throw new Error(\`Missing Article JSON-LD: \${article.slug}\`);
+              const schema = JSON.parse(match[1]);
+              if (schema["@type"] !== "Article" || schema.mainEntityOfPage?.["@id"] !== \`https://jazielstory.site/articles/\${article.slug}.html\`) {
+                throw new Error(\`Invalid Article JSON-LD identity: \${article.slug}\`);
+              }
+              if (!html.includes(\`src="../assets/js/main.js\`)) throw new Error(\`Incorrect main.js path: \${article.slug}\`);
+            }
+            console.log(\`Verified Article JSON-LD and relative main.js paths for \${articles.length} pages.\`);
           '
       - name: Verify sitemap and robots.txt
         run: |
