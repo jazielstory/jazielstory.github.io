@@ -3,13 +3,13 @@
 - **Status:** IMPLEMENTED ON ISOLATED BRANCH / AUTOMATED VERIFICATION PENDING.
 - **Priority/reason:** P1 — Admin Popunder controls did not match the deployed v2 configuration, Monetag OnClick loaded unconditionally, generated article pages referenced the root main.js path incorrectly, and Article JSON-LD was absent from production generation.
 - **Branch:** `audit/fix-jaziel-story-2026-11-28` (created from `main`; not merged).
-- **Files changed:** `.github/scripts/generate-static-articles.mjs`, `.github/workflows/generate-static-articles.yml`, `assets/js/jaziel-ads.js`, `assets/data/ads-config.json`, `admin/admin.js`, `admin/index.html`, `privacy.html`, `terms.html`, `README.md`, `CHANGELOG.md`.
+- **Files changed:** `.github/scripts/generate-static-articles.mjs`, `.github/workflows/generate-static-articles.yml`, `assets/js/jaziel-ads.js`, `assets/data/ads-config.json`, `admin/admin.js`, `admin/index.html`, `index.html`, `all.html`, `privacy.html`, `terms.html`, `README.md`, `CHANGELOG.md`.
 - **Popunder:** Added independent Monetag OnClick and Adsterra Popunder switches. Both default OFF. Existing Monetag In-Page Push and Vignette loader code is preserved. The Admin saves a version 3 public config; the public loader validates Adsterra script URLs and supports legacy v1/v2 configuration without enabling a disabled legacy toggle.
 - **SEO:** Static article generation now adds Article JSON-LD, publication/modification dates when available, article section, Twitter image alt, and per-article canonical identity without changing Article Schema v1 or `articles.json`.
 - **Path repair:** Generated article pages now preserve the main.js cache query while rewriting the script path relative to `/articles/`.
 - **Workflow:** Static generation can run on this isolated audit branch and checks JSON-LD plus the generated main.js path. It checks out and pushes to the triggering ref; the GitHub Pages deployment workflow remains restricted to `main`.
 - **Policy pages:** Privacy and Terms now describe Monetag and/or Adsterra consistently; Terms date updated to November 2026.
-- **Preserved:** Article Schema v1, all published article records, all drafts, existing body content, In-Page Push, Vignette, Social Bar, Native Banner, and other banner placements. Homepage/All Stories fallback HTML is deferred to avoid introducing a second competing rendering path in this pass.
+- **Preserved:** Article Schema v1, all published article records, all drafts, existing body content, In-Page Push, Vignette, Social Bar, Native Banner, and other banner placements. Homepage and All Stories now receive generator-managed HTML fallback content from `articles.json`; the existing JavaScript loaders remain in place and refresh the same content without adding duplicate loaders.
 - **Verification:** Source-level checks and branch Actions checks pending. No production merge or deployment performed.
 
 ### P1 — Suppress repetitive image captions and keep alt text non-visible
