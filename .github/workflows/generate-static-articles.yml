@@ -55,7 +55,7 @@ jobs:
             for (const article of articles) {
               const file = "articles/" + article.slug + ".html";
               const html = fs.readFileSync(file, "utf8");
-              const marker = "<script type=\\"application/ld+json\\">";
+              const quote = String.fromCharCode(34);\n              const marker = "<script type=" + quote + "application/ld+json" + quote + ">";
               const start = html.indexOf(marker);
               if (start < 0) throw new Error("Missing Article JSON-LD: " + article.slug);
               const bodyStart = start + marker.length;
