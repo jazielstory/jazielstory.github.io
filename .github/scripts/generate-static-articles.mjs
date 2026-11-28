@@ -116,7 +116,8 @@ function render(a,template) {
   const published = /^\d{4}-\d{2}-\d{2}$/.test(String(a.date || "")) ? a.date : "";
   const modifiedValue = a.updatedAt || a.updated || "";
   const modified = /^\d{4}-\d{2}-\d{2}$/.test(String(modifiedValue)) ? modifiedValue : "";
-  // Keep structured data generated from existing Article Schema v1 fields; do not mutate articles.json.\n  const jsonLd = {
+  // Keep structured data generated from existing Article Schema v1 fields; do not mutate articles.json.
+  const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
